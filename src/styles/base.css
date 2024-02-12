@@ -1,50 +1,63 @@
 @font-face {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 400;
-  src:
-    local("Roboto"),
-    local("Roboto-Regular"),
-    url(/fonts/roboto.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 700;
-  src:
-    local("Roboto Bold"),
-    local("Roboto-Bold"),
-    url(/fonts/roboto-bold.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Roboto;
+  font-family: Jost;
   font-style: normal;
   font-weight: 500;
   src:
-    local("Roboto Medium"),
-    local("Roboto-Medium"),
-    url(/fonts/roboto-medium.woff2) format("woff2");
+    local("Jost Medium"),
+    local("Jost-Medium"),
+    url(/fonts/jost-medium.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Roboto;
+  font-family: Jost;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 400;
   src:
-    local("Roboto Black"),
-    local("Roboto-Black"),
-    url(/fonts/roboto-black.woff2) format("woff2");
+    local("Jost Regular"),
+    local("Jost-Regular"),
+    url(/fonts/jost-regular.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local("Jost SemiBold"),
+    local("Jost-SemiBold"),
+    url(/fonts/jost-semibold.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Cormorant Garamond;
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local("Cormorant Garamond Medium"),
+    local("CormorantGaramond-Medium"),
+    url(/fonts/cormorant-garamond-medium.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Cormorant Garamond;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("Cormorant Garamond Regular"),
+    local("CormorantGaramond-Regular"),
+    url(/fonts/cormorant-garamond-regular.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
   font-display: swap;
