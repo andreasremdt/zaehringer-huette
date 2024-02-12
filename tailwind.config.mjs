@@ -9,6 +9,12 @@ export default {
         sans: ["Jost", ...theme.fontFamily.sans],
         serif: ["Cormorant Garamond", ...theme.fontFamily.serif],
       },
+      colors: {
+        primary: {
+          400: "#f8f5f0",
+          DEFAULT: "#f9dabb",
+        },
+      },
     },
   },
   plugins: [],

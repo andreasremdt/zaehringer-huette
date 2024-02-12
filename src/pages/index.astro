@@ -1,7 +1,52 @@
 ---
 import Layout from "@/layouts/default.astro";
+import { Image } from "astro:assets";
+
+import heroImg from "@/images/yannick-pulver-ZwPuquZBnyM-unsplash.jpg";
 ---
 
 <Layout>
-  <h1>Hello, World</h1>
+  <section
+    class="container relative mx-auto flex aspect-video flex-col items-center justify-center text-white"
+  >
+    <h1 class="mb-8 font-serif text-8xl">Urlaub im Schwarzwald</h1>
+    <p class="max-w-3xl text-center font-medium uppercase">
+      Willkommen auf der Zähringer Hütte im idyllischen Naturschutzgebiet des
+      Schwarzwaldes. Genießen Sie entspannende Tage in rustikaler Atmosphäre.
+    </p>
+    <Image
+      src={heroImg}
+      width={1920}
+      height={800}
+      alt="placeholder"
+      class="absolute inset-0 -z-10 h-full w-full rounded-2xl object-cover"
+    />
+  </section>
+
+  <section class="container mx-auto px-24 py-24 text-center">
+    <h2 class="mx-auto mb-8 max-w-3xl font-serif text-5xl">
+      Verbringen Sie einen unvergesslichen Urlaub in den Bergen
+    </h2>
+    <p class="mx-auto max-w-xl">
+      Eingebettet in den Bergen des Schwarzwaldes in unmittelbarer Nähe des
+      Feldberges und seiner Skilifte befindet sich die rustikale, gut
+      ausgestattete Zähringer Hütte. 1275m über dem Meeresspiegel gelegen weckt
+      die Hütte im Winter und Sommer stets Alpengefühle. Die Hütte wurde 2014
+      komplett neu renoviert und entspricht jeglichen Ansprüchen.
+    </p>
+  </section>
+
+  <section class="bg-white py-24 text-center">
+    <div class="container mx-auto">
+      <h2 class="mb-8 font-serif text-5xl">Ausstattung</h2>
+
+      <ul class="flex font-serif text-xl font-medium">
+        <li class="flex-1">2 Toiletten</li>
+        <li class="flex-1">WLAN</li>
+        <li class="flex-1">Kachelöfen</li>
+        <li class="flex-1">Moderne Küche</li>
+        <li class="flex-1">4 - 11 Personen</li>
+      </ul>
+    </div>
+  </section>
 </Layout>
