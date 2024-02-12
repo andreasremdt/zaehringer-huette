@@ -1,0 +1,52 @@
+---
+import Header from "@/components/header.astro";
+
+import "@/styles/base.css";
+---
+
+<html lang="de" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Andreas Remdt" />
+    <meta name="description" content="TEST" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f9c910" />
+
+    <meta
+      property="og:title"
+      content="Urlaub im Schwarzwald - Zähringer Hütte"
+    />
+    <!-- <meta property="og:description" content={description} /> -->
+    <!-- {image ? <meta property="og:image" content={image} /> : null} -->
+    <meta property="og:site_name" content="Zähringer Hütte" />
+    <meta property="og:url" content={Astro.url} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Urlaub im Schwarzwald - Zähringer Hütte"
+    />
+    <!-- <meta name="twitter:description" content={description} /> -->
+    <!-- {image ? <meta name="twitter:image" content={image} /> : null} -->
+
+    <title>Urlaub im Schwarzwald - Zähringer Hütte</title>
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" /> -->
+  </head>
+  <body class="">
+    <a
+      href="#content"
+      class="btn btn-primary absolute -top-1 left-1/2 z-10 -translate-x-1/2 -translate-y-full rounded-t-none transition-transform focus:translate-y-0"
+      >Zum Inhalt springen</a
+    >
+
+    <Header />
+
+    <main class="" id="content">
+      <slot />
+    </main>
+  </body>
+</html>
