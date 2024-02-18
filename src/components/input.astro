@@ -1,0 +1,44 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+  label: string;
+  multiline?: string;
+};
+
+const {
+  label,
+  id,
+  as: Tag,
+  class: className,
+  required,
+  ...props
+} = Astro.props;
+---
+
+<div class:list={["relative", className]}>
+  <Tag
+    id={id}
+    class:list={[
+      "peer w-full rounded-lg border border-stone-300 bg-primary-400 px-4 transition-colors hover:border-stone-400 focus:border-stone-600 focus:outline-none",
+      { "h-12": Tag === "input", "h-28": Tag === "textarea" },
+    ]}
+    placeholder=" "
+    required={required}
+    {...props}
+  />
+  <label
+    for={id}
+    class="absolute left-2 top-6 -translate-y-10 cursor-text bg-primary-400 px-2 transition-transform peer-placeholder-shown:-translate-y-1/2 peer-focus:-translate-y-10"
+  >
+    {label}
+    {
+      required ? (
+        <>
+          <span class="sr-only">Pflichtfeld</span>
+          <span aria-hidden="true">*</span>
+        </>
+      ) : null
+    }
+  </label>
+</div>

@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  image: string;
+  reverse?: boolean;
+}
+
+const { title, image, reverse } = Astro.props;
+---
+
+<article
+  class:list={[
+    "mb-32 flex items-center gap-x-24",
+    { "flex-row-reverse": reverse },
+  ]}
+>
+  <Image
+    src={image}
+    width={600}
+    height={600}
+    alt="placeholder"
+    class="aspect-square rounded-xl object-cover"
+  />
+  <div>
+    <h2 class="mb-8 font-serif text-4xl font-medium">{title}</h2>
+    <slot />
+  </div>
+</article>

@@ -1,0 +1,27 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<form
+  action=""
+  method="POST"
+  class:list={["w-max space-x-8 rounded-full bg-white p-4", className]}
+>
+  <input type="date" placeholder="Von" class="ml-8" />
+  <input type="date" placeholder="Bis" />
+  <select class="bg-white">
+    <option value="">Anzahl Gäste</option>
+    <option value="">1</option>
+    <option value="">2</option>
+    <option value="">3</option>
+  </select>
+  <button
+    type="submit"
+    class="h-12 rounded-full bg-stone-800 px-6 text-sm font-medium uppercase text-white"
+    >Verfügbarkeit prüfen</button
+  >
+</form>

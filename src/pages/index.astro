@@ -1,30 +1,46 @@
 ---
-import Layout from "@/layouts/default.astro";
 import { Image } from "astro:assets";
 
-import heroImg from "@/images/yannick-pulver-ZwPuquZBnyM-unsplash.jpg";
+import Feature from "@/components/feature.astro";
+import Carousel from "@/components/carousel.astro";
+import Testimonials from "@/components/testimonials.astro";
+import BookingForm from "@/components/booking-form.astro";
+import Input from "@/components/input.astro";
+import Layout from "@/layouts/default.astro";
+import icon1 from "@/images/icons/air-conditioner.png";
+import icon2 from "@/images/icons/bunk.png";
+import icon3 from "@/images/icons/cutlery.png";
+import icon4 from "@/images/icons/laptop.png";
+import icon5 from "@/images/icons/shower.png";
 ---
 
 <Layout>
   <section
-    class="container relative mx-auto flex aspect-video flex-col items-center justify-center text-white"
+    class="flex bg-gradient-to-b from-primary from-50% to-primary-400 to-50% pt-12"
   >
-    <h1 class="mb-8 font-serif text-8xl">Urlaub im Schwarzwald</h1>
-    <p class="max-w-3xl text-center font-medium uppercase">
-      Willkommen auf der Zähringer Hütte im idyllischen Naturschutzgebiet des
-      Schwarzwaldes. Genießen Sie entspannende Tage in rustikaler Atmosphäre.
-    </p>
-    <Image
-      src={heroImg}
-      width={1920}
-      height={800}
-      alt="placeholder"
-      class="absolute inset-0 -z-10 h-full w-full rounded-2xl object-cover"
-    />
+    <div class="container relative mx-auto">
+      <h1 class="mb-8 text-center font-serif text-7xl">
+        Urlaub im Schwarzwald
+      </h1>
+
+      <BookingForm class="mx-auto translate-y-1/2" />
+
+      <Image
+        src="https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/yannick-pulver-ZwPuquZBnyM-unsplash.jpg?updatedAt=1708014036346"
+        width={1600}
+        height={600}
+        alt="placeholder"
+        loading="eager"
+        class="h-[40vw] rounded-2xl object-cover"
+      />
+    </div>
   </section>
 
-  <section class="container mx-auto px-24 py-24 text-center">
-    <h2 class="mx-auto mb-8 max-w-3xl font-serif text-5xl">
+  <section class="container mx-auto px-24 py-48 text-center">
+    <h2
+      class="mx-auto mb-8 max-w-3xl scroll-m-36 font-serif text-5xl"
+      id="huette"
+    >
       Verbringen Sie einen unvergesslichen Urlaub in den Bergen
     </h2>
     <p class="mx-auto max-w-xl">
@@ -34,19 +50,299 @@ import heroImg from "@/images/yannick-pulver-ZwPuquZBnyM-unsplash.jpg";
       die Hütte im Winter und Sommer stets Alpengefühle. Die Hütte wurde 2014
       komplett neu renoviert und entspricht jeglichen Ansprüchen.
     </p>
+
+    <div class="mt-32 grid grid-cols-3 gap-12 text-left">
+      <figure>
+        <Image
+          src="https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/feldberg-im-winter-800x600.jpg?updatedAt=1708014034622"
+          width={500}
+          height={600}
+          alt="placeholder"
+          class="aspect-[4/5] rounded-xl object-cover"
+        />
+        <figcaption class="mt-4">Schnee im Schwarzwald</figcaption>
+      </figure>
+      <figure class="translate-y-24">
+        <Image
+          src="https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/huette-front-fruehling.jpg?updatedAt=1708024261463"
+          width={500}
+          height={600}
+          alt="placeholder"
+          class="aspect-[4/5] rounded-xl object-cover"
+        />
+      </figure>
+      <figure>
+        <Image
+          src="https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/huette-front-mit-schnee.jpg?updatedAt=1708024261293"
+          width={500}
+          height={600}
+          alt="placeholder"
+          class="aspect-[4/5] rounded-xl object-cover"
+        />
+        <figcaption class="mt-4">Die Hütte von außen mit Schnee</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <section class="bg-white py-24 text-center">
-    <div class="container mx-auto">
-      <h2 class="mb-8 font-serif text-5xl">Ausstattung</h2>
+  <section
+    class="container mx-auto rounded-2xl bg-white px-16 py-48 text-center"
+  >
+    <h2 class="mb-16 font-serif text-5xl">Ausstattung</h2>
 
-      <ul class="flex font-serif text-xl font-medium">
-        <li class="flex-1">2 Toiletten</li>
-        <li class="flex-1">WLAN</li>
-        <li class="flex-1">Kachelöfen</li>
-        <li class="flex-1">Moderne Küche</li>
-        <li class="flex-1">4 - 11 Personen</li>
-      </ul>
+    <ul class="grid grid-cols-5 gap-16 font-serif text-xl font-medium">
+      <li>
+        <Image
+          src={icon1}
+          width={48}
+          height={48}
+          alt="placeholder"
+          class="mx-auto mb-4"
+          aria-hidden="true"
+        />
+        2 Toiletten mit Warmwasser
+      </li>
+      <li>
+        <Image
+          src={icon2}
+          width={48}
+          height={48}
+          alt="placeholder"
+          class="mx-auto mb-4"
+          aria-hidden="true"
+        />
+        WLAN mit 50 mbit/s
+      </li>
+      <li>
+        <Image
+          src={icon3}
+          width={48}
+          height={48}
+          alt="placeholder"
+          class="mx-auto mb-4"
+          aria-hidden="true"
+        />
+        2 Kachelöfen in Wohn- und Esszimmer
+      </li>
+      <li>
+        <Image
+          src={icon4}
+          width={48}
+          height={48}
+          alt="placeholder"
+          class="mx-auto mb-4"
+          aria-hidden="true"
+        />
+        Moderne Küche mit Vollausstattung
+      </li>
+      <li>
+        <Image
+          src={icon5}
+          width={48}
+          height={48}
+          alt="placeholder"
+          class="mx-auto mb-4"
+          aria-hidden="true"
+        />
+        Platz für 4 - 11 Personen
+      </li>
+      <li>
+        <Image
+          src={icon4}
+          width={48}
+          height={48}
+          alt="placeholder"
+          class="mx-auto mb-4"
+          aria-hidden="true"
+        />
+        2 Doppelzimmer
+      </li>
+      <li>
+        <Image
+          src={icon5}
+          width={48}
+          height={48}
+          alt="placeholder"
+          class="mx-auto mb-4"
+          aria-hidden="true"
+        />
+        1 Zweibettzimmer
+      </li>
+      <li>
+        <Image
+          src={icon1}
+          width={48}
+          height={48}
+          alt="placeholder"
+          class="mx-auto mb-4"
+          aria-hidden="true"
+        />
+        1 Dreibettzimmer
+      </li>
+      <li>
+        <Image
+          src={icon3}
+          width={48}
+          height={48}
+          alt="placeholder"
+          class="mx-auto mb-4"
+          aria-hidden="true"
+        />
+        1 Zimmer mit Schlafcouch
+      </li>
+      <li>
+        <Image
+          src={icon3}
+          width={48}
+          height={48}
+          alt="placeholder"
+          class="mx-auto mb-4"
+          aria-hidden="true"
+        />
+        Separate Waschbecken pro Zimmer
+      </li>
+    </ul>
+  </section>
+
+  <section class="mx-auto max-w-6xl py-32">
+    <Feature
+      image="https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/sergei-a--heLWtuAN3c-unsplash.jpg?updatedAt=1708014036583"
+      title="Idyllische Natur"
+      reverse
+    >
+      <p>
+        Die Hütte liegt im Naturschutzgebiet des Schwarzwaldes. Sie erwartet
+        eine tolle, bergige Landschaft mit sauberer Luft und eine ruhige
+        Atmosphäre abseits der Straßen. Die Hütte ist ein Juwel und dient der
+        kompletten Erholung.
+      </p>
+    </Feature>
+
+    <Feature
+      image="https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/alexandra-luniel-86T5I7ZtjmM-unsplash.jpg?updatedAt=1708014036935"
+      title="Wintersport"
+    >
+      <p>
+        Ski- und Snowboardfahrer finden 60 Pistenkilometer vor. Der Feldberg
+        verfügt über 4 Sessellifte, eine Gondelbahn und 26 Schlepplifte, welche
+        zum Wintersport einladen. Schneeschuhwandern bringt hier völlig neue
+        Erlebnisse.
+      </p>
+    </Feature>
+
+    <Feature
+      image="https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/christopher-burns-8sOuWN9ebKk-unsplash.jpg?updatedAt=1708014037109"
+      title="Wanderwege"
+      reverse
+    >
+      <p>
+        Wanderer und Abenteurer können im Sommer und Winter die insgesamt 60km
+        an (gespurten) Winterwanderwege entdecken. Alle Wege liegen in
+        unmittelbarer Nähe zur Hütte.
+      </p>
+    </Feature>
+
+    <Feature
+      image="https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/hayden-scott-lyTgIeUBOUE-unsplash.jpg?updatedAt=1708014036287"
+      title="Modern & Komfortabel"
+    >
+      <p>
+        Dusche und WC wurden renoviert, jedes Zimmer verfügt über separate
+        Waschbecken. Strom, Zentralheizung, Kachelofen, Pufferspeicher und WLAN
+        sind vorhanden.
+      </p>
+    </Feature>
+  </section>
+
+  <Carousel />
+
+  <Testimonials />
+
+  <section
+    class="container mx-auto flex h-[30vw] flex-col items-center justify-center rounded-2xl bg-[url(https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/yannick-pulver-ZwPuquZBnyM-unsplash.jpg?updatedAt=1708014036346)] bg-cover"
+  >
+    <h2 class="mb-2 text-center font-serif text-6xl text-white">Reservieren</h2>
+    <p class="mb-16 text-center text-white">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+      possimus!
+    </p>
+
+    <BookingForm />
+  </section>
+
+  <section class="container mx-auto py-24">
+    <h2 class="mb-2 text-center font-serif text-6xl">Schreiben Sie uns</h2>
+    <p class="mx-auto mb-16 max-w-lg text-center">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque earum sunt
+      natus nam modi non nostrum asperiores ipsam fuga tempora rerum totam
+      necessitatibus aliquid, explicabo molestias repudiandae, harum et ex.
+    </p>
+
+    <form class="mx-auto max-w-4xl space-y-8">
+      <Input
+        as="input"
+        type="text"
+        id="name"
+        name="name"
+        label="Ihr Vor- und Nachname"
+        required
+      />
+      <div class="flex gap-8">
+        <Input
+          as="input"
+          type="email"
+          id="email"
+          name="email"
+          label="Ihre E-Mail-Adresse"
+          required
+          class="flex-1"
+        />
+        <Input
+          as="input"
+          type="text"
+          id="phone"
+          name="phone"
+          label="Ihre Telefonnummer"
+          class="flex-1"
+        />
+      </div>
+      <Input
+        as="textarea"
+        id="message"
+        name="message"
+        label="Ihre Nachicht"
+        required
+      />
+      <button
+        type="submit"
+        class="h-12 w-full rounded-lg bg-primary px-6 text-sm font-medium uppercase"
+        >Anfrage senden</button
+      >
+    </form>
+  </section>
+
+  <section class="relative h-[30vw] bg-white">
+    <div class="absolute inset-0">
+      <div
+        class="container mx-auto flex h-full flex-col items-end justify-center"
+      >
+        <div class="w-[calc(50%-4rem)]">
+          <h2 class="mb-4 font-serif text-6xl">
+            Anfahrt &<br />Wegbeschreibung
+          </h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
+            voluptates quidem reprehenderit ullam quod nesciunt, voluptatum
+            cumque voluptatibus labore laudantium ad tempora aliquid ex culpa
+            amet. Temporibus recusandae explicabo est.
+          </p>
+        </div>
+      </div>
     </div>
+    <iframe
+      class="relative h-full w-[calc(50%-4rem)]"
+      width="425"
+      height="350"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=8.026188611984255%2C47.84774478678298%2C8.033269643783571%2C47.85478965945601&layer=mapnik&marker=47.85126914266297%2C8.029729127883911"
+    ></iframe>
   </section>
 </Layout>

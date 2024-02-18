@@ -14,6 +14,9 @@ export default {
           400: "#f8f5f0",
           DEFAULT: "#f9dabb",
         },
+        secondary: {
+          DEFAULT: "#122222",
+        },
       },
     },
   },

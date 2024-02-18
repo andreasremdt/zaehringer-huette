@@ -1,0 +1,207 @@
+---
+import { Image } from "astro:assets";
+
+const images = [
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/E91263A3-81A1-41C6-AD49-3B8EEBD465FF-scaled.jpeg?updatedAt=1708024266640",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/DDB33E3B-AED7-4B01-B92D-914E78AFB9E5-scaled.jpeg?updatedAt=1708024266617",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/4D0F85A5-FA8C-4C28-B1F2-8FA0F7C88095-scaled.jpeg?updatedAt=1708024266393",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/9B6142B9-A2E1-45D7-ACD6-BFE4B7392891-scaled.jpeg?updatedAt=1708024266367",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/84AC53B9-3F56-4146-8D7F-DCB6B7427F23-scaled.jpeg?updatedAt=1708024266333",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/28B80F85-59B3-406E-A3B7-E576DFBCB32C-scaled.jpeg?updatedAt=1708024266172",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/21A296BC-5B9C-4D59-B0BA-16C33283A5F5-scaled.jpeg?updatedAt=1708024265492",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/EA5197BD-0ACE-41DA-8673-E2E6C4F2DAAD-scaled.jpeg?updatedAt=1708024265243",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/IMG_5283.jpg?updatedAt=1708024262643",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/silberwiesen-zimmer.jpg?updatedAt=1708024262030",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/huette-front-fruehling.jpg?updatedAt=1708024261463",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/esstisch.jpg?updatedAt=1708024261430",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/skilift-feldberg.jpg?updatedAt=1708024261359",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/huette-front-mit-schnee.jpg?updatedAt=1708024261293",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/kleines-schlafzimmer.jpg?updatedAt=1708024261213",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/kueche.jpg?updatedAt=1708024261132",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/ofen.jpg?updatedAt=1708024261059",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/IMG_5311.jpg?updatedAt=1708024260945",
+    alt: "",
+    caption: "",
+  },
+  {
+    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/waschbecken.jpg?updatedAt=1708024260513",
+    alt: "",
+    caption: "",
+  },
+];
+---
+
+<section class="bg-secondary py-32 text-white">
+  <h2 class="mb-2 text-center font-serif text-5xl" id="galerie">Galerie</h2>
+  <p class="mb-16 text-center text-white">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, possimus!
+  </p>
+
+  <div class="overflow-hidden" data-carousel>
+    <div data-viewport>
+      <div class="flex touch-pan-y gap-8 pl-8">
+        {
+          images.map((image) => (
+            <figure class="min-w-0 flex-shrink-0 flex-grow-0 basis-1/4">
+              <a
+                href={image.src}
+                data-fancybox="gallery"
+                data-caption={image.caption}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={480}
+                  height={360}
+                  class="aspect-[4/3] w-full rounded-xl object-cover"
+                />
+              </a>
+              <figcaption>{image.caption}</figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+    <div class="mt-8 flex justify-center gap-x-8">
+      <button
+        type="button"
+        data-embla="prev"
+        aria-label="vorheriges bild anzeigen"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="pointer-events-none h-10 w-10"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+        </svg>
+      </button>
+      <button
+        type="button"
+        data-embla="next"
+        aria-label="nächstes bild anzeigen"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="pointer-events-none h-10 w-10"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  import EmblaCarousel from "embla-carousel";
+  import { Fancybox } from "@fancyapps/ui";
+
+  Fancybox.bind("[data-fancybox]");
+
+  let carousel = document.querySelector<HTMLDivElement>("[data-carousel]")!;
+  let buttons =
+    carousel.querySelectorAll<HTMLButtonElement>("button[data-embla]");
+  let viewport = carousel.querySelector<HTMLDivElement>("[data-viewport]")!;
+  let embla = EmblaCarousel(viewport, {
+    loop: true,
+    align: "center",
+    containScroll: false,
+  });
+
+  buttons.forEach((button) =>
+    button.addEventListener("click", (event) => {
+      const target = event.target as HTMLButtonElement;
+      const direction = target.dataset.embla;
+
+      if (direction === "prev") {
+        embla.scrollPrev();
+      } else if (direction === "next") {
+        embla.scrollNext();
+      }
+    }),
+  );
+</script>

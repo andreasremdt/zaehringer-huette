@@ -1,27 +1,30 @@
-<header class="container mx-auto flex items-center justify-between px-24 py-8">
-  <nav class="space-x-8">
-    <a href="#" class="text-sm font-medium uppercase">Die Hütte</a>
-    <a href="#" class="text-sm font-medium uppercase">Galerie</a>
-    <a href="#" class="text-sm font-medium uppercase">Preise</a>
-    <a href="#" class="text-sm font-medium uppercase">Buchen</a>
-  </nav>
+---
+import Logo from "@/components/logo.astro";
+---
 
-  <div aria-hidden="true" class="text-center uppercase leading-none">
-    <span class="block font-serif text-2xl font-semibold">Zähringer Hütte</span>
-    <span class="text-xs tracking-wider">Urlaub im Schwarzwald</span>
+<header class="border-b border-stone-400 bg-primary px-24 py-8">
+  <div class="container mx-auto flex items-center justify-between">
+    <nav class="space-x-8">
+      <a href="#huette" class="text-sm font-medium uppercase">Die Hütte</a>
+      <a href="#galerie" class="text-sm font-medium uppercase">Galerie</a>
+      <a href="#" class="text-sm font-medium uppercase">Preise</a>
+      <a href="#" class="text-sm font-medium uppercase">Buchen</a>
+    </nav>
+
+    <Logo />
+
+    <ul class="flex gap-x-8">
+      <li>
+        <a href="tel:+491739940283" class="text-sm font-medium uppercase"
+          >+49 (0)173 9940 283
+        </a>
+      </li>
+      <li>
+        <a
+          href="mailto:info@zaehringer-huette.de"
+          class="text-sm font-medium uppercase">info@zaehringer-huette.de</a
+        >
+      </li>
+    </ul>
   </div>
-
-  <ul class="flex gap-x-8">
-    <li>
-      <a href="tel:+491739940283" class="text-sm font-medium uppercase"
-        >+49 (0)173 9940 283
-      </a>
-    </li>
-    <li>
-      <a
-        href="mailto:info@zaehringer-huette.de"
-        class="text-sm font-medium uppercase">info@zaehringer-huette.de</a
-      >
-    </li>
-  </ul>
 </header>

@@ -1,0 +1,127 @@
+---
+const testimonials = [
+  {
+    content:
+      "Tolles Haus am Berg. Guter Ausgangspunkt zum Skifahren (direkt an der Piste), zum Wandern und Biken. Gemütlicher Wohnraum, sehr gut ausgestattete Küche.",
+    author: "elan sportreisen",
+  },
+  {
+    content:
+      "Sehr schöne Hütte, die alles hat, was man braucht. Wir waren über das Wochenende mit 9 Leuten vor Ort. Es hat uns sehr gut gefallen. Auch die Abwicklung ist lobenswert. Im Winter kann die Hütte nicht angefahren werden. Wir hatten das Pech, dass wir Ende September den 1. Schnee hautnah miterleben durften. Der Fußmarsch war zwar anstrengend aber auch lustig. Wir kommen gerne wieder.",
+    author: "Franz Peter Scherer",
+  },
+  {
+    content:
+      "Wundervoll urige große Hütte. Es gibt Strom und WLAN, geheizt wird mit einem wassergeführten Scheitholzofen - das ist einerseits urig, andererseits eine Herausforderung - es dauert 12h beständigen Nachlegens bis alles warm ist - und wenn man sich doof anstellt verraucht die Stube. Aber Lage und Ausstattung und Stil entschädigen dafür komplett.",
+    author: "Thomas Rinneberg",
+  },
+  {
+    content:
+      "Wir haben unser Mädelswochenende überaus genossen in dieser wunderschönen Location. Die Hütte bietet mit einer sehr guten Ausstattung (Kaffeemaschine, Raclette, Crepemaker etc.) alles für eine entspannte Auszeit. Sehr netter Vermieter!",
+    author: "Sandra Dippert",
+  },
+];
+---
+
+<section class="container mx-auto py-32">
+  <h2 class="mb-2 text-center font-serif text-6xl">Bewertungen</h2>
+  <p class="mb-8 text-center">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, possimus!
+  </p>
+
+  <div
+    class="relative mx-auto max-w-5xl overflow-hidden pt-8"
+    data-testimonials
+  >
+    <div data-viewport>
+      <div class="flex touch-pan-y gap-8">
+        {
+          testimonials.map((testimonial) => (
+            <figure class="min-w-0 flex-shrink-0 flex-grow-0 basis-full text-center">
+              <blockquote class="mx-auto mb-4 max-w-2xl">
+                <p class="font-serif text-3xl font-medium before:content-['“'] after:content-['”']">
+                  {testimonial.content}
+                </p>
+              </blockquote>
+              <figcaption class="before:content-['-']">
+                {testimonial.author}
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+
+    <button
+      class="absolute left-0 top-0 flex h-full bg-gradient-to-r from-primary-400 to-transparent px-8 pt-14"
+      type="button"
+      data-embla="prev"
+      aria-label="vorherige bewertung anzeigen"
+    >
+      <svg
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="pointer-events-none h-10 w-10"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+      </svg>
+    </button>
+    <button
+      class="absolute right-0 top-0 flex h-full bg-gradient-to-l from-primary-400 to-transparent px-8 pt-14"
+      type="button"
+      data-embla="next"
+      aria-label="nächste bewertung anzeigen"
+    >
+      <svg
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="pointer-events-none h-10 w-10"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+      </svg>
+    </button>
+  </div>
+</section>
+
+<script>
+  import EmblaCarousel from "embla-carousel";
+
+  let testimonials = document.querySelector<HTMLDivElement>(
+    "[data-testimonials]",
+  )!;
+  let buttons =
+    testimonials.querySelectorAll<HTMLButtonElement>("button[data-embla]");
+  let viewport = testimonials.querySelector<HTMLDivElement>("[data-viewport]")!;
+  let embla = EmblaCarousel(viewport, {
+    loop: false,
+    align: "center",
+    containScroll: false,
+  });
+
+  buttons.forEach((button) =>
+    button.addEventListener("click", (event) => {
+      const target = event.target as HTMLButtonElement;
+      const direction = target.dataset.embla;
+
+      if (direction === "prev") {
+        embla.scrollPrev();
+      } else if (direction === "next") {
+        embla.scrollNext();
+      }
+    }),
+  );
+</script>
