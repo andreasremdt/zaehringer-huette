@@ -4,8 +4,8 @@ import HeroImage from "@/app/images/hero-image.jpg";
 
 export default function Hero() {
   return (
-    <section className="from-primary to-primary-400 bg-gradient-to-b from-60% to-60% py-12">
-      <div className="relative mx-auto max-w-7xl px-4 text-center">
+    <section className="from-primary bg-gradient-to-b from-60% to-transparent to-60% pt-12">
+      <div className="mx-auto max-w-7xl px-4 text-center">
         <h1 className="mb-4 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
           Urlaub im Schwarzwald
         </h1>
