@@ -30,9 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang="de" className="scroll-smooth">
       <body
-        className={cn(jost.variable, cormorantGaramond.variable, "font-sans")}
+        className={cn(
+          jost.variable,
+          cormorantGaramond.variable,
+          "bg-primary-400 font-sans",
+        )}
       >
         <a
           href="#content"
