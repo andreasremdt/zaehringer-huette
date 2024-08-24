@@ -5,9 +5,9 @@ import HuetteFront from "@/app/images/huette-front-mit-schnee.jpg";
 
 export default function About() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 md:pb-48 md:pt-32">
+    <section className="mx-auto max-w-6xl px-4 py-16 md:pb-48 md:pt-32">
       <h2
-        className="mx-auto mb-8 max-w-3xl scroll-m-36 text-center font-serif text-3xl md:text-4xl lg:text-5xl"
+        className="mx-auto mb-8 max-w-3xl scroll-m-24 text-center font-serif text-3xl md:text-4xl lg:text-5xl"
         id="die-huette"
       >
         Verbringen Sie einen unvergesslichen Urlaub in den Bergen

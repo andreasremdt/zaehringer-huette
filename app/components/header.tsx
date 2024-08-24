@@ -57,10 +57,10 @@ export default function Header() {
             Die Hütte
           </a>
           <a
-            href="#galerie"
+            href="#die-umgebung"
             className="px-8 py-2 text-sm font-medium uppercase lg:p-0"
           >
-            Galerie
+            Die Umgebung
           </a>
           <a
             href="#"
