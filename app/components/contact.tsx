@@ -1,6 +1,5 @@
-import Input from "@/app/components/input";
-import Textarea from "@/app/components/textarea";
 import Icon from "@/app/components/icon";
+import ContactForm from "@/app/components/contact-form";
 
 export default function Contact() {
   return (
@@ -57,45 +56,7 @@ export default function Contact() {
           Umgebung und weiteres. Füllen Sie einfach das Formular aus.
         </p>
 
-        <form className="space-y-4 md:space-y-8">
-          <Input
-            type="text"
-            id="name"
-            name="name"
-            label="Ihr Vor- und Nachname"
-            required
-          />
-          <div className="flex gap-4 md:gap-8">
-            <Input
-              type="email"
-              id="email"
-              name="email"
-              label="Ihre E-Mail-Adresse"
-              required
-              className="flex-1"
-            />
-            <Input
-              type="text"
-              id="phone"
-              name="phone"
-              label="Ihre Telefonnummer"
-              className="flex-1"
-            />
-          </div>
-          <Textarea
-            id="message"
-            name="message"
-            label="Ihre Nachicht"
-            required
-          />
-          <button
-            type="submit"
-            className="bg-primary flex h-10 w-full items-center justify-center gap-2 rounded-lg px-6 text-xs font-medium uppercase md:h-12 md:gap-4 md:text-sm"
-          >
-            <Icon name="send" className="size-5" />
-            Anfrage senden
-          </button>
-        </form>
+        <ContactForm />
       </div>
     </section>
   );
