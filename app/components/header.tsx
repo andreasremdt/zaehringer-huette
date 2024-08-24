@@ -40,9 +40,11 @@ export default function Header() {
 
         <nav
           className={cn(
-            "bg-primary fixed bottom-0 right-0 top-24 z-10 flex flex-col border-l border-t border-stone-400 px-4 py-8 transition-all duration-300 ease-in-out lg:visible lg:static lg:w-full lg:translate-x-0 lg:flex-row lg:items-center lg:gap-8 lg:border-none lg:bg-transparent lg:p-0",
+            "bg-primary fixed bottom-0 right-0 z-10 flex flex-col border-l border-t border-stone-400 px-4 py-8 transition-all duration-300 ease-in-out lg:visible lg:static lg:w-full lg:translate-x-0 lg:flex-row lg:items-center lg:gap-8 lg:border-none lg:bg-transparent lg:p-0",
             {
               "invisible translate-x-full": !open,
+              "top-28": !scrolled,
+              "top-20": scrolled,
             },
           )}
           id="navigation"
