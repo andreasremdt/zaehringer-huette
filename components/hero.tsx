@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Icon from "@/app/components/icon";
-import HeroImage from "@/app/images/hero-image.jpg";
+import Icon from "@/components/icon";
+import HeroImage from "@/public/images/hero-image.jpg";
 
 export default function Hero() {
   return (

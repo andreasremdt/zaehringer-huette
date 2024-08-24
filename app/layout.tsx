@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Jost, Cormorant_Garamond } from "next/font/google";
-import { cn } from "@/app/lib/utils";
-import Header from "@/app/components/header";
-import Footer from "@/app/components/footer";
-import "@/app/styles/globals.css";
+import { cn } from "@/lib/utils";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import "@/styles/globals.css";
 
 const jost = Jost({
   subsets: ["latin"],

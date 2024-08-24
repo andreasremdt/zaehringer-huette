@@ -1,8 +1,8 @@
 import Image from "next/image";
-import SkiLift from "@/app/images/skilift.jpg";
-import Hikers from "@/app/images/hikers.jpg";
-import Landscape from "@/app/images/landscape.jpg";
-import Fireplace from "@/app/images/fireplace-with-fire.jpg";
+import SkiLift from "@/public/images/skilift.jpg";
+import Hikers from "@/public/images/hikers.jpg";
+import Landscape from "@/public/images/landscape.jpg";
+import Fireplace from "@/public/images/fireplace-with-fire.jpg";
 
 export default function Environment() {
   return (

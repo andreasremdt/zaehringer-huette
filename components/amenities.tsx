@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Wifi from "@/app/images/wifi.svg";
-import Kitchen from "@/app/images/kitchen.svg";
-import People from "@/app/images/people.svg";
-import Fireplace from "@/app/images/fireplace.svg";
+import Wifi from "@/public/images/wifi.svg";
+import Kitchen from "@/public/images/kitchen.svg";
+import People from "@/public/images/people.svg";
+import Fireplace from "@/public/images/fireplace.svg";
 import Icon from "./icon";
 
 export default function Amenities() {

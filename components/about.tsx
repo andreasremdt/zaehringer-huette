@@ -1,7 +1,7 @@
 import Image from "next/image";
-import SkiLift from "@/app/images/skilift.jpg";
-import Wohnzimmer from "@/app/images/wohnzimmer.jpg";
-import HuetteFront from "@/app/images/huette-front-mit-schnee.jpg";
+import SkiLift from "@/public/images/skilift.jpg";
+import Wohnzimmer from "@/public/images/wohnzimmer.jpg";
+import HuetteFront from "@/public/images/huette-front-mit-schnee.jpg";
 
 export default function About() {
   return (

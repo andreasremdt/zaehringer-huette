@@ -1,11 +1,11 @@
-import Hero from "@/app/components/hero";
-import About from "@/app/components/about";
-import Amenities from "@/app/components/amenities";
-import Environment from "@/app/components/environment";
-import Gallery from "@/app/components/gallery";
-import Testimonials from "@/app/components/testimonials";
-import BookNow from "@/app/components/book-now";
-import Contact from "@/app/components/contact";
+import Hero from "@/components/hero";
+import About from "@/components/about";
+import Amenities from "@/components/amenities";
+import Environment from "@/components/environment";
+import Gallery from "@/components/gallery";
+import Testimonials from "@/components/testimonials";
+import BookNow from "@/components/book-now";
+import Contact from "@/components/contact";
 
 export default function Page() {
   return (

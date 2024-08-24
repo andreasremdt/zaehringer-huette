@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Logo from "@/app/components/logo";
-import Icon from "@/app/components/icon";
+import Logo from "@/components/logo";
+import Icon from "@/components/icon";
 
 export default function Footer() {
   return (

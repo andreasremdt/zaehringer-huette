@@ -2,8 +2,8 @@
 
 import type { ComponentPropsWithoutRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Icon from "@/app/components/icon";
-import { cn } from "@/app/lib/utils";
+import Icon from "@/components/icon";
+import { cn } from "@/lib/utils";
 
 type Props = ComponentPropsWithoutRef<"div"> & {
   options?: {

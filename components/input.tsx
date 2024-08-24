@@ -1,20 +1,20 @@
 import { type ComponentPropsWithoutRef, type Ref, forwardRef } from "react";
-import { cn } from "@/app/lib/utils";
+import { cn } from "@/lib/utils";
 
-type Props = ComponentPropsWithoutRef<"textarea"> & {
+type Props = ComponentPropsWithoutRef<"input"> & {
   label: string;
   error?: string;
 };
 
-export default forwardRef(function Textarea(
+export default forwardRef(function Input(
   { className, label, required, error, id, ...props }: Props,
-  ref: Ref<HTMLTextAreaElement>,
+  ref: Ref<HTMLInputElement>,
 ) {
   return (
-    <div className={cn("relative", className)}>
-      <textarea
+    <div className={cn("relative", className)} aria-live="assertive">
+      <input
         id={id}
-        className="peer min-h-32 w-full rounded-lg border border-stone-300 bg-white px-4 py-2 align-middle text-sm text-stone-600 transition-colors hover:border-stone-400 focus:border-stone-600 focus:outline-none aria-[invalid]:border-red-300 md:text-base"
+        className="peer h-12 w-full rounded-lg border border-stone-300 bg-white px-4 text-sm text-stone-600 transition-colors hover:border-stone-400 focus:border-stone-600 focus:outline-none aria-[invalid]:border-red-300 md:text-base"
         placeholder=" "
         required={required}
         aria-describedby={`${id}-error`}

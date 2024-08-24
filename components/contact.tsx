@@ -1,5 +1,5 @@
-import Icon from "@/app/components/icon";
-import ContactForm from "@/app/components/contact-form";
+import Icon from "@/components/icon";
+import ContactForm from "@/components/contact-form";
 
 export default function Contact() {
   return (

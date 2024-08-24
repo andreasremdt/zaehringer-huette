@@ -1,9 +1,9 @@
 "use client";
 
-import Logo from "@/app/components/logo";
-import Icon from "@/app/components/icon";
-import { cn } from "@/app/lib/utils";
-import usePageMenu from "@/app/hooks/use-page-menu";
+import Logo from "@/components/logo";
+import Icon from "@/components/icon";
+import { cn } from "@/lib/utils";
+import usePageMenu from "@/hooks/use-page-menu";
 
 export default function Header() {
   const { open, toggle, scrolled, ref } = usePageMenu();
