@@ -5,6 +5,7 @@ import Environment from "@/app/components/environment";
 import Gallery from "@/app/components/gallery";
 import Testimonials from "@/app/components/testimonials";
 import BookNow from "@/app/components/book-now";
+import Contact from "@/app/components/contact";
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <Gallery />
       <Testimonials />
       <BookNow />
+      <Contact />
     </>
   );
 }

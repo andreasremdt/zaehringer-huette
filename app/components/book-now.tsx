@@ -18,7 +18,7 @@ export default function BookNow() {
 
         <button
           type="button"
-          className="bg-primary-400 mx-auto flex h-10 items-center gap-2 rounded-full px-6 text-xs font-medium uppercase md:h-12 md:gap-4 md:text-sm"
+          className="bg-primary mx-auto flex h-10 items-center gap-2 rounded-lg px-6 text-xs font-medium uppercase md:h-12 md:gap-4 md:text-sm"
         >
           <Icon name="calendar" className="size-4 md:size-5" /> Jetzt buchen
         </button>

@@ -113,7 +113,7 @@ export default function Amenities() {
 
         <button
           type="button"
-          className="mx-auto mt-8 flex h-10 items-center gap-2 rounded-full bg-stone-800 px-6 text-xs font-medium uppercase text-white md:h-12 md:gap-4 md:text-sm"
+          className="mx-auto mt-8 flex h-10 items-center gap-2 rounded-lg bg-stone-800 px-6 text-xs font-medium uppercase text-white md:h-12 md:gap-4 md:text-sm"
         >
           <Icon name="calendar" className="size-4 md:size-5" /> Jetzt buchen
         </button>
