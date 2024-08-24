@@ -6,11 +6,22 @@ import { cn } from "@/app/lib/utils";
 import usePageMenu from "@/app/hooks/use-page-menu";
 
 export default function Header() {
-  const { open, toggle, ref } = usePageMenu();
+  const { open, toggle, scrolled, ref } = usePageMenu();
 
   return (
-    <header className="bg-primary border-b border-stone-400" ref={ref}>
-      <div className="relative mx-auto flex h-24 max-w-7xl items-center justify-center px-4">
+    <header
+      className="bg-primary sticky top-0 z-10 border-b border-stone-400"
+      ref={ref}
+    >
+      <div
+        className={cn(
+          "relative mx-auto flex max-w-7xl items-center justify-center px-4 transition-all",
+          {
+            "h-28": !scrolled,
+            "h-20": scrolled,
+          },
+        )}
+      >
         <Logo
           tabIndex={-1}
           className="lg:absolute lg:left-1/2 lg:-translate-x-1/2"
@@ -38,7 +49,7 @@ export default function Header() {
           aria-label="Seitennavigation"
         >
           <a
-            href="#huette"
+            href="#die-huette"
             className="px-8 py-2 text-sm font-medium uppercase lg:p-0"
           >
             Die Hütte

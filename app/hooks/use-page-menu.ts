@@ -4,6 +4,7 @@ export default function usePageMenu() {
   const ref = useRef<HTMLDivElement>(null);
   const lastFocused = useRef<HTMLElement | null>(null);
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   function toggle() {
     setOpen((previous) => !previous);
@@ -36,17 +37,31 @@ export default function usePageMenu() {
       }
     }
 
+    function handleScroll() {
+      if (window.scrollY > 0 && !scrolled) {
+        setScrolled(true);
+      }
+
+      if (window.scrollY === 0 && scrolled) {
+        setScrolled(false);
+      }
+    }
+
     if (open) {
       lastFocused.current = document.activeElement as HTMLElement;
 
       document.addEventListener("keydown", handleKeyDown);
-
-      return () => {
-        document.removeEventListener("keydown", handleKeyDown);
-      };
-    } else {
     }
-  }, [open]);
 
-  return { open, toggle, ref };
+    document.addEventListener("scroll", handleScroll, { passive: true });
+
+    setScrolled(window.scrollY > 0);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, [open, scrolled]);
+
+  return { open, toggle, scrolled, ref };
 }
