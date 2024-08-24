@@ -4,6 +4,7 @@ import Amenities from "@/app/components/amenities";
 import Environment from "@/app/components/environment";
 import Gallery from "@/app/components/gallery";
 import Testimonials from "@/app/components/testimonials";
+import BookNow from "@/app/components/book-now";
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <Environment />
       <Gallery />
       <Testimonials />
+      <BookNow />
     </>
   );
 }

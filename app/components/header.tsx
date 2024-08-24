@@ -69,7 +69,7 @@ export default function Header() {
             Galerie
           </a>
           <a
-            href="#"
+            href="#buchen"
             className="px-8 py-2 text-sm font-medium uppercase lg:mr-auto lg:p-0"
           >
             Buchen
