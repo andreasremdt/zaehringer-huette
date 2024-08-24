@@ -114,7 +114,16 @@ export default function Gallery() {
       </p>
 
       <Lightbox>
-        <Carousel>
+        <Carousel
+          options={{
+            next: {
+              "aria-label": "Nächstes Bild anzeigen",
+            },
+            prev: {
+              "aria-label": "Vorheriges Bild anzeigen",
+            },
+          }}
+        >
           {images.map((image) => (
             <figure
               className="min-w-0 flex-shrink-0 flex-grow-0 basis-1/2 md:basis-1/4 lg:basis-1/6"

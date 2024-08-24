@@ -110,6 +110,13 @@ export default function Amenities() {
             </ul>
           </li>
         </ul>
+
+        <button
+          type="button"
+          className="mx-auto mt-8 flex h-10 items-center gap-2 rounded-full bg-stone-800 px-6 text-xs font-medium uppercase text-white md:h-12 md:gap-4 md:text-sm"
+        >
+          <Icon name="calendar" className="size-4 md:size-5" /> Jetzt buchen
+        </button>
       </div>
     </section>
   );

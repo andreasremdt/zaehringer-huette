@@ -30,7 +30,9 @@ export default function About() {
             alt="placeholder"
             className="aspect-[4/5] rounded-xl object-cover"
           />
-          <figcaption className="mt-4">Skiparadies Schwarzwald</figcaption>
+          <figcaption className="mt-2 text-sm">
+            Skiparadies Schwarzwald
+          </figcaption>
         </figure>
         <figure className="translate-y-16 md:translate-y-24">
           <Image
@@ -51,7 +53,7 @@ export default function About() {
             alt="placeholder"
             className="aspect-[4/5] rounded-xl object-cover"
           />
-          <figcaption className="mt-4">
+          <figcaption className="mt-2 text-sm">
             Die Hütte von außen mit Schnee
           </figcaption>
         </figure>

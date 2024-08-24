@@ -5,9 +5,19 @@ import useEmblaCarousel from "embla-carousel-react";
 import Icon from "@/app/components/icon";
 import { cn } from "@/app/lib/utils";
 
-type Props = ComponentPropsWithoutRef<"div">;
+type Props = ComponentPropsWithoutRef<"div"> & {
+  options?: {
+    next?: ComponentPropsWithoutRef<"button">;
+    prev?: ComponentPropsWithoutRef<"button">;
+  };
+};
 
-export default function Carousel({ children, className, ...props }: Props) {
+export default function Carousel({
+  children,
+  className,
+  options,
+  ...props
+}: Props) {
   const [ref, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
 
   return (
@@ -23,14 +33,14 @@ export default function Carousel({ children, className, ...props }: Props) {
       <div className="mt-8 flex justify-center gap-x-8">
         <button
           type="button"
-          aria-label="Vorheriges Bild anzeigen"
+          {...options?.prev}
           onClick={() => emblaApi?.scrollPrev()}
         >
           <Icon name="left" className="size-10" />
         </button>
         <button
           type="button"
-          aria-label="Nächstes Bild anzeigen"
+          {...options?.next}
           onClick={() => emblaApi?.scrollNext()}
         >
           <Icon name="right" className="size-10" />
