@@ -25,7 +25,7 @@ export default function Header() {
       >
         <Logo
           tabIndex={-1}
-          className="lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+          className="z-20 lg:absolute lg:left-1/2 lg:-translate-x-1/2"
         />
 
         <button
