@@ -16,7 +16,6 @@ export default forwardRef(function Textarea(
         id={id}
         className="peer min-h-32 w-full rounded-lg border border-stone-300 bg-white px-4 py-2 align-middle text-sm text-stone-600 transition-colors hover:border-stone-400 focus:border-stone-600 focus:outline-none aria-[invalid]:border-red-300 md:text-base"
         placeholder=" "
-        required={required}
         aria-describedby={`${id}-error`}
         aria-invalid={error ? true : undefined}
         {...props}

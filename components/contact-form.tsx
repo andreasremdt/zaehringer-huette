@@ -29,6 +29,7 @@ export default function ContactForm() {
         type="text"
         id="name"
         label="Ihr Vor- und Nachname"
+        required
         {...register("name", { required: "Bitte geben Sie Ihren Namen an." })}
         error={errors.name?.message}
       />
@@ -37,6 +38,7 @@ export default function ContactForm() {
           type="email"
           id="email"
           label="Ihre E-Mail-Adresse"
+          required
           className="flex-1"
           {...register("email", {
             required: "Bitte geben Sie Ihre E-Mail-Adresse an.",
@@ -59,6 +61,7 @@ export default function ContactForm() {
       <Textarea
         id="message"
         label="Ihre Nachicht"
+        required
         {...register("message", {
           minLength: {
             value: 10,
@@ -70,7 +73,7 @@ export default function ContactForm() {
       />
       <button
         type="submit"
-        className="bg-primary flex h-12 w-full items-center justify-center gap-2 rounded-lg px-6 text-xs font-medium uppercase md:gap-4 md:text-sm"
+        className="bg-primary-200 flex h-12 w-full items-center justify-center gap-2 rounded-lg px-6 text-xs font-medium uppercase md:gap-4 md:text-sm"
       >
         <Icon name="send" className="size-5" />
         Anfrage senden
