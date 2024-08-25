@@ -1,14 +1,15 @@
+import Link from "next/link";
 import Image from "next/image";
 import Wifi from "@/public/images/wifi.svg";
 import Kitchen from "@/public/images/kitchen.svg";
 import People from "@/public/images/people.svg";
 import Fireplace from "@/public/images/fireplace.svg";
-import Icon from "./icon";
+import Icon from "@/components/icon";
 
 export default function Amenities() {
   return (
     <section className="mx-auto max-w-7xl">
-      <div className="mx-4 rounded-2xl bg-white px-4 py-16 md:px-16 md:py-32">
+      <div className="mx-4 rounded-2xl border border-stone-300 bg-white px-4 py-16 md:px-16 md:py-32">
         <h2 className="mb-16 text-center font-serif text-3xl md:text-4xl lg:text-5xl">
           Ausstattung
         </h2>
@@ -111,12 +112,12 @@ export default function Amenities() {
           </li>
         </ul>
 
-        <button
-          type="button"
-          className="mx-auto mt-8 flex h-10 items-center gap-2 rounded-lg bg-stone-800 px-6 text-xs font-medium uppercase text-white md:h-12 md:gap-4 md:text-sm"
+        <Link
+          href="/buchen"
+          className="bg-secondary-950 mx-auto mt-8 flex h-10 w-max items-center gap-2 rounded-lg px-6 text-xs font-medium uppercase text-white md:h-12 md:gap-4 md:text-sm"
         >
           <Icon name="calendar" className="size-4 md:size-5" /> Jetzt buchen
-        </button>
+        </Link>
       </div>
     </section>
   );

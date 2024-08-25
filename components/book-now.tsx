@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Icon from "@/components/icon";
 
 export default function BookNow() {
@@ -16,12 +17,12 @@ export default function BookNow() {
           Webseite.
         </p>
 
-        <button
-          type="button"
-          className="bg-primary mx-auto flex h-10 items-center gap-2 rounded-lg px-6 text-xs font-medium uppercase md:h-12 md:gap-4 md:text-sm"
+        <Link
+          href="/buchen"
+          className="bg-primary-200 mx-auto flex h-10 w-max items-center gap-2 rounded-lg px-6 text-xs font-medium uppercase md:h-12 md:gap-4 md:text-sm"
         >
           <Icon name="calendar" className="size-4 md:size-5" /> Jetzt buchen
-        </button>
+        </Link>
       </div>
     </section>
   );

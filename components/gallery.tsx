@@ -102,7 +102,7 @@ const images = [
 
 export default function Gallery() {
   return (
-    <section className="bg-secondary py-16 text-white md:py-32">
+    <section className="bg-secondary-950 py-16 text-white md:py-32">
       <h2
         className="mb-2 scroll-m-24 text-center font-serif text-3xl md:text-4xl lg:text-5xl"
         id="galerie"

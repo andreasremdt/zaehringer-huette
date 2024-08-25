@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header
-      className="bg-primary sticky top-0 z-10 border-b border-stone-400"
+      className="bg-primary-200 sticky top-0 z-10 border-b border-stone-400"
       ref={ref}
     >
       <div
@@ -29,7 +29,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="bg-primary absolute right-2 top-1/2 -translate-y-1/2 p-2 lg:hidden"
+          className="bg-primary-200 absolute right-2 top-1/2 -translate-y-1/2 p-2 lg:hidden"
           aria-label={`${open ? "Schließe" : "Öffne"} Menü`}
           aria-expanded={open}
           aria-controls="navigation"
@@ -40,7 +40,7 @@ export default function Header() {
 
         <nav
           className={cn(
-            "bg-primary fixed bottom-0 right-0 z-10 flex flex-col border-l border-t border-stone-400 px-4 py-8 transition-all duration-300 ease-in-out lg:visible lg:static lg:w-full lg:translate-x-0 lg:flex-row lg:items-center lg:gap-8 lg:border-none lg:bg-transparent lg:p-0",
+            "bg-primary-200 fixed bottom-0 right-0 z-10 flex flex-col border-l border-t border-stone-400 px-4 py-8 transition-all duration-300 ease-in-out lg:visible lg:static lg:w-full lg:translate-x-0 lg:flex-row lg:items-center lg:gap-8 lg:border-none lg:bg-transparent lg:p-0",
             {
               "invisible translate-x-full": !open,
               "top-28": !scrolled,
@@ -74,7 +74,7 @@ export default function Header() {
           >
             Buchen
           </a>
-          <hr className="border-secondary my-4" />
+          <hr className="my-4 border-black" />
           <a
             href="tel:+491739940283"
             className="inline-flex items-center gap-4 py-2 pr-8 text-sm font-medium uppercase lg:p-0"

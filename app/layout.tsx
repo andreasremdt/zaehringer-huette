@@ -35,12 +35,12 @@ export default function RootLayout({
         className={cn(
           jost.variable,
           cormorantGaramond.variable,
-          "bg-primary-400 font-sans",
+          "bg-primary-50 font-sans",
         )}
       >
         <a
           href="#content"
-          className="bg-primary-400 absolute -top-1 left-1/2 z-10 -translate-x-1/2 -translate-y-full rounded-t-none px-4 py-2 transition-transform focus:translate-y-0"
+          className="bg-primary-50 absolute -top-1 left-1/2 z-10 -translate-x-1/2 -translate-y-full rounded-t-none px-4 py-2 transition-transform focus:translate-y-0"
         >
           Zum Inhalt springen
         </a>

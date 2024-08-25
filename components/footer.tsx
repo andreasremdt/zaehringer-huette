@@ -4,13 +4,13 @@ import Icon from "@/components/icon";
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary text-white">
-      <div className="border-b border-gray-700 py-16 text-sm md:py-24 md:text-base">
+    <footer className="bg-secondary-950 text-white">
+      <div className="border-secondary-800 border-b py-16 text-sm md:py-24 md:text-base">
         <div className="mx-auto max-w-7xl px-4 lg:flex lg:justify-evenly">
           <div className="mb-8 lg:order-2 lg:mb-0">
             <Logo tabIndex={-1} />
 
-            <p className="relative mt-4 pt-4 text-center before:absolute before:left-1/2 before:top-0 before:h-px before:w-1/4 before:-translate-x-1/2 before:bg-gray-700 md:mt-8 md:pt-8">
+            <p className="before:bg-secondary-800 relative mt-4 pt-4 text-center before:absolute before:left-1/2 before:top-0 before:h-px before:w-1/4 before:-translate-x-1/2 md:mt-8 md:pt-8">
               Dr. Freddy Stober Weg 8<br />
               79868 Feldberg (Schwarzwald)
               <br />
@@ -22,7 +22,7 @@ export default function Footer() {
             href="mailto:info@zaehringer-huette.de"
             className="mb-8 flex flex-col items-center lg:order-1 lg:mb-0"
           >
-            <span className="mb-2 grid size-12 place-items-center rounded-full border border-gray-700 md:size-16">
+            <span className="border-secondary-800 mb-2 grid size-12 place-items-center rounded-full border md:size-16">
               <Icon name="envelope" className="size-4 md:size-6" />
             </span>
             info@zaehringer-huette.de
@@ -32,7 +32,7 @@ export default function Footer() {
             href="tel:+491739940283"
             className="flex flex-col items-center lg:order-3"
           >
-            <span className="mb-2 grid size-12 place-items-center rounded-full border border-gray-700 md:size-16">
+            <span className="border-secondary-800 mb-2 grid size-12 place-items-center rounded-full border md:size-16">
               <Icon name="phone" className="size-4 md:size-6" />
             </span>
             +49 (0)173 9940 283

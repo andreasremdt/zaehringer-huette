@@ -46,7 +46,7 @@ export default function Contact() {
           </ul>
         </div>
 
-        <hr className="my-8" />
+        <hr className="my-8 border-stone-300" />
 
         <h3 className="mb-2 scroll-m-24 font-serif text-2xl md:text-3xl lg:text-4xl">
           Haben Sie Fragen?

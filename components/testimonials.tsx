@@ -38,12 +38,12 @@ export default function Testimonials() {
             next: {
               "aria-label": "Nächste Bewertung anzeigen",
               className:
-                "from-primary-400 absolute right-0 top-0 flex h-full bg-gradient-to-l to-transparent pt-8",
+                "from-primary-50 absolute right-0 top-0 flex h-full bg-gradient-to-l to-transparent pt-8",
             },
             prev: {
               "aria-label": "Vorherige Bewertung anzeigen",
               className:
-                "from-primary-400 absolute left-0 top-0 flex h-full bg-gradient-to-r to-transparent pt-8",
+                "from-primary-50 absolute left-0 top-0 flex h-full bg-gradient-to-r to-transparent pt-8",
             },
           }}
         >
