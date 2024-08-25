@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Logo from "@/components/logo";
 import Icon from "@/components/icon";
 import { cn } from "@/lib/utils";
@@ -50,30 +51,30 @@ export default function Header() {
           id="navigation"
           aria-label="Seitennavigation"
         >
-          <a
-            href="#die-huette"
+          <Link
+            href="/#die-huette"
             className="px-8 py-2 text-sm font-medium uppercase lg:p-0"
           >
             Die Hütte
-          </a>
-          <a
-            href="#die-umgebung"
+          </Link>
+          <Link
+            href="/#die-umgebung"
             className="px-8 py-2 text-sm font-medium uppercase lg:p-0"
           >
             Die Umgebung
-          </a>
-          <a
-            href="#galerie"
+          </Link>
+          <Link
+            href="/#galerie"
             className="px-8 py-2 text-sm font-medium uppercase lg:p-0"
           >
             Galerie
-          </a>
-          <a
-            href="#buchen"
+          </Link>
+          <Link
+            href="/#buchen"
             className="px-8 py-2 text-sm font-medium uppercase lg:mr-auto lg:p-0"
           >
             Buchen
-          </a>
+          </Link>
           <hr className="my-4 border-black" />
           <a
             href="tel:+491739940283"
