@@ -22,7 +22,7 @@ type Props = {
 
 export default function BookingSummary({ range, adults, kids, error }: Props) {
   if (error) {
-    return <p className="text-red-500">{error}</p>;
+    return <p className="text-sm text-red-500">{error}</p>;
   }
 
   if (!hasValidRange(range)) {

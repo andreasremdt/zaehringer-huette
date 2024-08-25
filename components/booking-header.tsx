@@ -37,11 +37,11 @@ export default function BookingHeader() {
       </h1>
       <p className="mb-16 max-w-3xl md:mb-24">
         Wir freuen uns über Ihr Interesse an der Hütte. Für eine verbindliche
-        Buchung wählen Sie Ihren gewünschten Zeitraum und füllen Sie das
-        Formular aus. Wir melden uns dann bei Ihnen.
+        Buchung lesen Sie bitte die Hinweise und Regeln und füllen dann das
+        Formular aus.
       </p>
 
-      <figure className="grid grid-cols-4 gap-4">
+      <figure className="grid grid-cols-4 gap-2 md:gap-4">
         {images.map((image, index) => (
           <Image
             key={image.src}

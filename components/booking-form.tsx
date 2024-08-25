@@ -37,7 +37,7 @@ export default function BookingForm() {
 
   return (
     <form
-      className="mx-auto flex max-w-7xl items-start gap-16 px-4 pb-16 md:pb-24"
+      className="mx-auto max-w-7xl items-start gap-16 px-4 pb-16 md:pb-24 lg:flex"
       onSubmit={handleSubmit(onSubmit)}
     >
       <input
@@ -48,9 +48,9 @@ export default function BookingForm() {
         })}
       />
 
-      <div className="basis-2/3">
+      <div className="lg:basis-2/3">
         <header className="mb-8 border-b border-stone-300 pb-8 md:mb-16 md:pb-16">
-          <h2 className="mb-8 font-serif text-2xl md:text-3xl lg:text-4xl">
+          <h2 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
             Preise & Informationen
           </h2>
 
@@ -89,8 +89,8 @@ export default function BookingForm() {
           </ul>
         </header>
 
-        <h3 className="mb-8 font-serif text-2xl md:text-3xl lg:text-4xl">
-          Verfügbarkeit
+        <h3 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
+          Zeitraum auswählen
         </h3>
 
         <DatePicker
@@ -103,13 +103,13 @@ export default function BookingForm() {
           selected={getValues("range")}
         />
 
-        <hr className="my-16 border-stone-300" />
+        <hr className="my-8 border-stone-300 md:my-16" />
 
-        <h3 className="mb-8 font-serif text-2xl md:text-3xl lg:text-4xl">
+        <h3 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
           Umfang
         </h3>
 
-        <ul className="grid list-disc grid-cols-2 gap-x-8 gap-y-2 pl-6">
+        <ul className="grid list-disc grid-cols-1 gap-y-2 pl-6 md:grid-cols-2 md:gap-x-8">
           <li>WLAN mit 50 mbit/s</li>
           <li>Moderne Küche mit Vollausstattung</li>
           <li>Kachelöfen</li>
@@ -117,9 +117,9 @@ export default function BookingForm() {
           <li>Behindertengerechte Duschen und WCs</li>
         </ul>
 
-        <hr className="my-16 border-stone-300" />
+        <hr className="my-8 border-stone-300 md:my-16" />
 
-        <h3 className="mb-8 font-serif text-2xl md:text-3xl lg:text-4xl">
+        <h3 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
           Regeln
         </h3>
 
@@ -135,9 +135,9 @@ export default function BookingForm() {
         </ul>
       </div>
 
-      <div className="sticky top-24 basis-1/3">
-        <fieldset className="relative rounded-xl border border-stone-300 bg-white p-8">
-          <legend className="absolute font-serif text-xl md:text-2xl lg:text-3xl">
+      <div className="mt-8 md:mt-0 lg:sticky lg:top-24 lg:basis-1/3">
+        <fieldset className="relative rounded-xl border border-stone-300 bg-white p-4 md:p-8">
+          <legend className="absolute font-serif text-2xl lg:text-3xl">
             Ihre Angaben
           </legend>
 
