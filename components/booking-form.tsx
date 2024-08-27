@@ -49,46 +49,6 @@ export default function BookingForm() {
       />
 
       <div className="lg:basis-2/3">
-        <header className="mb-8 border-b border-stone-300 pb-8 md:mb-16 md:pb-16">
-          <h2 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
-            Preise & Informationen
-          </h2>
-
-          <ul className="list-disc space-y-2 pl-6">
-            <li>
-              Die Mindestzahl an Personen pro Reservierung liegt bei <b>4</b>.
-              Maximal können <b>11 Personen</b> übernachten.
-            </li>
-            <li>
-              Die Hütte ist nur <b>ab 3 Nächten</b> buchbar (Do-So oder So-Do)
-            </li>
-            <li>
-              <b>300€</b> pro Übernachtung/ bei einer Belegung von 4 Personen
-            </li>
-            <li>
-              Jede weitere Person <b>35€</b> / Übernachtung.
-            </li>
-            <li>
-              Ab einer Reservierungsdauer von mehr als 5 Tagen erhalten Sie
-              <b> 5% Rabatt</b> auf den Gesamtpreis
-            </li>
-            <li>
-              Der verbrauchte Strom wird mit <b>40 ct/kwh</b> separat berechnet
-            </li>
-            <li>
-              Die Endreinigung beträgt <b>80€</b>
-            </li>
-            <li>
-              Die Holzpauschale beträgt <b>30€</b>
-            </li>
-            <li>
-              Alle Preise gelten zuzüglich der Kurtaxe der Gemeinde Feldberg.
-              Erwachsene <b>2,90€</b> pro Person/Tag, Kinder im Alter von 6 - 15
-              Jahren <b>1,20€</b> pro Person/Tag
-            </li>
-          </ul>
-        </header>
-
         <h3 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
           Zeitraum auswählen
         </h3>
@@ -103,23 +63,49 @@ export default function BookingForm() {
           selected={getValues("range")}
         />
 
-        <hr className="my-8 border-stone-300 md:my-16" />
+        <hr className="my-8 border-stone-300" />
 
-        <h3 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
-          Umfang
-        </h3>
+        <h2 className="mb-4 font-serif text-2xl md:text-3xl lg:text-4xl">
+          Preise & Informationen
+        </h2>
 
-        <ul className="grid list-disc grid-cols-1 gap-y-2 pl-6 md:grid-cols-2 md:gap-x-8">
-          <li>WLAN mit 50 mbit/s</li>
-          <li>Moderne Küche mit Vollausstattung</li>
-          <li>Kachelöfen</li>
-          <li>Warmwasser</li>
-          <li>Behindertengerechte Duschen und WCs</li>
+        <ul className="list-disc space-y-2 pl-6">
+          <li>
+            Die Mindestzahl an Personen pro Reservierung liegt bei <b>4</b>.
+            Maximal können <b>11 Personen</b> übernachten.
+          </li>
+          <li>
+            Die Hütte ist nur <b>ab 3 Nächten</b> buchbar (Do-So oder So-Do)
+          </li>
+          <li>
+            <b>300€</b> pro Übernachtung/ bei einer Belegung von 4 Personen
+          </li>
+          <li>
+            Jede weitere Person <b>35€</b> / Übernachtung.
+          </li>
+          <li>
+            Ab einer Reservierungsdauer von mehr als 5 Tagen erhalten Sie
+            <b> 5% Rabatt</b> auf den Gesamtpreis
+          </li>
+          <li>
+            Der verbrauchte Strom wird mit <b>40 ct/kwh</b> separat berechnet
+          </li>
+          <li>
+            Die Endreinigung beträgt <b>80€</b>
+          </li>
+          <li>
+            Die Holzpauschale beträgt <b>30€</b>
+          </li>
+          <li>
+            Alle Preise gelten zuzüglich der Kurtaxe der Gemeinde Feldberg.
+            Erwachsene <b>2,90€</b> pro Person/Tag, Kinder im Alter von 6 - 15
+            Jahren <b>1,20€</b> pro Person/Tag
+          </li>
         </ul>
 
-        <hr className="my-8 border-stone-300 md:my-16" />
+        <hr className="my-8 border-stone-300" />
 
-        <h3 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
+        <h3 className="mb-4 font-serif text-2xl md:text-3xl lg:text-4xl">
           Regeln
         </h3>
 
@@ -135,7 +121,7 @@ export default function BookingForm() {
         </ul>
       </div>
 
-      <div className="mt-8 md:mt-0 lg:sticky lg:top-24 lg:basis-1/3">
+      <div className="mt-8 md:mt-0 lg:basis-1/3">
         <fieldset className="relative rounded-xl border border-stone-300 bg-white p-4 md:p-8">
           <legend className="absolute font-serif text-2xl lg:text-3xl">
             Ihre Angaben
@@ -267,7 +253,7 @@ export default function BookingForm() {
 
             <button
               type="submit"
-              className="bg-primary-200 flex h-12 w-full items-center justify-center gap-2 rounded-lg px-6 text-xs font-medium uppercase md:gap-4 md:text-sm"
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary-200 px-6 text-xs font-medium uppercase md:gap-4 md:text-sm"
             >
               <Icon name="send" className="size-5" />
               Jetzt buchen
