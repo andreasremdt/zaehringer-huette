@@ -24,7 +24,7 @@ export default forwardRef(function Input(
 
       <label
         htmlFor={id}
-        className="absolute left-2 top-6 -translate-y-10 cursor-text bg-white px-2 transition-transform peer-placeholder-shown:-translate-y-1/2 peer-focus:-translate-y-10 md:top-6"
+        className="pointer-events-none absolute left-2 top-6 -translate-y-10 bg-white px-2 transition-transform peer-placeholder-shown:-translate-y-1/2 peer-focus:-translate-y-10 md:top-6"
       >
         {label}
         {required ? (

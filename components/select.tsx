@@ -1,4 +1,11 @@
-import { type ComponentPropsWithoutRef, type Ref, forwardRef } from "react";
+"use client";
+
+import {
+  type ComponentPropsWithoutRef,
+  type Ref,
+  forwardRef,
+  useState,
+} from "react";
 import { cn } from "@/lib/utils";
 import Icon from "@/components/icon";
 
@@ -11,6 +18,8 @@ export default forwardRef(function Input(
   { className, label, required, error, children, id, ...props }: Props,
   ref: Ref<HTMLSelectElement>,
 ) {
+  const [value, setValue] = useState("");
+
   return (
     <div className={cn("relative", className)} aria-live="assertive">
       <select
@@ -20,6 +29,8 @@ export default forwardRef(function Input(
         aria-invalid={error ? true : undefined}
         {...props}
         ref={ref}
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
       >
         {children}
       </select>
@@ -31,7 +42,12 @@ export default forwardRef(function Input(
 
       <label
         htmlFor={id}
-        className="absolute left-2 top-6 -translate-y-10 cursor-text bg-white px-2 transition-transform peer-placeholder-shown:-translate-y-1/2 peer-focus:-translate-y-10 md:top-6"
+        className={cn(
+          "pointer-events-none absolute left-2 top-6 -translate-y-10 bg-white px-2 transition-transform peer-focus:-translate-y-10 md:top-6",
+          {
+            "-translate-y-1/2": !Boolean(value),
+          },
+        )}
       >
         {label}
         {required ? (

@@ -165,9 +165,10 @@ export default function BookingForm() {
                   required: "Bitte geben die Anzahl der Gäste an.",
                   valueAsNumber: true,
                   validate: (value, formValues) => {
-                    const total = value + formValues.kids;
+                    const adults = value || 0;
+                    const kids = formValues.kids || 0;
 
-                    if (total < 4) {
+                    if (adults + kids < 4) {
                       return "Die Mindestzahl der Gäste beträgt 4.";
                     }
 
@@ -176,7 +177,7 @@ export default function BookingForm() {
                 })}
                 error={errors.adults?.message}
               >
-                <option value="0"></option>
+                <option value=""></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -197,12 +198,13 @@ export default function BookingForm() {
                 {...register("kids", {
                   valueAsNumber: true,
                   validate: (value, formValues) => {
-                    const total = value + formValues.adults;
+                    const adults = formValues.adults || 0;
+                    const kids = value || 0;
 
-                    if (total >= 4 && formValues.adults > 0) {
+                    if (adults + kids >= 4 && adults > 0) {
                       clearErrors("adults");
                     } else {
-                      if (formValues.adults === 0 && value > 0) {
+                      if (adults === 0 && kids > 0) {
                         setError("adults", {
                           message: "Es muss min. 1 Erwachsener anwesend sein.",
                         });
@@ -217,7 +219,7 @@ export default function BookingForm() {
                   },
                 })}
               >
-                <option value="0"></option>
+                <option value=""></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
