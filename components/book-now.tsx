@@ -19,7 +19,7 @@ export default function BookNow() {
 
         <Link
           href="/buchen"
-          className="bg-primary-200 mx-auto flex h-10 w-max items-center gap-2 rounded-lg px-6 text-xs font-medium uppercase md:h-12 md:gap-4 md:text-sm"
+          className="mx-auto flex h-10 w-max items-center gap-2 rounded-lg bg-primary-200 px-6 text-xs font-medium uppercase transition-colors duration-300 ease-in-out hover:bg-secondary-950 hover:text-white md:h-12 md:gap-4 md:text-sm"
         >
           <Icon name="calendar" className="size-4 md:size-5" /> Jetzt buchen
         </Link>

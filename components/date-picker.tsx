@@ -43,7 +43,7 @@ export default function DatePicker({
         month_grid: "w-full table-fixed border-spacing-2 border-separate",
         month_caption: "text-center mb-4",
         caption_label: "font-semibold text-lg",
-        day: "rounded-full",
+        day: "rounded-full transition-colors duration-300 ease-in-out",
         button_previous: "rotate-180 p-2",
         button_next: "p-2",
         day_button:

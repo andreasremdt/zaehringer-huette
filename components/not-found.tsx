@@ -15,7 +15,7 @@ export default function NotFound() {
 
       <Link
         href="/"
-        className="inline-flex h-10 items-center gap-2 rounded-lg bg-secondary-950 px-6 text-xs font-medium uppercase text-white md:h-12 md:gap-4 md:text-sm"
+        className="inline-flex h-10 items-center gap-2 rounded-lg bg-secondary-950 px-6 text-xs font-medium uppercase text-white transition-colors duration-300 ease-in-out hover:bg-primary-200 hover:text-secondary-950 md:h-12 md:gap-4 md:text-sm"
       >
         Zur Startseite
       </Link>

@@ -257,7 +257,7 @@ export default function BookingForm() {
 
             <button
               type="submit"
-              className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary-200 px-6 text-xs font-medium uppercase md:gap-4 md:text-sm"
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary-200 px-6 text-xs font-medium uppercase transition-colors duration-300 ease-in-out hover:bg-secondary-950 hover:text-white md:gap-4 md:text-sm"
             >
               <Icon name="send" className="size-5" />
               Jetzt buchen
