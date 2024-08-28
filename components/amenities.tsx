@@ -18,7 +18,7 @@ export default function Amenities() {
             <ul className="space-y-4">
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/wifi.svg"
+                  src="/icons/wifi.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -31,7 +31,7 @@ export default function Amenities() {
               </li>
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/kitchen.svg"
+                  src="/icons/kitchen.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -44,7 +44,7 @@ export default function Amenities() {
               </li>
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/people.svg"
+                  src="/icons/people.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -57,7 +57,7 @@ export default function Amenities() {
               </li>
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/fireplace.svg"
+                  src="/icons/fireplace.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -77,7 +77,7 @@ export default function Amenities() {
             <ul className="space-y-4">
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/bed.svg"
+                  src="/icons/bed.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -90,7 +90,7 @@ export default function Amenities() {
               </li>
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/double-bedroom.svg"
+                  src="/icons/double-bedroom.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -103,7 +103,7 @@ export default function Amenities() {
               </li>
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/bunk-bed.svg"
+                  src="/icons/bunk-bed.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -116,7 +116,7 @@ export default function Amenities() {
               </li>
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/couch.svg"
+                  src="/icons/couch.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -136,7 +136,7 @@ export default function Amenities() {
             <ul className="space-y-4">
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/shower.svg"
+                  src="/icons/shower.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -149,7 +149,7 @@ export default function Amenities() {
               </li>
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/sink.svg"
+                  src="/icons/sink.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -162,7 +162,7 @@ export default function Amenities() {
               </li>
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/toilet.svg"
+                  src="/icons/toilet.svg"
                   width={32}
                   height={32}
                   alt=""
@@ -175,7 +175,7 @@ export default function Amenities() {
               </li>
               <li className="flex items-center gap-4">
                 <Image
-                  src="/images/warm-water.svg"
+                  src="/icons/warm-water.svg"
                   width={32}
                   height={32}
                   alt=""
