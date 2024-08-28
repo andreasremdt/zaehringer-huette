@@ -15,7 +15,7 @@ export default forwardRef(function Select(
     <div className={cn("relative", className)} aria-live="assertive">
       <select
         id={id}
-        className="peer h-12 w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 text-sm text-stone-600 transition-colors hover:border-stone-400 focus:border-stone-600 focus:outline-none aria-[invalid]:border-red-300 md:text-base"
+        className="peer h-12 w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 text-sm text-stone-600 transition-colors duration-300 ease-in-out hover:border-stone-400 focus:border-stone-600 focus:outline-none aria-[invalid]:border-red-300 aria-[invalid]:hover:border-red-500 aria-[invalid]:focus-visible:border-red-500 md:text-base"
         aria-describedby={`${id}-error`}
         aria-invalid={error ? true : undefined}
         {...props}
@@ -32,7 +32,7 @@ export default forwardRef(function Select(
       <label
         htmlFor={id}
         className={cn(
-          "pointer-events-none absolute left-2 top-6 -translate-y-10 bg-white px-2 transition-transform peer-focus:-translate-y-10 md:top-6",
+          "pointer-events-none absolute left-2 top-6 -translate-y-10 bg-white px-2 transition-transform duration-300 ease-in-out peer-focus:-translate-y-10 md:top-6",
           {
             "-translate-y-1/2": !Boolean(value),
           },
