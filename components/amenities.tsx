@@ -22,6 +22,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -33,6 +35,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -44,6 +48,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -55,6 +61,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -73,6 +81,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -84,6 +94,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -95,6 +107,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -106,6 +120,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -124,6 +140,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -135,6 +153,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -146,6 +166,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
@@ -157,6 +179,8 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
+                  loading="eager"
+                  decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />

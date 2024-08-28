@@ -27,8 +27,11 @@ export default function About() {
             width={500}
             height={600}
             placeholder="blur"
-            alt="placeholder"
+            alt="Skilift von oben in verschneiter, bergiger Landschaft"
             className="aspect-[4/5] rounded-xl object-cover"
+            loading="lazy"
+            quality={75}
+            decoding="async"
           />
           <figcaption className="mt-2 text-sm">
             Skiparadies Schwarzwald
@@ -40,8 +43,11 @@ export default function About() {
             width={500}
             height={600}
             placeholder="blur"
-            alt="placeholder"
+            alt="Gemütliche Eckcouch im Wohnzimmer mit viel Holz und warmem Licht"
             className="aspect-[4/5] rounded-xl object-cover"
+            loading="lazy"
+            quality={75}
+            decoding="async"
           />
         </figure>
         <figure>
@@ -50,8 +56,11 @@ export default function About() {
             width={500}
             height={600}
             placeholder="blur"
-            alt="placeholder"
+            alt="Eingeschneite Holzhütte mit Wald im Hintergrund"
             className="aspect-[4/5] rounded-xl object-cover"
+            loading="lazy"
+            quality={75}
+            decoding="async"
           />
           <figcaption className="mt-2 text-sm">
             Die Hütte von außen mit Schnee

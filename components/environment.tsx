@@ -21,8 +21,11 @@ export default function Environment() {
             width={544}
             height={408}
             placeholder="blur"
-            alt="lush forest with lakes and stones with mountains in the background during sunset"
+            alt="Saftig grüner Wald im Sonnenuntergang mit Tümpeln und Felsbrocken"
             className="mb-4 aspect-video rounded-xl object-cover md:aspect-[4/3]"
+            loading="lazy"
+            quality={75}
+            decoding="async"
           />
 
           <h3 className="mb-4 font-serif text-2xl md:text-3xl lg:text-4xl">
@@ -43,8 +46,11 @@ export default function Environment() {
             width={544}
             height={408}
             placeholder="blur"
-            alt="ski lift in snowy mountains"
+            alt="Skilift von oben in verschneiter, bergiger Landschaft"
             className="mb-4 aspect-video rounded-xl object-cover md:aspect-[4/3]"
+            loading="lazy"
+            quality={75}
+            decoding="async"
           />
 
           <h3 className="mb-4 font-serif text-2xl md:text-3xl lg:text-4xl">
@@ -65,8 +71,11 @@ export default function Environment() {
             width={544}
             height={408}
             placeholder="blur"
-            alt="two hikers climbing up a staircase within a lush forest"
+            alt="Zwei Wanderer klettern eine Holztreppe in einem Wald hinauf"
             className="mb-4 aspect-video rounded-xl object-cover md:aspect-[4/3]"
+            loading="lazy"
+            quality={75}
+            decoding="async"
           />
 
           <h3 className="mb-4 font-serif text-2xl md:text-3xl lg:text-4xl">
@@ -86,8 +95,11 @@ export default function Environment() {
             width={544}
             height={408}
             placeholder="blur"
-            alt="fireplace with fire cracking"
+            alt="Steinkamin mit offenem Feuer"
             className="mb-4 aspect-video rounded-xl object-cover md:aspect-[4/3]"
+            loading="lazy"
+            quality={75}
+            decoding="async"
           />
 
           <h3 className="mb-4 font-serif text-2xl md:text-3xl lg:text-4xl">

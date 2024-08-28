@@ -146,6 +146,9 @@ export default function Gallery() {
                   alt={image.alt}
                   width={480}
                   height={360}
+                  loading="lazy"
+                  quality={75}
+                  decoding="async"
                   className="aspect-[4/3] w-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-50 group-focus-visible:opacity-50"
                 />
                 <span className="absolute inset-0 flex scale-90 items-center justify-center opacity-0 transition-all duration-300 ease-in-out group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100">

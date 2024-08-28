@@ -22,8 +22,11 @@ export default function Hero() {
           width={1248}
           height={702}
           placeholder="blur"
-          alt="eingeschneite holzhütte im schwarzwald zwischen bäumen und büschen"
+          alt="Eingeschneite Holzhütte im Schwarzwald zwischen Bäumen und Büschen"
           loading="eager"
+          fetchPriority="high"
+          quality={75}
+          decoding="async"
           className="aspect-video rounded-2xl object-cover"
         />
       </div>

@@ -5,27 +5,22 @@ const images = [
   {
     src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/E91263A3-81A1-41C6-AD49-3B8EEBD465FF-scaled.jpeg?updatedAt=1708024266640",
     alt: "",
-    caption: "",
   },
   {
     src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/DDB33E3B-AED7-4B01-B92D-914E78AFB9E5-scaled.jpeg?updatedAt=1708024266617",
     alt: "",
-    caption: "",
   },
   {
     src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/4D0F85A5-FA8C-4C28-B1F2-8FA0F7C88095-scaled.jpeg?updatedAt=1708024266393",
     alt: "",
-    caption: "",
   },
   {
     src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/9B6142B9-A2E1-45D7-ACD6-BFE4B7392891-scaled.jpeg?updatedAt=1708024266367",
     alt: "",
-    caption: "",
   },
   {
     src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/waschbecken.jpg?updatedAt=1708024260513",
     alt: "",
-    caption: "",
   },
 ];
 
@@ -49,6 +44,9 @@ export default function BookingHeader() {
             alt={image.alt}
             width={480}
             height={360}
+            loading="eager"
+            decoding="async"
+            quality={75}
             className={cn("aspect-[4/3] w-full rounded-xl object-cover", {
               "col-span-2 row-span-2 h-full": index === 0,
             })}
