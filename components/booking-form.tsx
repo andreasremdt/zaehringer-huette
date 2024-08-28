@@ -160,13 +160,14 @@ export default function BookingForm() {
                 id="adults"
                 className="flex-1"
                 label="Erwachsene"
+                value={getValues("adults")}
                 required
                 {...register("adults", {
                   required: "Bitte geben die Anzahl der Gäste an.",
                   valueAsNumber: true,
                   validate: (value, formValues) => {
-                    const adults = value || 0;
-                    const kids = formValues.kids || 0;
+                    const adults = value;
+                    const kids = formValues.kids;
 
                     if (adults + kids < 4) {
                       return "Die Mindestzahl der Gäste beträgt 4.";
@@ -177,7 +178,7 @@ export default function BookingForm() {
                 })}
                 error={errors.adults?.message}
               >
-                <option value=""></option>
+                <option value="0"></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -194,12 +195,13 @@ export default function BookingForm() {
               <Select
                 id="kids"
                 label="Kinder"
+                value={getValues("kids")}
                 className="flex-1"
                 {...register("kids", {
                   valueAsNumber: true,
                   validate: (value, formValues) => {
-                    const adults = formValues.adults || 0;
-                    const kids = value || 0;
+                    const adults = formValues.adults;
+                    const kids = value;
 
                     if (adults + kids >= 4 && adults > 0) {
                       clearErrors("adults");
@@ -219,7 +221,7 @@ export default function BookingForm() {
                   },
                 })}
               >
-                <option value=""></option>
+                <option value="0"></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
