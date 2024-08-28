@@ -1,11 +1,4 @@
-"use client";
-
-import {
-  type ComponentPropsWithoutRef,
-  type Ref,
-  forwardRef,
-  useState,
-} from "react";
+import { type ComponentPropsWithoutRef, type Ref, forwardRef } from "react";
 import { cn } from "@/lib/utils";
 import Icon from "@/components/icon";
 
@@ -14,12 +7,10 @@ type Props = ComponentPropsWithoutRef<"select"> & {
   error?: string;
 };
 
-export default forwardRef(function Input(
-  { className, label, required, error, children, id, ...props }: Props,
+export default forwardRef(function Select(
+  { className, label, required, error, children, id, value, ...props }: Props,
   ref: Ref<HTMLSelectElement>,
 ) {
-  const [value, setValue] = useState("");
-
   return (
     <div className={cn("relative", className)} aria-live="assertive">
       <select
@@ -29,8 +20,6 @@ export default forwardRef(function Input(
         aria-invalid={error ? true : undefined}
         {...props}
         ref={ref}
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
       >
         {children}
       </select>
