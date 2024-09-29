@@ -13,7 +13,7 @@ export default function Logo({ className, ...props }: Props) {
       aria-label="Navigiere zur Startseite"
     >
       <span
-        className="block font-serif text-2xl font-semibold"
+        className="block font-serif text-xl font-semibold sm:text-2xl"
         aria-hidden="true"
       >
         Zähringer Hütte

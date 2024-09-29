@@ -1,8 +1,4 @@
 import Image from "next/image";
-import SkiLift from "@/public/images/skilift.jpg";
-import Hikers from "@/public/images/hikers.jpg";
-import Landscape from "@/public/images/landscape.jpg";
-import Fireplace from "@/public/images/fireplace-with-fire.jpg";
 
 export default function Environment() {
   return (
@@ -17,12 +13,11 @@ export default function Environment() {
       <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
         <article>
           <Image
-            src={Landscape}
+            src="/images/schwarzwald-fluß.jpg"
             width={544}
             height={408}
-            placeholder="blur"
-            alt="Saftig grüner Wald im Sonnenuntergang mit Tümpeln und Felsbrocken"
-            className="mb-4 aspect-video rounded-xl object-cover md:aspect-[4/3]"
+            alt="Kleiner See mit Bachlauf in herbstlich-bunter Landschaft"
+            className="mb-4 aspect-video w-full rounded-xl object-cover md:aspect-[4/3]"
             loading="lazy"
             quality={75}
             decoding="async"
@@ -42,12 +37,11 @@ export default function Environment() {
 
         <article>
           <Image
-            src={SkiLift}
+            src="/images/skilift-mit-schnee.jpg"
             width={544}
             height={408}
-            placeholder="blur"
             alt="Skilift von oben in verschneiter, bergiger Landschaft"
-            className="mb-4 aspect-video rounded-xl object-cover md:aspect-[4/3]"
+            className="mb-4 aspect-video w-full rounded-xl object-cover md:aspect-[4/3]"
             loading="lazy"
             quality={75}
             decoding="async"
@@ -67,12 +61,11 @@ export default function Environment() {
 
         <article>
           <Image
-            src={Hikers}
+            src="/images/wanderer.jpg"
             width={544}
             height={408}
-            placeholder="blur"
             alt="Zwei Wanderer klettern eine Holztreppe in einem Wald hinauf"
-            className="mb-4 aspect-video rounded-xl object-cover md:aspect-[4/3]"
+            className="mb-4 aspect-video w-full rounded-xl object-cover md:aspect-[4/3]"
             loading="lazy"
             quality={75}
             decoding="async"
@@ -91,12 +84,11 @@ export default function Environment() {
 
         <article>
           <Image
-            src={Fireplace}
+            src="/images/wohnzimmer-mit-ofen-und-esstisch.jpg"
             width={544}
             height={408}
-            placeholder="blur"
-            alt="Steinkamin mit offenem Feuer"
-            className="mb-4 aspect-video rounded-xl object-cover md:aspect-[4/3]"
+            alt="Wohnzimmer mit Ofen und Esstisch"
+            className="mb-4 aspect-video w-full rounded-xl object-cover md:aspect-[4/3]"
             loading="lazy"
             quality={75}
             decoding="async"

@@ -65,7 +65,10 @@ export default function BookingForm() {
 
         <hr className="my-8 border-stone-300" />
 
-        <h2 className="mb-4 font-serif text-2xl md:text-3xl lg:text-4xl">
+        <h2
+          className="mb-4 scroll-m-48 font-serif text-2xl md:text-3xl lg:text-4xl"
+          id="preise"
+        >
           Preise & Informationen
         </h2>
 
@@ -94,7 +97,8 @@ export default function BookingForm() {
             Die Endreinigung beträgt <b>80€</b>
           </li>
           <li>
-            Die Holzpauschale beträgt <b>30€</b>
+            Die Holzpauschale beträgt <b>60€</b> im Winter (November - Mai) und{" "}
+            <b>30€</b> im Sommer (Juni - Oktober).
           </li>
           <li>
             Alle Preise gelten zuzüglich der Kurtaxe der Gemeinde Feldberg.

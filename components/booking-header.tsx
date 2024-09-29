@@ -3,24 +3,24 @@ import { cn } from "@/lib/utils";
 
 const images = [
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/E91263A3-81A1-41C6-AD49-3B8EEBD465FF-scaled.jpeg?updatedAt=1708024266640",
-    alt: "",
+    src: "/images/doppelbett-bunt.jpg",
+    alt: "Großes Doppelbett mit grauem Bezug in Schlafzimmer mit Holz",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/DDB33E3B-AED7-4B01-B92D-914E78AFB9E5-scaled.jpeg?updatedAt=1708024266617",
-    alt: "",
+    src: "/images/hütte-schnee.jpg",
+    alt: "Gezoomte Frontansicht der Holzhütte mit viel Schnee im Dunkeln",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/4D0F85A5-FA8C-4C28-B1F2-8FA0F7C88095-scaled.jpeg?updatedAt=1708024266393",
-    alt: "",
+    src: "/images/doppelbett-weiß.jpg",
+    alt: "Mittleres Doppelbett mit weißem Bezug und Nachtischen mit Beleuchtung",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/9B6142B9-A2E1-45D7-ACD6-BFE4B7392891-scaled.jpeg?updatedAt=1708024266367",
-    alt: "",
+    src: "/images/geweih.jpg",
+    alt: "Hirschgeweih an Holzwand",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/waschbecken.jpg?updatedAt=1708024260513",
-    alt: "",
+    src: "/images/waschbecken.jpg",
+    alt: "Weißes Porzellanwaschbecken mit einem WC links",
   },
 ];
 

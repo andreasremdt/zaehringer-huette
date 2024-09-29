@@ -1,7 +1,4 @@
 import Image from "next/image";
-import SkiLift from "@/public/images/skilift.jpg";
-import Wohnzimmer from "@/public/images/wohnzimmer.jpg";
-import HuetteFront from "@/public/images/huette-front-mit-schnee.jpg";
 
 export default function About() {
   return (
@@ -23,10 +20,9 @@ export default function About() {
       <div className="mt-16 grid grid-cols-3 gap-4 md:mt-32 md:gap-8 lg:gap-12">
         <figure>
           <Image
-            src={SkiLift}
+            src="/images/skilift-mit-schnee.jpg"
             width={500}
             height={600}
-            placeholder="blur"
             alt="Skilift von oben in verschneiter, bergiger Landschaft"
             className="aspect-[4/5] rounded-xl object-cover"
             loading="lazy"
@@ -39,10 +35,9 @@ export default function About() {
         </figure>
         <figure className="translate-y-16 md:translate-y-24">
           <Image
-            src={Wohnzimmer}
+            src="/images/wohnzimmer-couch.jpg"
             width={500}
             height={600}
-            placeholder="blur"
             alt="Gemütliche Eckcouch im Wohnzimmer mit viel Holz und warmem Licht"
             className="aspect-[4/5] rounded-xl object-cover"
             loading="lazy"
@@ -52,10 +47,9 @@ export default function About() {
         </figure>
         <figure>
           <Image
-            src={HuetteFront}
+            src="/images/hütte-front-mit-schnee.jpg"
             width={500}
             height={600}
-            placeholder="blur"
             alt="Eingeschneite Holzhütte mit Wald im Hintergrund"
             className="aspect-[4/5] rounded-xl object-cover"
             loading="lazy"

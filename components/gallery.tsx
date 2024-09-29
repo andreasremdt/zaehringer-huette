@@ -5,99 +5,116 @@ import Icon from "@/components/icon";
 
 const images = [
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/E91263A3-81A1-41C6-AD49-3B8EEBD465FF-scaled.jpeg?updatedAt=1708024266640",
-    alt: "",
-    caption: "",
+    src: "/images/küche.jpg",
+    alt: "Beleuchtete Frontansicht der Küche mit Esstisch und Schrank",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/DDB33E3B-AED7-4B01-B92D-914E78AFB9E5-scaled.jpeg?updatedAt=1708024266617",
-    alt: "",
-    caption: "",
+    src: "/images/kamin-küche.jpg",
+    alt: "Inaktiver Kamin mit Holzstapel und einem Seitenschrank in Küche",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/4D0F85A5-FA8C-4C28-B1F2-8FA0F7C88095-scaled.jpeg?updatedAt=1708024266393",
-    alt: "",
-    caption: "",
+    src: "/images/waschbecken.jpg",
+    alt: "Weißes Porzellanwaschbecken mit einem WC links",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/9B6142B9-A2E1-45D7-ACD6-BFE4B7392891-scaled.jpeg?updatedAt=1708024266367",
-    alt: "",
-    caption: "",
+    src: "/images/dusche.jpg",
+    alt: "Moderne Dusche mit Glastrennung und Fliesenfußboden",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/84AC53B9-3F56-4146-8D7F-DCB6B7427F23-scaled.jpeg?updatedAt=1708024266333",
-    alt: "",
-    caption: "",
+    src: "/images/dusche-innen.jpg",
+    alt: "Innenansicht der modernen Dusche mit Blick auf Amaturen",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/28B80F85-59B3-406E-A3B7-E576DFBCB32C-scaled.jpeg?updatedAt=1708024266172",
-    alt: "",
-    caption: "",
+    src: "/images/essbereich.jpg",
+    alt: "Massiver Holztisch mit einem Essbereich vor rustikalem Kamin mit 6 Stühlen",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/21A296BC-5B9C-4D59-B0BA-16C33283A5F5-scaled.jpeg?updatedAt=1708024265492",
-    alt: "",
-    caption: "",
+    src: "/images/wohnzimmer-couch.jpg",
+    alt: "Große, weiße Stoffcouch im Wohnzimmer mit warmer Beleuchtung",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/EA5197BD-0ACE-41DA-8673-E2E6C4F2DAAD-scaled.jpeg?updatedAt=1708024265243",
-    alt: "",
-    caption: "",
+    src: "/images/wohnzimmer-sessel.jpg",
+    alt: "Roter Stoffsessel mit weißen Verzierungen im Wohnzimmer, dazu ein Hocker",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/IMG_5283.jpg?updatedAt=1708024262643",
-    alt: "",
-    caption: "",
+    src: "/images/flur.jpg",
+    alt: "Flur mit alten Holzdielen und moderner Beleuchtung, mit Blick auf die Schlafzimmer",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/silberwiesen-zimmer.jpg?updatedAt=1708024262030",
-    alt: "",
-    caption: "",
+    src: "/images/geweih.jpg",
+    alt: "Hirschgeweih an Holzwand",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/huette-front-fruehling.jpg?updatedAt=1708024261463",
-    alt: "",
-    caption: "",
+    src: "/images/bett-mit-tisch.jpg",
+    alt: "Holztisch mit 3 Stühlen vor Bett",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/esstisch.jpg?updatedAt=1708024261430",
-    alt: "",
-    caption: "",
+    src: "/images/dreibettzimmer.jpg",
+    alt: "Holztisch mit 3 Stühlen vor Bett",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/skilift-feldberg.jpg?updatedAt=1708024261359",
-    alt: "",
-    caption: "",
+    src: "/images/schlafsofa.jpg",
+    alt: "Graues Schlafsofa in kleinem Zimmer mit warmer Beleuchtung",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/huette-front-mit-schnee.jpg?updatedAt=1708024261293",
-    alt: "",
-    caption: "",
+    src: "/images/doppelbett.jpg",
+    alt: "Großes Doppelbett mit weißem Bezug in Schlafzimmer mit Holz",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/kleines-schlafzimmer.jpg?updatedAt=1708024261213",
-    alt: "",
-    caption: "",
+    src: "/images/doppelbett-bunt.jpg",
+    alt: "Großes Doppelbett mit grauem Bezug in Schlafzimmer mit Holz",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/kueche.jpg?updatedAt=1708024261132",
-    alt: "",
-    caption: "",
+    src: "/images/doppelbett-mit-schrank.jpg",
+    alt: "Mittleres Doppelbett mit weißem Bezug vor Holzschrank",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/ofen.jpg?updatedAt=1708024261059",
-    alt: "",
-    caption: "",
+    src: "/images/doppelbett-weiß.jpg",
+    alt: "Mittleres Doppelbett mit weißem Bezug und Nachtischen mit Beleuchtung",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/IMG_5311.jpg?updatedAt=1708024260945",
-    alt: "",
-    caption: "",
+    src: "/images/waschbecken-in-zimmer.jpg",
+    alt: "Waschbecken im Schlafzimmer mit Fenster und Bett im Vordergrund",
   },
   {
-    src: "https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/waschbecken.jpg?updatedAt=1708024260513",
-    alt: "",
-    caption: "",
+    src: "/images/treppe.jpg",
+    alt: "Schwarze Holztreppe mit Bilderwand",
+  },
+  {
+    src: "/images/hütte-im-sommer-front.jpg",
+    alt: "Frontansicht der Holzhütte im Sommer umgeben von Mischwald",
+  },
+  {
+    src: "/images/hütte-sommer-eingang.jpg",
+    alt: "Haupteingang der Holzhütte mit Steintreppe und Gartenmöbeln",
+  },
+  {
+    src: "/images/hütte-sommer-hinten.jpg",
+    alt: "Rückansicht der Holzhütte im Sommer mit Schuppen",
+  },
+  {
+    src: "/images/gartenmöbel.jpg",
+    alt: "Gartenmöbel aus Holz vor der Hütte",
+  },
+  {
+    src: "/images/hütte-mit-schnee-front.jpg",
+    alt: "Frontansicht der Holzhütte im Winter mit viel Schnee umgeben von Mischwald",
+  },
+  {
+    src: "/images/hütte-außen-mit-schnee.jpg",
+    alt: "Rückansicht der Holzhütte im Winter mit viel Schnee im Dunkeln",
+  },
+  {
+    src: "/images/hütte-schnee.jpg",
+    alt: "Gezoomte Frontansicht der Holzhütte mit viel Schnee im Dunkeln",
+  },
+  {
+    src: "/images/skilift-mit-schnee.jpg",
+    alt: "Skilift im Winter mit viel Schnee vor blauem Himmel und einigen Skifahrern",
+  },
+  {
+    src: "/images/feldberg-schnee.jpg",
+    alt: "Blick auf einen Turm auf dem Feldberg im Winter mit blauem Himmel",
   },
 ];
 
@@ -137,7 +154,6 @@ export default function Gallery() {
               <a
                 href={image.src}
                 data-fancybox="gallery"
-                data-caption={image.caption}
                 className="group relative block"
                 aria-label={`Zeige Bild ${index + 1} in Großansicht`}
               >

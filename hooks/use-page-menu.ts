@@ -47,6 +47,16 @@ export default function usePageMenu() {
       }
     }
 
+    function handleClick(event: MouseEvent) {
+      const target = event.target as HTMLElement;
+
+      if (!ref.current?.contains(target)) {
+        setOpen(false);
+      } else if (target.hasAttribute("href")) {
+        setOpen(false);
+      }
+    }
+
     if (open) {
       lastFocused.current = document.activeElement as HTMLElement;
 
@@ -54,6 +64,7 @@ export default function usePageMenu() {
     }
 
     document.addEventListener("scroll", handleScroll, { passive: true });
+    document.addEventListener("click", handleClick);
 
     setScrolled(window.scrollY > 0);
 

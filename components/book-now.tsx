@@ -4,7 +4,7 @@ import Icon from "@/components/icon";
 export default function BookNow() {
   return (
     <section className="mx-auto max-w-7xl px-4 text-center">
-      <div className="rounded-2xl bg-[url(https://ik.imagekit.io/6uqkzvybwk/zaehringer-huette/yannick-pulver-ZwPuquZBnyM-unsplash.jpg?updatedAt=1708014036346)] bg-cover px-4 py-16 md:py-32">
+      <div className="rounded-2xl bg-[linear-gradient(to_bottom,rgba(0,0,0,.5),rgba(0,0,0,.3)),url(/images/hütte-front-zoom.jpg)] bg-cover px-4 py-16 md:py-32">
         <h2
           className="mb-2 scroll-m-24 font-serif text-3xl text-white md:text-4xl lg:text-5xl"
           id="buchen"

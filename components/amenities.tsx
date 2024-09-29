@@ -22,7 +22,7 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
@@ -35,7 +35,7 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
@@ -48,7 +48,7 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
@@ -61,12 +61,12 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
-                2 Kachelöfen in Wohn- und Esszimmer
+                1 Kachelofen im Wohnzimmer
               </li>
             </ul>
           </article>
@@ -81,7 +81,7 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
@@ -94,7 +94,7 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
@@ -107,7 +107,7 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
@@ -120,7 +120,7 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
@@ -140,12 +140,12 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
                 />
-                Behindertengerechte Duschen und WCs
+                1 behindertengerechte Dusche
               </li>
               <li className="flex items-center gap-4">
                 <Image
@@ -153,7 +153,7 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
@@ -166,7 +166,7 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
@@ -179,7 +179,7 @@ export default function Amenities() {
                   width={32}
                   height={32}
                   alt=""
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   className="size-8"
                   aria-hidden="true"
