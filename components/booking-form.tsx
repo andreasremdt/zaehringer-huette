@@ -35,6 +35,7 @@ export default function BookingForm() {
     console.log(data);
   }
 
+  console.log(errors);
   return (
     <form
       className="mx-auto max-w-7xl items-start gap-16 px-4 pb-16 md:pb-24 lg:flex"
@@ -55,8 +56,9 @@ export default function BookingForm() {
 
         <DatePicker
           onSelect={(range) => {
-            if (range?.from && range.to) {
-              setValue("range", range);
+            setValue("range", range);
+
+            if (range?.from && range?.to) {
               clearErrors("range");
             }
           }}
