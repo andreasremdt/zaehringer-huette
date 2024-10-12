@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="border-b border-secondary-800 py-16 text-sm md:py-24 md:text-base">
         <div className="mx-auto max-w-7xl items-start px-4 lg:flex lg:justify-evenly">
           <div className="mb-8 lg:order-2 lg:mb-0">
-            <Logo tabIndex={-1} />
+            <Logo tabIndex={-1} className="text-center" />
 
             <p className="relative mt-4 pt-4 text-center before:absolute before:left-1/2 before:top-0 before:h-px before:w-1/4 before:-translate-x-1/2 before:bg-secondary-800 md:mt-8 md:pt-8">
               Dr. Freddy Stober Weg 8<br />

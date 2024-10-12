@@ -95,7 +95,7 @@ export default function Environment() {
           />
 
           <h3 className="mb-4 font-serif text-2xl md:text-3xl lg:text-4xl">
-            Modern & Komfortabel
+            Gemütlich & Komfortabel
           </h3>
 
           <p>

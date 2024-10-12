@@ -9,11 +9,11 @@ export default function Logo({ className, ...props }: Props) {
     <Link
       href="/"
       {...props}
-      className={cn("block text-center uppercase leading-none", className)}
+      className={cn("block uppercase leading-none", className)}
       aria-label="Navigiere zur Startseite"
     >
       <span
-        className="block font-serif text-xl font-semibold sm:text-2xl"
+        className="block whitespace-nowrap font-serif text-xl font-semibold sm:text-2xl"
         aria-hidden="true"
       >
         Zähringer Hütte
