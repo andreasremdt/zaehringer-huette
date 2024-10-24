@@ -173,19 +173,6 @@ export default function Amenities() {
                 />
                 2 Toiletten
               </li>
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/warm-water.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                Warmwasser überall im Haus
-              </li>
             </ul>
           </article>
         </div>
