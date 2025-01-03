@@ -21,7 +21,13 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    livePreview: {
+      url: process.env.NEXT_PUBLIC_PAYLOAD_URL || "",
+      collections: ["pages"],
+      globals: ["contact-info"],
+    },
   },
+  serverURL: process.env.NEXT_PUBLIC_PAYLOAD_URL || "",
   collections: [users, media, icons, pages],
   globals: [contactInfo],
   editor: lexicalEditor(),

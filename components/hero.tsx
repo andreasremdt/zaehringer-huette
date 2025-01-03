@@ -29,6 +29,7 @@ export default function Hero({ title, pretitle, image }: Props) {
             alt={image.alt}
             loading="eager"
             fetchPriority="high"
+            priority
             quality={75}
             decoding="async"
             className="w-full rounded-2xl object-cover object-top lg:basis-3/5"

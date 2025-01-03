@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { AboutBlock } from "@/payload-types";
 import Image from "next/image";
+import { Fragment } from "react";
 
 type Props = AboutBlock;
 
@@ -17,7 +18,7 @@ export default function About({ text, title, images }: Props) {
 
       <div className="mt-16 grid grid-cols-3 gap-4 md:mt-32 md:gap-8 lg:gap-12">
         {images.map((image, index) => (
-          <>
+          <Fragment key={typeof image === "string" ? index : image.id}>
             {typeof image !== "string" ? (
               <figure
                 key={image.url}
@@ -42,7 +43,7 @@ export default function About({ text, title, images }: Props) {
                 ) : null}
               </figure>
             ) : null}
-          </>
+          </Fragment>
         ))}
       </div>
     </section>
