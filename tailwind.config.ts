@@ -1,3 +1,4 @@
+import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
 import theme from "tailwindcss/defaultTheme";
 
@@ -42,6 +43,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [typography],
 };
 export default config;

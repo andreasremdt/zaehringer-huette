@@ -2,9 +2,12 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import type { ComponentPropsWithoutRef } from "react";
 
-type Props = ComponentPropsWithoutRef<"a">;
+type Props = ComponentPropsWithoutRef<"a"> & {
+  title: string;
+  subtitle: string;
+};
 
-export default function Logo({ className, ...props }: Props) {
+export default function Logo({ className, title, subtitle, ...props }: Props) {
   return (
     <Link
       href="/"
@@ -16,10 +19,10 @@ export default function Logo({ className, ...props }: Props) {
         className="block whitespace-nowrap font-serif text-xl font-semibold sm:text-2xl"
         aria-hidden="true"
       >
-        Zähringer Hütte
+        {title}
       </span>
       <span className="text-xs tracking-wider" aria-hidden="true">
-        Urlaub im Schwarzwald
+        {subtitle}
       </span>
     </Link>
   );

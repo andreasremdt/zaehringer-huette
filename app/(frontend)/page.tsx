@@ -1,23 +1,8 @@
-import About from "@/components/about";
-import Amenities from "@/components/amenities";
-import BookNow from "@/components/book-now";
-import Contact from "@/components/contact";
-import Environment from "@/components/environment";
-import Gallery from "@/components/gallery";
-import Hero from "@/components/hero";
-import Testimonials from "@/components/testimonials";
+import BlockRenderer from "@/components/block-renderer";
+import { getPageBySlug } from "@/lib/fetcher";
 
-export default function Page() {
-  return (
-    <>
-      <Hero />
-      <About />
-      <Amenities />
-      <Environment />
-      <Gallery />
-      <Testimonials />
-      <BookNow />
-      <Contact />
-    </>
-  );
+export default async function Page() {
+  const page = await getPageBySlug("/");
+
+  return <BlockRenderer blocks={page.layout} />;
 }

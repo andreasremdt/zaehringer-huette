@@ -1,12 +1,16 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
+import { seoPlugin } from "@payloadcms/plugin-seo";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
+import icons from "./collections/icons";
 import media from "./collections/media";
+import pages from "./collections/pages";
 import users from "./collections/users";
+import contactInfo from "./globals/contact-info";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -18,7 +22,8 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [users, media],
+  collections: [users, media, icons, pages],
+  globals: [contactInfo],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
@@ -31,5 +36,13 @@ export default buildConfig({
   graphQL: {
     disable: true,
   },
-  plugins: [],
+  plugins: [
+    seoPlugin({
+      collections: ["pages"],
+      uploadsCollection: "media",
+      generateTitle: ({ doc }) => `${doc.title} - Zähringer Hütte`,
+      generateDescription: ({ doc }) => doc.excerpt,
+      tabbedUI: true,
+    }),
+  ],
 });

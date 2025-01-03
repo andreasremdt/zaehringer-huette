@@ -6,8 +6,12 @@ import Icon from "@/components/icon";
 import Input from "@/components/input";
 import Select from "@/components/select";
 import Textarea from "@/components/textarea";
+import type { CalendarBlock } from "@/payload-types";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 import type { DateRange } from "react-day-picker";
 import { useForm } from "react-hook-form";
+
+type Props = CalendarBlock;
 
 type Inputs = {
   name: string;
@@ -19,7 +23,7 @@ type Inputs = {
   range?: DateRange;
 };
 
-export default function BookingForm() {
+export default function BookingForm({ content }: Props) {
   const {
     register,
     handleSubmit,
@@ -66,64 +70,12 @@ export default function BookingForm() {
 
         <hr className="my-8 border-stone-300" />
 
-        <h2
-          className="mb-4 scroll-m-48 font-serif text-2xl md:text-3xl lg:text-4xl"
-          id="preise"
-        >
-          Preise & Informationen
-        </h2>
-
-        <ul className="list-disc space-y-2 pl-6">
-          <li>
-            Die Mindestzahl an Personen pro Reservierung liegt bei <b>4</b>.
-            Maximal können <b>11 Personen</b> übernachten.
-          </li>
-          <li>
-            Die Hütte ist nur <b>ab 3 Nächten</b> buchbar (Do-So oder So-Do)
-          </li>
-          <li>
-            <b>300€</b> pro Übernachtung/ bei einer Belegung von 4 Personen
-          </li>
-          <li>
-            Jede weitere Person <b>35€</b> / Übernachtung.
-          </li>
-          <li>
-            Ab einer Reservierungsdauer von mehr als 5 Tagen erhalten Sie
-            <b> 5% Rabatt</b> auf den Gesamtpreis
-          </li>
-          <li>
-            Der verbrauchte Strom wird mit <b>40 ct/kwh</b> separat berechnet
-          </li>
-          <li>
-            Die Endreinigung beträgt <b>80€</b>
-          </li>
-          <li>
-            Die Holzpauschale beträgt <b>60€</b> im Winter (November - Mai) und{" "}
-            <b>30€</b> im Sommer (Juni - Oktober).
-          </li>
-          <li>
-            Alle Preise gelten zuzüglich der Kurtaxe der Gemeinde Feldberg.
-            Erwachsene <b>2,90€</b> pro Person/Tag, Kinder im Alter von 6 - 15
-            Jahren <b>1,20€</b> pro Person/Tag
-          </li>
-        </ul>
-
-        <hr className="my-8 border-stone-300" />
-
-        <h3 className="mb-4 font-serif text-2xl md:text-3xl lg:text-4xl">
-          Regeln
-        </h3>
-
-        <ul className="list-disc space-y-2 pl-6">
-          <li>
-            Eine Kaution von <b>200€</b> ist zu hinterlegen
-          </li>
-          <li>Haustiere sind nicht erlaubt</li>
-          <li>
-            Die Wohnung ist am Abreisetag bis <b>11 Uhr</b> (besenrein) zu
-            übergeben
-          </li>
-        </ul>
+        {content ? (
+          <RichText
+            data={content}
+            className="prose max-w-none prose-headings:font-serif prose-headings:font-normal prose-h2:text-3xl prose-h3:text-2xl prose-a:font-normal"
+          />
+        ) : null}
       </div>
 
       <div className="mt-8 md:mt-0 lg:basis-1/3">

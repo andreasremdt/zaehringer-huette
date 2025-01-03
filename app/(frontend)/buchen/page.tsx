@@ -1,11 +1,8 @@
-import BookingForm from "@/components/booking-form";
-import BookingHeader from "@/components/booking-header";
+import BlockRenderer from "@/components/block-renderer";
+import { getPageBySlug } from "@/lib/fetcher";
 
-export default function Page() {
-  return (
-    <>
-      <BookingHeader />
-      <BookingForm />
-    </>
-  );
+export default async function Page() {
+  const page = await getPageBySlug("/buchen");
+
+  return <BlockRenderer blocks={page.layout} />;
 }

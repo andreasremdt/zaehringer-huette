@@ -1,7 +1,10 @@
 import Icon from "@/components/icon";
+import type { BookNowBlock } from "@/payload-types";
 import Link from "next/link";
 
-export default function BookNow() {
+type Props = BookNowBlock;
+
+export default function BookNow({ title, text }: Props) {
   return (
     <section className="mx-auto max-w-7xl px-4 text-center">
       <div className="rounded-2xl bg-[linear-gradient(to_bottom,rgba(0,0,0,.5),rgba(0,0,0,.3)),url(/images/hütte-front-zoom.jpg)] bg-cover px-4 py-16 md:py-32">
@@ -9,13 +12,9 @@ export default function BookNow() {
           className="mb-2 scroll-m-24 font-serif text-3xl text-white md:text-4xl lg:text-5xl"
           id="buchen"
         >
-          Buchen
+          {title}
         </h2>
-        <p className="mx-auto mb-8 max-w-xl text-white">
-          Unsere Hütte ist ganzjährig sehr beliebt und oftmals ausgebucht.
-          Buchen Sie Ihren Aufenthalt am besten jetzt bequem über unsere
-          Webseite.
-        </p>
+        <p className="mx-auto mb-8 max-w-xl text-white">{text}</p>
 
         <Link
           href="/buchen"

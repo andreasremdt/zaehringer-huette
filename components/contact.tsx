@@ -1,7 +1,17 @@
 import ContactForm from "@/components/contact-form";
 import Icon from "@/components/icon";
+import type { ContactFormBlock } from "@/payload-types";
+import config from "@payload-config";
+import { getPayload } from "payload";
 
-export default function Contact() {
+type Props = ContactFormBlock;
+
+export default async function Contact({ title, description }: Props) {
+  const payload = await getPayload({ config });
+  const result = await payload.findGlobal({
+    slug: "contact-info",
+  });
+
   return (
     <section className="mt-16 grid grid-cols-1 bg-white lg:grid-cols-[auto,minmax(0%,640px),minmax(0%,640px),auto]">
       <iframe
@@ -19,29 +29,30 @@ export default function Contact() {
 
         <div className="flex flex-col gap-4 sm:flex-row sm:gap-8 md:gap-16">
           <p>
-            Dr. Freddy Stober Weg 8<br />
-            79868 Feldberg (Schwarzwald)
+            {result.street}
             <br />
-            Deutschland
+            {result.zip} {result.city}
+            <br />
+            {result.country}
           </p>
 
           <ul>
             <li>
               <a
-                href="tel:+491739940283"
+                href={`tel:${result.phone}`}
                 className="inline-flex items-center gap-4"
               >
                 <Icon name="phone" className="size-4 shrink-0" />
-                +49 (0)173 9940 283
+                {result.phone}
               </a>
             </li>
             <li>
               <a
-                href="mailto:info@zaehringer-huette.de"
+                href={`mailto:${result.email}`}
                 className="inline-flex items-center gap-4"
               >
                 <Icon name="envelope" className="size-4 shrink-0" />
-                info@zaehringer-huette.de
+                {result.email}
               </a>
             </li>
           </ul>
@@ -50,12 +61,9 @@ export default function Contact() {
         <hr className="my-8 border-stone-300" />
 
         <h3 className="mb-2 scroll-m-24 font-serif text-2xl md:text-3xl lg:text-4xl">
-          Haben Sie Fragen?
+          {title}
         </h3>
-        <p className="mb-8">
-          Gerne beantworten wir Ihre Fragen und geben Auskunft über die Hütte,
-          Umgebung und weiteres. Füllen Sie einfach das Formular aus.
-        </p>
+        <p className="mb-8">{description}</p>
 
         <ContactForm />
       </div>

@@ -1,180 +1,45 @@
 import Icon from "@/components/icon";
+import type { AmenitiesBlock } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Amenities() {
+type Props = AmenitiesBlock;
+
+export default function Amenities({ title, groups }: Props) {
   return (
     <section className="mx-auto max-w-7xl">
       <div className="mx-4 rounded-2xl border border-stone-300 bg-white px-4 py-16 md:px-16 md:py-32">
         <h2 className="mb-16 text-center font-serif text-3xl md:text-4xl lg:text-5xl">
-          Ausstattung
+          {title}
         </h2>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <article>
-            <h3 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
-              Allgemeines
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/wifi.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                WLAN mit 50 mbit/s
-              </li>
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/kitchen.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                Moderne Küche mit Vollausstattung
-              </li>
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/people.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                Platz für bis zu 11 Personen
-              </li>
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/fireplace.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                1 Kachelofen im Wohnzimmer
-              </li>
-            </ul>
-          </article>
-          <article>
-            <h3 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
-              Übernachtung
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/bed.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                2 Doppelzimmer
-              </li>
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/double-bedroom.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                1 Zweibettzimmer
-              </li>
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/bunk-bed.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                1 Dreibettzimmer
-              </li>
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/couch.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                1 Zimmer mit Schlafcouch
-              </li>
-            </ul>
-          </article>
-          <article>
-            <h3 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
-              Sanitäre Anlagen
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/shower.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                1 behindertengerechte Dusche
-              </li>
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/sink.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                Separate Waschbecken pro Zimmer
-              </li>
-              <li className="flex items-center gap-4">
-                <Image
-                  src="/icons/toilet.svg"
-                  width={32}
-                  height={32}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="size-8"
-                  aria-hidden="true"
-                />
-                2 Toiletten
-              </li>
-            </ul>
-          </article>
+          {groups?.map((group) => (
+            <article key={group.id}>
+              <h3 className="mb-4 font-serif text-2xl md:mb-8 md:text-3xl lg:text-4xl">
+                {group.title}
+              </h3>
+              <ul className="space-y-4">
+                {group.items.map((item) => (
+                  <li className="flex items-center gap-4" key={item.id}>
+                    {typeof item.icon !== "string" ? (
+                      <Image
+                        src={item.icon.url as string}
+                        width={32}
+                        height={32}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        className="size-8"
+                        aria-hidden="true"
+                      />
+                    ) : null}
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
 
         <Link

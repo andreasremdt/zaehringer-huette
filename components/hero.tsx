@@ -1,16 +1,17 @@
 import Icon from "@/components/icon";
+import type { HeroBlock } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Hero() {
+type Props = HeroBlock;
+
+export default function Hero({ title, pretitle, image }: Props) {
   return (
     <section className="bg-secondary-950 py-16 text-white lg:py-32">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-16 px-4 lg:flex-row">
         <div className="text-center lg:basis-2/5 lg:text-left">
-          <p className="mb-2">Buchen Sie Ihren Urlaub im Schwarzwald</p>
-          <h1 className="mb-8 font-serif text-5xl lg:text-7xl">
-            Urlaub in der Zähringer Hütte
-          </h1>
+          <p className="mb-2">{pretitle}</p>
+          <h1 className="mb-8 font-serif text-5xl lg:text-7xl">{title}</h1>
 
           <Link
             href="/buchen"
@@ -20,18 +21,19 @@ export default function Hero() {
           </Link>
         </div>
 
-        <Image
-          src="/images/hütte-im-sommer-front.jpg"
-          blurDataURL="/images/hütte-im-sommer-front-blur.jpg"
-          width={1248}
-          height={702}
-          alt="Frontansicht der Holzhütte im Sommer zwischen Bäumen und Büschen"
-          loading="eager"
-          fetchPriority="high"
-          quality={75}
-          decoding="async"
-          className="w-full rounded-2xl object-cover object-top lg:basis-3/5"
-        />
+        {typeof image !== "string" ? (
+          <Image
+            src={image.url as string}
+            width={1248}
+            height={702}
+            alt={image.alt}
+            loading="eager"
+            fetchPriority="high"
+            quality={75}
+            decoding="async"
+            className="w-full rounded-2xl object-cover object-top lg:basis-3/5"
+          />
+        ) : null}
       </div>
     </section>
   );
