@@ -35,7 +35,6 @@ export default function BookingForm() {
     console.log(data);
   }
 
-  console.log(errors);
   return (
     <form
       className="mx-auto max-w-7xl items-start gap-16 px-4 pb-16 md:pb-24 lg:flex"
