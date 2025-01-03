@@ -1,0 +1,20 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: zaehringer_huette_db
+    ports:
+      - '27017:27017'
+    command:
+      - --storageEngine=wiredTiger
+    volumes:
+      - data:/data/db
+    logging:
+      driver: none
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_DATABASE: zaehringer-huette
+      MONGO_INITDB_ROOT_PASSWORD: password
+    restart: unless-stopped
+
+volumes:
+  data:
