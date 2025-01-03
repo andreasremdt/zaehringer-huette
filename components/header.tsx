@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
-import Logo from "@/components/logo";
 import Icon from "@/components/icon";
-import { cn } from "@/lib/utils";
+import Logo from "@/components/logo";
 import usePageMenu from "@/hooks/use-page-menu";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Header() {
   const { open, toggle, scrolled, ref } = usePageMenu();

@@ -1,5 +1,5 @@
-import Icon from "@/components/icon";
 import ContactForm from "@/components/contact-form";
+import Icon from "@/components/icon";
 
 export default function Contact() {
   return (
@@ -8,6 +8,7 @@ export default function Contact() {
         className="order-2 aspect-[4/3] w-full lg:order-1 lg:col-span-2 lg:aspect-auto lg:h-full lg:pr-8"
         width="425"
         height="350"
+        title="Karte der Zähringer Hütte"
         src="https://www.openstreetmap.org/export/embed.html?bbox=8.026188611984255%2C47.84774478678298%2C8.033269643783571%2C47.85478965945601&layer=mapnik&marker=47.85126914266297%2C8.029729127883911"
       />
 

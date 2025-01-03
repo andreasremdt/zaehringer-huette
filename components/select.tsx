@@ -1,6 +1,6 @@
-import { type ComponentPropsWithoutRef, type Ref, forwardRef } from "react";
-import { cn } from "@/lib/utils";
 import Icon from "@/components/icon";
+import { cn } from "@/lib/utils";
+import { type ComponentPropsWithoutRef, type Ref, forwardRef } from "react";
 
 type Props = ComponentPropsWithoutRef<"select"> & {
   label: string;
@@ -34,7 +34,7 @@ export default forwardRef(function Select(
         className={cn(
           "pointer-events-none absolute left-2 top-6 -translate-y-10 bg-white px-2 transition-transform duration-300 ease-in-out peer-focus:-translate-y-10 md:top-6",
           {
-            "-translate-y-1/2": !Boolean(value),
+            "-translate-y-1/2": !value,
           },
         )}
       >

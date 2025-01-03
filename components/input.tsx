@@ -1,5 +1,5 @@
-import { type ComponentPropsWithoutRef, type Ref, forwardRef } from "react";
 import { cn } from "@/lib/utils";
+import { type ComponentPropsWithoutRef, type Ref, forwardRef } from "react";
 
 type Props = ComponentPropsWithoutRef<"input"> & {
   label: string;

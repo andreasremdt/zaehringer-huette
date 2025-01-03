@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Icon from "@/components/icon";
+import Link from "next/link";
 
 export default function BookNow() {
   return (

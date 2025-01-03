@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useEffect, type ComponentPropsWithoutRef } from "react";
 import { Fancybox } from "@fancyapps/ui";
 import type { OptionsType } from "@fancyapps/ui/types/Fancybox/options";
+import { type ComponentPropsWithoutRef, useEffect, useRef } from "react";
 
 type Props = ComponentPropsWithoutRef<"div"> & {
   options?: Partial<OptionsType>;

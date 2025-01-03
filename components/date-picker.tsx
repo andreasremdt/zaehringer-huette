@@ -1,10 +1,10 @@
 "use client";
 
-import { type DateRange, DayPicker } from "react-day-picker";
-import { de } from "date-fns/locale";
-import { add } from "date-fns";
 import Icon from "@/components/icon";
 import useMediaQuery from "@/hooks/use-media-query";
+import { add } from "date-fns";
+import { de } from "date-fns/locale";
+import { type DateRange, DayPicker } from "react-day-picker";
 
 type Props = {
   selected?: DateRange;

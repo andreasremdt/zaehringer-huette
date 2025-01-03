@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Carousel from "@/components/carousel";
-import Lightbox from "@/components/lightbox";
 import Icon from "@/components/icon";
+import Lightbox from "@/components/lightbox";
+import Image from "next/image";
 
 const images = [
   {

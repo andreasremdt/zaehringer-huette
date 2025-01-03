@@ -1,13 +1,13 @@
 "use client";
 
-import type { DateRange } from "react-day-picker";
-import { useForm } from "react-hook-form";
+import BookingSummary from "@/components/booking-summary";
+import DatePicker from "@/components/date-picker";
 import Icon from "@/components/icon";
 import Input from "@/components/input";
 import Select from "@/components/select";
 import Textarea from "@/components/textarea";
-import DatePicker from "@/components/date-picker";
-import BookingSummary from "@/components/booking-summary";
+import type { DateRange } from "react-day-picker";
+import { useForm } from "react-hook-form";
 
 type Inputs = {
   name: string;
@@ -184,7 +184,7 @@ export default function BookingForm() {
                 })}
                 error={errors.adults?.message}
               >
-                <option value="0"></option>
+                <option value="0" />
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -227,7 +227,7 @@ export default function BookingForm() {
                   },
                 })}
               >
-                <option value="0"></option>
+                <option value="0" />
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

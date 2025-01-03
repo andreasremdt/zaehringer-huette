@@ -1,9 +1,9 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import Icon from "@/components/icon";
 import Input from "@/components/input";
 import Textarea from "@/components/textarea";
-import Icon from "@/components/icon";
+import { useForm } from "react-hook-form";
 
 type Inputs = {
   name: string;
