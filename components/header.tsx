@@ -1,7 +1,7 @@
 import HeaderClient from "@/components/header.client";
 import Icon from "@/components/icon";
 import Logo from "@/components/logo";
-import { getGlobalConfig } from "@/lib/fetcher";
+import { getGlobalConfig } from "@/payload/fetcher";
 
 export default async function Header() {
   const result = await getGlobalConfig();

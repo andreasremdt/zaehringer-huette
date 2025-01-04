@@ -1,6 +1,6 @@
 import Icon from "@/components/icon";
 import Logo from "@/components/logo";
-import { getGlobalConfig } from "@/lib/fetcher";
+import { getGlobalConfig } from "@/payload/fetcher";
 import Link from "next/link";
 
 export default async function Footer() {

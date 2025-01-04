@@ -1,7 +1,7 @@
 import ContactForm from "@/components/contact-form";
 import Icon from "@/components/icon";
-import { getGlobalConfig } from "@/lib/fetcher";
 import type { ContactFormBlock } from "@/payload-types";
+import { getGlobalConfig } from "@/payload/fetcher";
 
 type Props = ContactFormBlock;
 

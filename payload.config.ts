@@ -6,12 +6,12 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
-import bookings from "@/collections/bookings";
-import icons from "@/collections/icons";
-import media from "@/collections/media";
-import pages from "@/collections/pages";
-import users from "@/collections/users";
-import contactInfo from "@/globals/contact-info";
+import bookings from "@/payload/collections/bookings";
+import icons from "@/payload/collections/icons";
+import media from "@/payload/collections/media";
+import pages from "@/payload/collections/pages";
+import users from "@/payload/collections/users";
+import contactInfo from "@/payload/globals/contact-info";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);

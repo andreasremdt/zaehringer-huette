@@ -1,14 +1,14 @@
-import about from "@/blocks/about";
-import amenities from "@/blocks/amenities";
-import bookNow from "@/blocks/book-now";
-import calendar from "@/blocks/calendar";
-import contactForm from "@/blocks/contact-form";
-import environment from "@/blocks/environment";
-import gallery from "@/blocks/gallery";
-import hero from "@/blocks/hero";
-import imageHero from "@/blocks/image-hero";
-import richText from "@/blocks/rich-text";
-import testimonial from "@/blocks/testimonial";
+import about from "@/payload/blocks/about";
+import amenities from "@/payload/blocks/amenities";
+import bookNow from "@/payload/blocks/book-now";
+import calendar from "@/payload/blocks/calendar";
+import contactForm from "@/payload/blocks/contact-form";
+import environment from "@/payload/blocks/environment";
+import gallery from "@/payload/blocks/gallery";
+import hero from "@/payload/blocks/hero";
+import imageHero from "@/payload/blocks/image-hero";
+import richText from "@/payload/blocks/rich-text";
+import testimonial from "@/payload/blocks/testimonial";
 import type { CollectionConfig } from "payload";
 
 const pages: CollectionConfig = {
