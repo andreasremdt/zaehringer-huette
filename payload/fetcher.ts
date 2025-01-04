@@ -27,6 +27,16 @@ export const getAllPages = cache(async function getAllPages() {
   return result.docs;
 });
 
+export const getAllBookings = cache(async function getAllBookings() {
+  const payload = await getPayload({ config });
+  const result = await payload.find({
+    collection: "bookings",
+    pagination: false,
+  });
+
+  return result.docs;
+});
+
 export const getGlobalConfig = cache(async function getGlobalConfig() {
   const payload = await getPayload({ config });
   const result = await payload.findGlobal({

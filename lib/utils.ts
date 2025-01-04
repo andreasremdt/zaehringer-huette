@@ -1,10 +1,41 @@
+import type { Booking } from "@/payload-types";
 import clsx, { type ClassValue } from "clsx";
-import { differenceInDays, format, getMonth } from "date-fns";
+import { addDays, differenceInDays, format, getMonth } from "date-fns";
 import type { DateRange } from "react-day-picker";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...classes: ClassValue[]) {
   return twMerge(clsx(...classes));
+}
+
+export function getSlugFromParams(parts?: string[]) {
+  if (!parts) {
+    return "/";
+  }
+
+  const slug = decodeURIComponent(parts[0]);
+
+  if (slug.startsWith("/")) {
+    return slug;
+  }
+
+  return `/${slug}`;
+}
+
+export function getBookedDays(bookings: Booking[]) {
+  const bookedDays: Date[] = [];
+
+  for (const booking of bookings) {
+    const from = new Date(booking.from);
+    const to = new Date(booking.to);
+    const length = getNumberOfDays({ from, to }) + 1;
+
+    for (let i = 0; i < length; i++) {
+      bookedDays.push(addDays(from, i));
+    }
+  }
+
+  return bookedDays;
 }
 
 export function getNumberOfDays({ from, to }: DateRange) {

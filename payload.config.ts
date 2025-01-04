@@ -12,6 +12,7 @@ import media from "@/payload/collections/media";
 import pages from "@/payload/collections/pages";
 import users from "@/payload/collections/users";
 import contactInfo from "@/payload/globals/contact-info";
+import costs from "@/payload/globals/costs";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -29,7 +30,7 @@ export default buildConfig({
     },
   },
   collections: [users, media, icons, pages, bookings],
-  globals: [contactInfo],
+  globals: [contactInfo, costs],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

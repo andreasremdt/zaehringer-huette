@@ -36,9 +36,11 @@ export interface Config {
   };
   globals: {
     'contact-info': ContactInfo;
+    costs: Cost;
   };
   globalsSelect: {
     'contact-info': ContactInfoSelect<false> | ContactInfoSelect<true>;
+    costs: CostsSelect<false> | CostsSelect<true>;
   };
   locale: null;
   user: User & {
@@ -737,6 +739,23 @@ export interface ContactInfo {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "costs".
+ */
+export interface Cost {
+  id: string;
+  pricePerNight: number;
+  pricePerExtraPerson: number;
+  taxAdults: number;
+  taxKids: number;
+  woodCostsWinter: number;
+  woodCostsSummer: number;
+  cleaningFee: number;
+  discount: number;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "contact-info_select".
  */
 export interface ContactInfoSelect<T extends boolean = true> {
@@ -748,6 +767,23 @@ export interface ContactInfoSelect<T extends boolean = true> {
   country?: T;
   phone?: T;
   email?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "costs_select".
+ */
+export interface CostsSelect<T extends boolean = true> {
+  pricePerNight?: T;
+  pricePerExtraPerson?: T;
+  taxAdults?: T;
+  taxKids?: T;
+  woodCostsWinter?: T;
+  woodCostsSummer?: T;
+  cleaningFee?: T;
+  discount?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

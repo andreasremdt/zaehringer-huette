@@ -26,6 +26,7 @@ export default function DatePicker({
       selected={selected}
       onSelect={onSelect}
       numberOfMonths={isMobile ? 1 : 2}
+      excludeDisabled
       min={3}
       disabled={[{ before: add(new Date(), { days: 1 }) }, ...disabled]}
       components={{
