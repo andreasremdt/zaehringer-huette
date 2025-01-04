@@ -1,16 +1,12 @@
 import ContactForm from "@/components/contact-form";
 import Icon from "@/components/icon";
+import { getGlobalConfig } from "@/lib/fetcher";
 import type { ContactFormBlock } from "@/payload-types";
-import config from "@payload-config";
-import { getPayload } from "payload";
 
 type Props = ContactFormBlock;
 
 export default async function Contact({ title, description }: Props) {
-  const payload = await getPayload({ config });
-  const result = await payload.findGlobal({
-    slug: "contact-info",
-  });
+  const result = await getGlobalConfig();
 
   return (
     <section className="mt-16 grid grid-cols-1 bg-white lg:grid-cols-[auto,minmax(0%,640px),minmax(0%,640px),auto]">

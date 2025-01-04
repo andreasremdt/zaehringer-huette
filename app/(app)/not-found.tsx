@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function NotFound() {
+export default function Page() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 text-center md:pb-48 md:pt-32">
       <p className="mb-8 font-serif text-4xl sm:text-5xl md:text-7xl lg:text-9xl">

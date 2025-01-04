@@ -1,14 +1,10 @@
 import HeaderClient from "@/components/header.client";
 import Icon from "@/components/icon";
 import Logo from "@/components/logo";
-import config from "@payload-config";
-import { getPayload } from "payload";
+import { getGlobalConfig } from "@/lib/fetcher";
 
 export default async function Header() {
-  const payload = await getPayload({ config });
-  const result = await payload.findGlobal({
-    slug: "contact-info",
-  });
+  const result = await getGlobalConfig();
 
   return (
     <>

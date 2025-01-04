@@ -1,5 +1,6 @@
 "use client";
 
+import createBooking, { type BookingData } from "@/actions/create-booking";
 import BookingSummary from "@/components/booking-summary";
 import DatePicker from "@/components/date-picker";
 import Icon from "@/components/icon";
@@ -8,20 +9,9 @@ import Select from "@/components/select";
 import Textarea from "@/components/textarea";
 import type { CalendarBlock } from "@/payload-types";
 import { RichText } from "@payloadcms/richtext-lexical/react";
-import type { DateRange } from "react-day-picker";
 import { useForm } from "react-hook-form";
 
 type Props = CalendarBlock;
-
-type Inputs = {
-  name: string;
-  email: string;
-  phone?: string;
-  comments?: string;
-  adults: number;
-  kids: number;
-  range?: DateRange;
-};
 
 export default function BookingForm({ content }: Props) {
   const {
@@ -33,10 +23,10 @@ export default function BookingForm({ content }: Props) {
     clearErrors,
     setError,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<BookingData>();
 
-  function onSubmit(data: Inputs) {
-    console.log(data);
+  async function onSubmit(data: BookingData) {
+    await createBooking(data);
   }
 
   return (

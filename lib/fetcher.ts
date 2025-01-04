@@ -1,7 +1,8 @@
 import config from "@payload-config";
 import { getPayload } from "payload";
+import { cache } from "react";
 
-export async function getPageBySlug(slug: string) {
+export const getPageBySlug = cache(async function getPageBySlug(slug: string) {
   const payload = await getPayload({ config });
   const result = await payload.find({
     collection: "pages",
@@ -14,4 +15,13 @@ export async function getPageBySlug(slug: string) {
   });
 
   return result.docs[0];
-}
+});
+
+export const getGlobalConfig = cache(async function getGlobalConfig() {
+  const payload = await getPayload({ config });
+  const result = await payload.findGlobal({
+    slug: "contact-info",
+  });
+
+  return result;
+});

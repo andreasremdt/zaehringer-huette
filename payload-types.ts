@@ -15,6 +15,7 @@ export interface Config {
     media: Media;
     icons: Icon;
     pages: Page;
+    bookings: Booking;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -25,6 +26,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     icons: IconsSelect<false> | IconsSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
+    bookings: BookingsSelect<false> | BookingsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -355,6 +357,24 @@ export interface ImageHeroBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bookings".
+ */
+export interface Booking {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string | null;
+  adults: number;
+  kids?: number | null;
+  message?: string | null;
+  from: string;
+  to: string;
+  confirmed?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -375,6 +395,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'pages';
         value: string | Page;
+      } | null)
+    | ({
+        relationTo: 'bookings';
+        value: string | Booking;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -638,6 +662,23 @@ export interface ImageHeroBlockSelect<T extends boolean = true> {
   images?: T;
   id?: T;
   blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bookings_select".
+ */
+export interface BookingsSelect<T extends boolean = true> {
+  name?: T;
+  email?: T;
+  phone?: T;
+  adults?: T;
+  kids?: T;
+  message?: T;
+  from?: T;
+  to?: T;
+  confirmed?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

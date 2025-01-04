@@ -1,14 +1,10 @@
 import Icon from "@/components/icon";
 import Logo from "@/components/logo";
-import config from "@payload-config";
+import { getGlobalConfig } from "@/lib/fetcher";
 import Link from "next/link";
-import { getPayload } from "payload";
 
 export default async function Footer() {
-  const payload = await getPayload({ config });
-  const result = await payload.findGlobal({
-    slug: "contact-info",
-  });
+  const result = await getGlobalConfig();
 
   return (
     <footer className="bg-secondary-950 text-white">

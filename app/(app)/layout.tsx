@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import "@/styles/globals.css";
+import LivePreview from "@/components/live-preview";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({
         <main id="content">{children}</main>
 
         <Footer />
+        <LivePreview />
       </body>
     </html>
   );
