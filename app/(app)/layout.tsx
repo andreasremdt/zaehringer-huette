@@ -21,8 +21,10 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Zähringer Hütte",
-  description: "",
+  title: {
+    template: "%s | Zähinger Hütte",
+    default: "Zähinger Hütte",
+  },
 };
 
 export default function RootLayout({

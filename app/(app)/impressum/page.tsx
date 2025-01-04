@@ -1,5 +1,6 @@
 import BlockRenderer from "@/components/block-renderer";
-import { getPageBySlug } from "@/payload/fetcher";
+import { getGlobalConfig, getPageBySlug } from "@/payload/fetcher";
+import type { Metadata } from "next";
 
 export default async function Page() {
   const page = await getPageBySlug("/impressum");
@@ -13,4 +14,31 @@ export default async function Page() {
       <BlockRenderer blocks={page.layout} />
     </div>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPageBySlug("/impressum");
+  const config = await getGlobalConfig();
+
+  if (!page.meta) {
+    return {};
+  }
+
+  return {
+    title: page.meta.title,
+    description: page.meta.description,
+    authors: [{ name: "Andreas Remdt", url: "https://andreasremdt.com" }],
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL),
+    openGraph: {
+      title: page.meta.title as string,
+      description: page.meta.description as string,
+      url: process.env.NEXT_PUBLIC_SERVER_URL,
+      siteName: config.title,
+      images:
+        typeof page.meta.image !== "string"
+          ? (page.meta.image?.url as string)
+          : undefined,
+      locale: "de-DE",
+    },
+  };
 }
