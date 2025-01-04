@@ -38,6 +38,14 @@ export default buildConfig({
   },
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || "",
+    connectOptions: {
+      dbName: process.env.DATABASE_NAME || "",
+      appName: process.env.DATABASE_APP_NAME || "",
+      retryWrites: true,
+      writeConcern: {
+        w: "majority",
+      },
+    },
   }),
   sharp,
   graphQL: {
