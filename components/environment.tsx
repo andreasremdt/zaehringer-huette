@@ -1,5 +1,5 @@
+import Image from "@/components/image";
 import type { EnvironmentBlock } from "@/payload-types";
-import Image from "next/image";
 
 type Props = EnvironmentBlock;
 
@@ -18,7 +18,7 @@ export default function Environment({ title, items }: Props) {
           <article key={item.id}>
             {typeof item.image !== "string" ? (
               <Image
-                src={item.image.url as string}
+                src={item.image.url}
                 width={544}
                 height={408}
                 alt={item.image.alt}

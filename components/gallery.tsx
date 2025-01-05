@@ -1,8 +1,8 @@
 import Carousel from "@/components/carousel";
 import Icon from "@/components/icon";
+import Image from "@/components/image";
 import Lightbox from "@/components/lightbox";
 import type { GalleryBlock } from "@/payload-types";
-import Image from "next/image";
 import { Fragment } from "react";
 
 type Props = GalleryBlock;
@@ -46,7 +46,7 @@ export default function Gallery({ description, title, images }: Props) {
                     aria-label={`Zeige Bild ${index + 1} in Großansicht`}
                   >
                     <Image
-                      src={image.url as string}
+                      src={image.url}
                       alt={image.alt}
                       width={480}
                       height={360}

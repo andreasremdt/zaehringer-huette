@@ -17,7 +17,9 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
 
     // If the page was previously published, we need to revalidate the old path
     if (previousDoc?._status === "published" && doc._status !== "published") {
-      revalidatePath(previousDoc.slug === "home" ? "/" : `/${previousDoc.slug}`);
+      revalidatePath(
+        previousDoc.slug === "home" ? "/" : `/${previousDoc.slug}`,
+      );
     }
   }
 

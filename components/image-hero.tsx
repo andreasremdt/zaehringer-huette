@@ -1,6 +1,6 @@
+import Image from "@/components/image";
 import { cn } from "@/lib/utils";
 import type { ImageHeroBlock } from "@/payload-types";
-import Image from "next/image";
 import { Fragment } from "react";
 
 type Props = ImageHeroBlock;
@@ -18,7 +18,7 @@ export default function ImageHero({ title, description, images }: Props) {
           <Fragment key={typeof image === "string" ? index : image.id}>
             {typeof image !== "string" ? (
               <Image
-                src={image.url as string}
+                src={image.url}
                 alt={image.alt}
                 width={480}
                 height={360}

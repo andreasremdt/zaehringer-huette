@@ -1,6 +1,6 @@
 import Icon from "@/components/icon";
+import Image from "@/components/image";
 import type { AmenitiesBlock } from "@/payload-types";
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = AmenitiesBlock;
@@ -24,7 +24,7 @@ export default function Amenities({ title, groups }: Props) {
                   <li className="flex items-center gap-4" key={item.id}>
                     {typeof item.icon !== "string" ? (
                       <Image
-                        src={item.icon.url as string}
+                        src={item.icon.url}
                         width={32}
                         height={32}
                         alt=""

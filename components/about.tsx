@@ -1,6 +1,6 @@
+import Image from "@/components/image";
 import { cn } from "@/lib/utils";
 import type { AboutBlock } from "@/payload-types";
-import Image from "next/image";
 import { Fragment } from "react";
 
 type Props = AboutBlock;
@@ -27,7 +27,7 @@ export default function About({ text, title, images }: Props) {
                 })}
               >
                 <Image
-                  src={image.url as string}
+                  src={image.url}
                   width={500}
                   height={600}
                   alt={image.alt}

@@ -1,6 +1,6 @@
 import Icon from "@/components/icon";
+import Image from "@/components/image";
 import type { HeroBlock } from "@/payload-types";
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = HeroBlock;
@@ -23,7 +23,7 @@ export default function Hero({ title, pretitle, image }: Props) {
 
         {typeof image !== "string" ? (
           <Image
-            src={image.url as string}
+            src={image.url}
             width={1248}
             height={702}
             alt={image.alt}
