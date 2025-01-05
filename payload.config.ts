@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { seoPlugin } from "@payloadcms/plugin-seo";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
@@ -47,6 +48,14 @@ export default buildConfig({
     disable: true,
   },
   plugins: [
+    vercelBlobStorage({
+      enabled: true,
+      collections: {
+        icons: true,
+        media: true,
+      },
+      token: process.env.BLOB_READ_WRITE_TOKEN,
+    }),
     seoPlugin({
       collections: ["pages"],
       uploadsCollection: "media",

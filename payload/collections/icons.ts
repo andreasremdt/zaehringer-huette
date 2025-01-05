@@ -15,9 +15,7 @@ const icons: CollectionConfig = {
     read: () => true,
   },
   fields: [],
-  upload: {
-    staticDir: path.resolve(dirname, "../../public/icons"),
-  },
+  upload: true,
 };
 
 export default icons;

@@ -35,9 +35,7 @@ const media: CollectionConfig = {
       },
     },
   ],
-  upload: {
-    staticDir: path.resolve(dirname, "../../public/images"),
-  },
+  upload: true,
 };
 
 export default media;
