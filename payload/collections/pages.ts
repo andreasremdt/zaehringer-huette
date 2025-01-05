@@ -1,4 +1,5 @@
 import generatePreviewPath from "@/lib/generate-preview-path";
+import { revalidateDelete, revalidatePage } from "@/lib/revalidate-page";
 import about from "@/payload/blocks/about";
 import amenities from "@/payload/blocks/amenities";
 import bookNow from "@/payload/blocks/book-now";
@@ -32,6 +33,17 @@ const pages: CollectionConfig = {
         slug: typeof data?.slug === "string" ? data.slug : "",
         req,
       }),
+  },
+  hooks: {
+    afterChange: [revalidatePage],
+    afterDelete: [revalidateDelete],
+  },
+  versions: {
+    drafts: {
+      autosave: {
+        interval: 100,
+      },
+    },
   },
   fields: [
     {

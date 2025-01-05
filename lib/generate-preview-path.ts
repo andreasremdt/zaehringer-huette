@@ -11,5 +11,5 @@ export default function generatePreviewPath({ slug, req }: Props) {
     Boolean(process.env.VERCEL_PROJECT_PRODUCTION_URL);
   const protocol = isProduction ? "https:" : req.protocol;
 
-  return `${protocol}//${req.host}${slug}`;
+  return `${protocol}//${req.host}/${slug}`;
 }

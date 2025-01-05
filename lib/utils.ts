@@ -8,20 +8,6 @@ export function cn(...classes: ClassValue[]) {
   return twMerge(clsx(...classes));
 }
 
-export function getSlugFromParams(parts?: string[]) {
-  if (!parts) {
-    return "/";
-  }
-
-  const slug = decodeURIComponent(parts[0]);
-
-  if (slug.startsWith("/")) {
-    return slug;
-  }
-
-  return `/${slug}`;
-}
-
 export function getBookedDays(bookings: Booking[]) {
   const bookedDays: Date[] = [];
 

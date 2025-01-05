@@ -37,6 +37,5 @@ export default async function createBooking(data: BookingData) {
     },
   });
 
-  console.log(data);
   return result;
 }

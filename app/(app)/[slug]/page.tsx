@@ -1,18 +1,19 @@
 import BlockRenderer from "@/components/block-renderer";
 import LivePreview from "@/components/live-preview";
-import { getSlugFromParams } from "@/lib/utils";
 import { getAllPages, getGlobalConfig, getPageBySlug } from "@/payload/fetcher";
 import type { Metadata } from "next";
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{
-    slug: string[];
+    slug: string;
   }>;
 };
 
 export default async function Page({ params }: Props) {
-  const slug = getSlugFromParams((await params).slug);
+  const { isEnabled } = await draftMode();
+  const slug = (await params).slug || "home";
   const page = await getPageBySlug(slug);
 
   if (!page) {
@@ -26,15 +27,15 @@ export default async function Page({ params }: Props) {
     return (
       <div className="mx-auto max-w-7xl px-4 py-16 md:py-24">
         <BlockRenderer blocks={page.layout} />
-        <LivePreview />
+        {isEnabled ? <LivePreview /> : null}
       </div>
     );
   }
 
   return (
     <>
-      <LivePreview />
       <BlockRenderer blocks={page.layout} />
+      {isEnabled ? <LivePreview /> : null}
     </>
   );
 }
@@ -42,13 +43,15 @@ export default async function Page({ params }: Props) {
 export async function generateStaticParams() {
   const pages = await getAllPages();
 
-  return pages.map((page) => ({
-    slug: [page.slug],
-  }));
+  return pages
+    .filter((page) => page.slug !== "home")
+    .map((page) => ({
+      slug: page.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const slug = getSlugFromParams((await params).slug);
+  const slug = (await params).slug;
   const page = await getPageBySlug(slug);
   const config = await getGlobalConfig();
 

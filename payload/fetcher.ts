@@ -1,19 +1,21 @@
 import config from "@payload-config";
+import { draftMode } from "next/headers";
 import { getPayload } from "payload";
 import { cache } from "react";
 
 export const getPageBySlug = cache(async function getPageBySlug(slug: string) {
+  const { isEnabled } = await draftMode();
   const payload = await getPayload({ config });
   const result = await payload.find({
     collection: "pages",
-    draft: true,
+    draft: isEnabled,
     pagination: false,
+    limit: 1,
     where: {
       slug: {
         equals: slug,
       },
     },
-    limit: 1,
   });
 
   return result.docs[0];
@@ -24,6 +26,8 @@ export const getAllPages = cache(async function getAllPages() {
   const result = await payload.find({
     collection: "pages",
     pagination: false,
+    draft: false,
+    limit: 1000,
   });
 
   return result.docs;
