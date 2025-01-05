@@ -1,4 +1,5 @@
 import BlockRenderer from "@/components/block-renderer";
+import LivePreview from "@/components/live-preview";
 import { getSlugFromParams } from "@/lib/utils";
 import { getAllPages, getGlobalConfig, getPageBySlug } from "@/payload/fetcher";
 import type { Metadata } from "next";
@@ -25,11 +26,17 @@ export default async function Page({ params }: Props) {
     return (
       <div className="mx-auto max-w-7xl px-4 py-16 md:py-24">
         <BlockRenderer blocks={page.layout} />
+        <LivePreview />
       </div>
     );
   }
 
-  return <BlockRenderer blocks={page.layout} />;
+  return (
+    <>
+      <LivePreview />
+      <BlockRenderer blocks={page.layout} />
+    </>
+  );
 }
 
 export async function generateStaticParams() {

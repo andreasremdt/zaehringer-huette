@@ -53,7 +53,6 @@ export default function RootLayout({
         <main id="content">{children}</main>
 
         <Footer />
-        <LivePreview />
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import { getClientSideURL } from "@/lib/get-url";
 import { RefreshRouteOnSave } from "@payloadcms/live-preview-react";
 import { useRouter } from "next/navigation";
 
@@ -8,8 +9,8 @@ export default function LivePreview() {
 
   return (
     <RefreshRouteOnSave
-      refresh={() => router.refresh()}
-      serverURL={process.env.NEXT_PUBLIC_SERVER_URL as string}
+      refresh={router.refresh}
+      serverURL={getClientSideURL()}
     />
   );
 }

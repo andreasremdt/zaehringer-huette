@@ -1,3 +1,4 @@
+import generatePreviewPath from "@/lib/generate-preview-path";
 import about from "@/payload/blocks/about";
 import amenities from "@/payload/blocks/amenities";
 import bookNow from "@/payload/blocks/book-now";
@@ -19,6 +20,18 @@ const pages: CollectionConfig = {
   },
   admin: {
     useAsTitle: "title",
+    livePreview: {
+      url: ({ data, req }) =>
+        generatePreviewPath({
+          slug: typeof data?.slug === "string" ? data.slug : "",
+          req,
+        }),
+    },
+    preview: (data, { req }) =>
+      generatePreviewPath({
+        slug: typeof data?.slug === "string" ? data.slug : "",
+        req,
+      }),
   },
   fields: [
     {

@@ -6,6 +6,8 @@ export const getPageBySlug = cache(async function getPageBySlug(slug: string) {
   const payload = await getPayload({ config });
   const result = await payload.find({
     collection: "pages",
+    draft: true,
+    pagination: false,
     where: {
       slug: {
         equals: slug,

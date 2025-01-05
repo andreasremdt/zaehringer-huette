@@ -23,11 +23,6 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
-    livePreview: {
-      url: process.env.NEXT_PUBLIC_SERVER_URL || "",
-      collections: ["pages"],
-      globals: ["contact-info"],
-    },
   },
   collections: [users, media, icons, pages, bookings],
   globals: [contactInfo, costs],
