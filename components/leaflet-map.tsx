@@ -30,7 +30,7 @@ export default function LeafletMap(props: Props) {
       });
 
       leaflet
-        .tileLayer("https:{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        .tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           maxZoom: 19,
         })
         .addTo(map);
