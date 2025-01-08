@@ -41,6 +41,15 @@ const config: Config = {
           "950": "#122222",
         },
       },
+      animation: {
+        "fade-in": "fade-in 0.25s ease-out forwards",
+      },
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: "0", scale: "0.9" },
+          "100%": { opacity: "100", scale: "1" },
+        },
+      },
     },
   },
   plugins: [typography],
