@@ -1,5 +1,6 @@
 import ContactForm from "@/components/contact-form";
 import Icon from "@/components/icon";
+import LeafletMap from "@/components/leaflet-map";
 import type { ContactFormBlock } from "@/payload-types";
 import { getGlobalConfig } from "@/payload/fetcher";
 
@@ -10,13 +11,12 @@ export default async function Contact({ title, description }: Props) {
 
   return (
     <section className="mt-16 grid grid-cols-1 bg-white lg:grid-cols-[auto,minmax(0%,640px),minmax(0%,640px),auto]">
-      <iframe
+      <div
+        role="presentation"
         className="order-2 aspect-[4/3] w-full lg:order-1 lg:col-span-2 lg:aspect-auto lg:h-full lg:pr-8"
-        width="425"
-        height="350"
-        title="Karte der Zähringer Hütte"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=8.026188611984255%2C47.84774478678298%2C8.033269643783571%2C47.85478965945601&layer=mapnik&marker=47.85126914266297%2C8.029729127883911"
-      />
+      >
+        <LeafletMap className="h-full" />
+      </div>
 
       <div className="order-1 py-16 pl-4 pr-4 lg:pl-8">
         <h2 className="mb-4 scroll-m-24 font-serif text-3xl md:text-4xl lg:text-5xl">
