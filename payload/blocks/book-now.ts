@@ -20,6 +20,14 @@ const bookNow: Block = {
       label: "Inhalt",
       required: true,
     },
+    {
+      name: "image",
+      type: "upload",
+      relationTo: "media",
+      required: true,
+      label: "Hintergrundbild",
+      hasMany: false,
+    },
   ],
 };
 

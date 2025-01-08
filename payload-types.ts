@@ -213,6 +213,7 @@ export interface AmenitiesBlock {
 export interface BookNowBlock {
   title: string;
   text: string;
+  image: string | Media;
   id?: string | null;
   blockName?: string | null;
   blockType: 'book-now';
@@ -588,6 +589,7 @@ export interface AmenitiesBlockSelect<T extends boolean = true> {
 export interface BookNowBlockSelect<T extends boolean = true> {
   title?: T;
   text?: T;
+  image?: T;
   id?: T;
   blockName?: T;
 }
