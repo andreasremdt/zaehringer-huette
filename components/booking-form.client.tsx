@@ -10,13 +10,19 @@ import Textarea from "@/components/textarea";
 import { getBookedDays } from "@/lib/utils";
 import type { Booking, CalendarBlock } from "@/payload-types";
 import { RichText } from "@payloadcms/richtext-lexical/react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import BookingFormAlert from "./booking-form-alert";
 
 type Props = CalendarBlock & {
   bookings: Booking[];
 };
 
 export default function BookingFormClient({ content, bookings }: Props) {
+  const [state, setState] = useState<"idle" | "loading" | "success" | "error">(
+    "idle",
+  );
+
   const {
     register,
     handleSubmit,
@@ -28,8 +34,24 @@ export default function BookingFormClient({ content, bookings }: Props) {
     formState: { errors },
   } = useForm<BookingData>();
 
-  async function onSubmit(data: BookingData) {
-    await createBooking(data);
+  async function onSubmit(formData: BookingData) {
+    setState("loading");
+
+    const result = await createBooking(formData);
+
+    if (result.success) {
+      return setState("success");
+    }
+
+    if (result.errors) {
+      setState("idle");
+
+      for (const [field, [message]] of Object.entries(result.errors)) {
+        setError(field as keyof BookingData, { message });
+      }
+    } else {
+      setState("error");
+    }
   }
 
   return (
@@ -72,7 +94,9 @@ export default function BookingFormClient({ content, bookings }: Props) {
         ) : null}
       </div>
 
-      <div className="mt-8 md:mt-0 lg:basis-1/3">
+      <div className="relative mt-8 md:mt-0 lg:basis-1/3">
+        <BookingFormAlert state={state} />
+
         <fieldset className="relative rounded-xl border border-stone-300 bg-white p-4 md:p-8">
           <legend className="absolute font-serif text-2xl lg:text-3xl">
             Ihre Angaben
@@ -208,10 +232,13 @@ export default function BookingFormClient({ content, bookings }: Props) {
 
             <button
               type="submit"
-              className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-secondary-950 px-6 text-xs font-medium uppercase text-white transition-colors duration-300 ease-in-out hover:bg-primary-200 hover:text-secondary-950 md:gap-4 md:text-sm"
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-secondary-950 px-6 text-xs font-medium uppercase text-white transition-colors duration-300 ease-in-out hover:bg-primary-200 hover:text-secondary-950 md:gap-4 md:text-sm disabled:opacity-75 disabled:hover:bg-secondary-950 disabled:hover:text-white"
+              disabled={state === "loading"}
             >
-              <Icon name="send" className="size-5" />
-              Jetzt buchen
+              {state !== "loading" ? (
+                <Icon name="send" className="size-5" />
+              ) : null}
+              {state === "loading" ? "Bitte warten..." : "Jetzt reservieren"}
             </button>
           </div>
         </fieldset>

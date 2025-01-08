@@ -17,7 +17,6 @@ type SendMessageState = {
     name?: string[];
     email?: string[];
     message?: string[];
-    root?: string[];
   };
   values?: FormInputData;
 };
@@ -56,6 +55,7 @@ export default async function sendMessage(
       replyTo: email,
       text: `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone || "-"}\n\n${message}`,
     });
+
     await payload.create({
       collection: "messages",
       data: {

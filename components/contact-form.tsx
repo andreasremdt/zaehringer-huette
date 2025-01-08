@@ -20,10 +20,10 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm<FormInputData>();
 
-  async function onSubmit(data: FormInputData) {
+  async function onSubmit(formData: FormInputData) {
     setState("loading");
 
-    const result = await sendMessage(data);
+    const result = await sendMessage(formData);
 
     if (result.success) {
       return setState("success");
