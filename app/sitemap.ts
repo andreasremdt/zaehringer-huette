@@ -8,6 +8,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${process.env.NEXT_PUBLIC_SERVER_URL}${page.slug}`,
     lastModified: page.updatedAt,
     changeFrequency: "yearly",
-    priority: page.slug === "/" ? 1 : 0.8,
+    priority: page.slug === "home" ? 1 : 0.8,
   }));
 }

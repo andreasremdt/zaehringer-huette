@@ -51,7 +51,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const slug = (await params).slug;
+  const slug = (await params).slug || "home";
   const page = await getPageBySlug(slug);
   const config = await getGlobalConfig();
 
