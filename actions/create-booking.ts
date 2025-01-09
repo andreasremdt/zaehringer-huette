@@ -14,6 +14,7 @@ export type BookingData = {
   adults: number;
   kids: number;
   range?: DateRange;
+  address?: string;
 };
 
 type SendMessageState = {
@@ -53,6 +54,11 @@ const createBookingSchema = z.object({
 export default async function createBooking(
   formData: BookingData,
 ): Promise<SendMessageState> {
+  // Honeypot spam prevention
+  if (formData.address) {
+    return { success: false };
+  }
+
   const validatedFields = createBookingSchema.safeParse(formData);
 
   if (!validatedFields.success) {

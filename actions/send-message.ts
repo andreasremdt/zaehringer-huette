@@ -9,6 +9,7 @@ export type FormInputData = {
   email: string;
   phone?: string;
   message: string;
+  address?: string;
 };
 
 type SendMessageState = {
@@ -34,6 +35,11 @@ const contactFormSchema = z.object({
 export default async function sendMessage(
   formData: FormInputData,
 ): Promise<SendMessageState> {
+  // Honeypot spam prevention
+  if (formData.address) {
+    return { success: false };
+  }
+
   const validatedFields = contactFormSchema.safeParse(formData);
 
   if (!validatedFields.success) {

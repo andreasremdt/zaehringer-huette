@@ -60,6 +60,14 @@ export default function BookingFormClient({ content, bookings }: Props) {
       onSubmit={handleSubmit(onSubmit)}
     >
       <input
+        type="text"
+        className="absolute left-[-9999px]"
+        tabIndex={-1}
+        autoComplete="new-password"
+        {...register("address")}
+      />
+
+      <input
         type="hidden"
         {...register("range", {
           required:

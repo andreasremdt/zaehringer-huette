@@ -48,6 +48,14 @@ export default function ContactForm() {
     >
       <ContactFormAlert state={state} />
 
+      <input
+        type="text"
+        className="absolute left-[-9999px]"
+        tabIndex={-1}
+        autoComplete="new-password"
+        {...register("address")}
+      />
+
       <Input
         type="text"
         id="name"
