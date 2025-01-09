@@ -6,6 +6,9 @@ const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    reactCompiler: true,
+  },
   reactStrictMode: true,
   images: {
     remotePatterns: [NEXT_PUBLIC_SERVER_URL].map((item) => {
