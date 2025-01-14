@@ -25,14 +25,10 @@ const pages: CollectionConfig = {
       url: ({ data, req }) =>
         generatePreviewPath({
           slug: typeof data?.slug === "string" ? data.slug : "",
+          collection: "pages",
           req,
         }),
     },
-    preview: (data, { req }) =>
-      generatePreviewPath({
-        slug: typeof data?.slug === "string" ? data.slug : "",
-        req,
-      }),
   },
   hooks: {
     afterChange: [revalidatePage],
