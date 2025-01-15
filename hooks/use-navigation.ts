@@ -1,19 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function usePageMenu() {
-  const ref = useRef<HTMLDivElement>(null);
+export default function useNavigation() {
+  const [visible, setVisible] = useState(false);
   const lastFocused = useRef<HTMLElement | null>(null);
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  function toggle() {
-    setOpen((previous) => !previous);
-  }
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setOpen(false);
+        close();
 
         lastFocused.current?.focus();
       }
@@ -37,42 +32,46 @@ export default function usePageMenu() {
       }
     }
 
-    function handleScroll() {
-      if (window.scrollY > 0 && !scrolled) {
-        setScrolled(true);
-      }
-
-      if (window.scrollY === 0 && scrolled) {
-        setScrolled(false);
-      }
-    }
-
     function handleClick(event: MouseEvent) {
       const target = event.target as HTMLElement;
 
-      if (!ref.current?.contains(target)) {
-        setOpen(false);
-      } else if (target.hasAttribute("href")) {
-        setOpen(false);
+      if (ref.current?.contains(target) && target.hasAttribute("href")) {
+        close();
       }
     }
 
-    if (open) {
+    if (visible) {
       lastFocused.current = document.activeElement as HTMLElement;
 
       document.addEventListener("keydown", handleKeyDown);
+      document.addEventListener("click", handleClick);
     }
-
-    document.addEventListener("scroll", handleScroll, { passive: true });
-    document.addEventListener("click", handleClick);
-
-    setScrolled(window.scrollY > 0);
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("scroll", handleScroll);
+      document.addEventListener("click", handleClick);
     };
-  }, [open, scrolled]);
+  }, [visible]);
 
-  return { open, toggle, scrolled, ref };
+  function close() {
+    ref.current?.addEventListener(
+      "animationend",
+      () => {
+        setVisible(false);
+      },
+      { once: true },
+    );
+
+    ref.current?.classList.remove("animate-fade-in");
+    ref.current?.classList.add("animate-fade-out");
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  function open() {
+    document.body.classList.add("overflow-hidden");
+
+    setVisible(true);
+  }
+
+  return { visible, open, close, ref };
 }

@@ -1,6 +1,6 @@
-import HeaderClient from "@/components/header.client";
 import Icon from "@/components/icon";
 import Logo from "@/components/logo";
+import Navigation from "@/components/navigation";
 import { getGlobalConfig } from "@/payload/fetcher";
 
 export default async function Header() {
@@ -35,7 +35,7 @@ export default async function Header() {
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-4">
           <Logo title={result.title} subtitle={result.subtitle} />
 
-          <HeaderClient />
+          <Navigation />
         </div>
       </header>
     </>

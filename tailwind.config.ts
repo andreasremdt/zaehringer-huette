@@ -7,6 +7,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: ["animate-fade-out"],
   theme: {
     extend: {
       fontFamily: {
@@ -43,11 +44,16 @@ const config: Config = {
       },
       animation: {
         "fade-in": "fade-in 0.25s ease-out forwards",
+        "fade-out": "fade-out 0.25s ease-out forwards",
       },
       keyframes: {
         "fade-in": {
           "0%": { opacity: "0", scale: "0.9" },
           "100%": { opacity: "100", scale: "1" },
+        },
+        "fade-out": {
+          "0%": { opacity: "100", scale: "1" },
+          "100%": { opacity: "0", scale: "0.9" },
         },
       },
     },
