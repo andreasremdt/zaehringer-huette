@@ -32,6 +32,9 @@ importers:
       '@payloadcms/storage-vercel-blob':
         specifier: ^3.17.1
         version: 3.17.1(payload@3.17.1(graphql@16.10.0)(monaco-editor@0.52.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3))
+      '@payloadcms/translations':
+        specifier: ^3.17.1
+        version: 3.17.1
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
