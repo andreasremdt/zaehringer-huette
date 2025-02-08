@@ -14,7 +14,11 @@ export type BookingData = {
   adults: number;
   kids: number;
   range?: DateRange;
-  address?: string;
+  address: string;
+  zip: string;
+  city: string;
+  country: string;
+  newPassword?: string;
 };
 
 type SendMessageState = {
@@ -25,6 +29,10 @@ type SendMessageState = {
     comments?: string[];
     adults?: string[];
     range?: string[];
+    address?: string[];
+    zip?: string[];
+    city?: string[];
+    country?: string[];
   };
   values?: BookingData;
 };
@@ -38,6 +46,13 @@ const createBookingSchema = z.object({
   phone: z.string().trim().optional(),
   comments: z.string().trim().optional(),
   adults: z.number().min(1, "Die Mindestzahl der Gäste beträgt 4."),
+  address: z
+    .string()
+    .trim()
+    .min(1, "Bitte geben Sie Ihre Straße und Hausnummer an."),
+  zip: z.string().trim().min(1, "Bitte geben Sie Ihre PLZ an."),
+  city: z.string().trim().min(1, "Bitte geben Sie Ihre Stadt an."),
+  country: z.string().trim().min(1, "Bitte geben Sie Ihr Land an."),
   kids: z.number().optional(),
   range: z.object(
     {
@@ -55,7 +70,7 @@ export default async function createBooking(
   formData: BookingData,
 ): Promise<SendMessageState> {
   // Honeypot spam prevention
-  if (formData.address) {
+  if (formData.newPassword) {
     return { success: false };
   }
 
@@ -69,8 +84,19 @@ export default async function createBooking(
     };
   }
 
-  const { name, email, phone, comments, adults, kids, range } =
-    validatedFields.data;
+  const {
+    name,
+    email,
+    address,
+    zip,
+    city,
+    country,
+    phone,
+    comments,
+    adults,
+    kids,
+    range,
+  } = validatedFields.data;
 
   try {
     const payload = await getPayload({ config });
@@ -79,7 +105,7 @@ export default async function createBooking(
       to: "me@andreasremdt.com",
       subject: `Reservierung von ${name}`,
       replyTo: email,
-      text: `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone || "-"}\nErwachsene: ${adults}\nKinder: ${kids || "-"}\nZeitraum: ${format(range.from, "dd.MM.yyyy")} - ${format(range.to, "dd.MM.yyyy")}\n\n${comments}`,
+      text: `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone || "-"}\nAnschrift: ${address}, ${zip} ${city}, ${country}\nErwachsene: ${adults}\nKinder: ${kids || "-"}\nZeitraum: ${format(range.from, "dd.MM.yyyy")} - ${format(range.to, "dd.MM.yyyy")}\n\n${comments}`,
     });
 
     await payload.create({
@@ -89,6 +115,10 @@ export default async function createBooking(
         email,
         adults,
         kids,
+        address,
+        city,
+        zip,
+        country,
         message: comments,
         phone,
         from: range.from.toISOString(),

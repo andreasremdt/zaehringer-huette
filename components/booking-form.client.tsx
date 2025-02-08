@@ -38,7 +38,7 @@ export default function BookingFormClient({ content, bookings }: Props) {
     setState("loading");
 
     const result = await createBooking(formData);
-
+    console.log(result);
     if (result.success) {
       return setState("success");
     }
@@ -64,7 +64,7 @@ export default function BookingFormClient({ content, bookings }: Props) {
         className="absolute left-[-9999px]"
         tabIndex={-1}
         autoComplete="new-password"
-        {...register("address")}
+        {...register("newPassword")}
       />
 
       <input
@@ -138,6 +138,68 @@ export default function BookingFormClient({ content, bookings }: Props) {
               error={errors.email?.message}
             />
 
+            <Input
+              type="text"
+              id="phone"
+              label="Ihre Telefonnummer"
+              {...register("phone")}
+            />
+
+            <hr />
+
+            <Input
+              type="text"
+              id="address"
+              label="Straße und Hausnummer"
+              required
+              {...register("address", {
+                required: "Bitte geben Sie Ihre Straße und Hausnummer an.",
+              })}
+              error={errors.address?.message}
+            />
+
+            <div className="flex gap-4">
+              <Input
+                type="text"
+                id="zip"
+                className="w-1/3"
+                label="PLZ"
+                required
+                {...register("zip", {
+                  required: "Bitte geben Sie Ihre PLZ an.",
+                })}
+                error={errors.zip?.message}
+              />
+              <Input
+                type="text"
+                id="city"
+                className="w-2/3"
+                label="Stadt"
+                required
+                {...register("city", {
+                  required: "Bitte geben Sie Ihre Stadt an.",
+                })}
+                error={errors.city?.message}
+              />
+            </div>
+
+            <Select
+              id="country"
+              label="Land"
+              value={getValues("adults")}
+              required
+              {...register("country", {
+                required: "Bitte geben Sie Ihr Land an.",
+              })}
+              error={errors.country?.message}
+            >
+              <option value="" />
+              <option value="Deutschland">Deutschland</option>
+              <option value="Schweiz">Schweiz</option>
+            </Select>
+
+            <hr />
+
             <div className="flex gap-4">
               <Select
                 id="adults"
@@ -146,7 +208,7 @@ export default function BookingFormClient({ content, bookings }: Props) {
                 value={getValues("adults")}
                 required
                 {...register("adults", {
-                  required: "Bitte geben die Anzahl der Gäste an.",
+                  required: "Bitte geben Sie die Anzahl der Gäste an.",
                   valueAsNumber: true,
                   validate: (value, formValues) => {
                     const adults = value;
@@ -217,13 +279,6 @@ export default function BookingFormClient({ content, bookings }: Props) {
                 <option value="10">10</option>
               </Select>
             </div>
-
-            <Input
-              type="text"
-              id="phone"
-              label="Ihre Telefonnummer"
-              {...register("phone")}
-            />
 
             <Textarea
               id="comments"

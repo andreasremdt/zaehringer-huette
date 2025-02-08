@@ -375,6 +375,10 @@ export interface Booking {
   message?: string | null;
   from: string;
   to: string;
+  address: string;
+  zip: string;
+  city: string;
+  country: string;
   confirmed?: boolean | null;
   updatedAt: string;
   createdAt: string;
@@ -701,6 +705,10 @@ export interface BookingsSelect<T extends boolean = true> {
   message?: T;
   from?: T;
   to?: T;
+  address?: T;
+  zip?: T;
+  city?: T;
+  country?: T;
   confirmed?: T;
   updatedAt?: T;
   createdAt?: T;

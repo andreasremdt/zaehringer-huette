@@ -23,80 +23,133 @@ const bookings: CollectionConfig = {
   },
   fields: [
     {
-      type: "text",
-      name: "name",
-      label: "Name",
-      required: true,
-    },
-    {
-      type: "row",
+      type: "collapsible",
+      label: "Kontaktdaten",
       fields: [
         {
           type: "text",
-          name: "email",
-          label: "E-Mail-Adresse",
+          name: "name",
+          label: "Name",
           required: true,
-          admin: {
-            width: "50%",
-          },
         },
         {
-          type: "text",
-          name: "phone",
-          label: "Telefonnummer",
-          admin: {
-            width: "50%",
-          },
+          type: "row",
+          fields: [
+            {
+              type: "text",
+              name: "email",
+              label: "E-Mail-Adresse",
+              required: true,
+              admin: {
+                width: "50%",
+              },
+            },
+            {
+              type: "text",
+              name: "phone",
+              label: "Telefonnummer",
+              admin: {
+                width: "50%",
+              },
+            },
+          ],
         },
       ],
     },
     {
-      type: "row",
+      type: "collapsible",
+      label: "Buchungsdaten",
       fields: [
         {
-          type: "number",
-          name: "adults",
-          label: "Erwachsene",
-          required: true,
-          admin: {
-            width: "10%",
-          },
+          type: "row",
+          fields: [
+            {
+              type: "number",
+              name: "adults",
+              label: "Erwachsene",
+              required: true,
+              admin: {
+                width: "20%",
+              },
+            },
+            {
+              type: "number",
+              name: "kids",
+              label: "Kinder",
+              admin: {
+                width: "20%",
+              },
+            },
+          ],
         },
         {
-          type: "number",
-          name: "kids",
-          label: "Kinder",
-          admin: {
-            width: "10%",
-          },
+          type: "textarea",
+          name: "message",
+          label: "Anmerkungen / Wünsche",
+        },
+        {
+          type: "row",
+          fields: [
+            {
+              type: "date",
+              name: "from",
+              label: "Gebucht von",
+              required: true,
+              admin: {
+                width: "20%",
+              },
+            },
+            {
+              type: "date",
+              name: "to",
+              label: "Gebucht bis",
+              required: true,
+              admin: {
+                width: "20%",
+              },
+            },
+          ],
         },
       ],
     },
     {
-      type: "textarea",
-      name: "message",
-      label: "Anmerkungen / Wünsche",
-    },
-    {
-      type: "row",
+      type: "collapsible",
+      label: "Adressdaten",
       fields: [
         {
-          type: "date",
-          name: "from",
-          label: "Gebucht von",
+          type: "text",
+          name: "address",
+          label: "Straße und Hausnummer",
           required: true,
-          admin: {
-            width: "20%",
-          },
         },
         {
-          type: "date",
-          name: "to",
-          label: "Gebucht bis",
+          type: "row",
+          fields: [
+            {
+              type: "text",
+              name: "zip",
+              label: "Postleitzahl",
+              required: true,
+              admin: {
+                width: "20%",
+              },
+            },
+            {
+              type: "text",
+              name: "city",
+              label: "Stadt",
+              required: true,
+              admin: {
+                width: "80%",
+              },
+            },
+          ],
+        },
+        {
+          type: "text",
+          name: "country",
+          label: "Land",
           required: true,
-          admin: {
-            width: "20%",
-          },
         },
       ],
     },
