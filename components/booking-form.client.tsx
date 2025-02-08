@@ -13,6 +13,7 @@ import { RichText } from "@payloadcms/richtext-lexical/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import BookingFormAlert from "./booking-form-alert";
+import { countries } from "@/lib/countries";
 
 type Props = CalendarBlock & {
   bookings: Booking[];
@@ -186,7 +187,7 @@ export default function BookingFormClient({ content, bookings }: Props) {
             <Select
               id="country"
               label="Land"
-              value={getValues("adults")}
+              value={getValues("country")}
               required
               {...register("country", {
                 required: "Bitte geben Sie Ihr Land an.",
@@ -194,8 +195,11 @@ export default function BookingFormClient({ content, bookings }: Props) {
               error={errors.country?.message}
             >
               <option value="" />
-              <option value="Deutschland">Deutschland</option>
-              <option value="Schweiz">Schweiz</option>
+              {countries.map((country) => (
+                <option key={country} value={country}>
+                  {country}
+                </option>
+              ))}
             </Select>
 
             <hr />
