@@ -49,7 +49,7 @@ export default function DatePicker({
         button_next: "p-2",
         day_button:
           "flex items-center justify-center aspect-square w-full disabled:cursor-not-allowed",
-        disabled: "text-stone-400",
+        disabled: "text-primary-400 rounded-full bg-primary-100",
         hidden: "invisible",
       }}
     />

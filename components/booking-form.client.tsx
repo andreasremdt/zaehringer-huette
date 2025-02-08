@@ -38,7 +38,7 @@ export default function BookingFormClient({ content, bookings }: Props) {
     setState("loading");
 
     const result = await createBooking(formData);
-    console.log(result);
+
     if (result.success) {
       return setState("success");
     }
