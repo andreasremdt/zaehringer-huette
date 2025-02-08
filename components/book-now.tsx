@@ -28,10 +28,11 @@ export default function BookNow({ title, text, image }: Props) {
         <p className="mx-auto mb-8 max-w-xl text-white">{text}</p>
 
         <Link
-          href="/buchen"
+          href="/reservieren"
           className="mx-auto flex h-10 w-max items-center gap-2 rounded-lg bg-primary-200 px-6 text-xs font-medium uppercase transition-colors duration-300 ease-in-out hover:bg-white md:h-12 md:gap-4 md:text-sm"
         >
-          <Icon name="calendar" className="size-4 md:size-5" /> Jetzt buchen
+          <Icon name="calendar" className="size-4 md:size-5" /> Jetzt
+          reservieren
         </Link>
       </section>
     </div>

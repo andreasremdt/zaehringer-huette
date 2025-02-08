@@ -18,7 +18,7 @@ export default function BookingFormAlert({ state }: Props) {
         <>
           <Icon name="check" className="size-10 mb-4 fill-primary-400" />
           <p className="font-serif text-2xl mb-2">
-            Vielen Dank für Ihre Reservierung
+            Vielen Dank für Ihre Anfrage
           </p>
           <p className="text-center max-w-sm">
             Wir haben Ihre Nachricht erhalten und werden uns schnellst möglich
@@ -32,7 +32,7 @@ export default function BookingFormAlert({ state }: Props) {
             Das hat leider nicht geklappt
           </p>
           <p className="text-center max-w-sm">
-            Aus technischen Gründen konnte Ihre Reservierung nicht gespeichert
+            Aus technischen Gründen konnte Ihre Anfrage nicht gespeichert
             werden. Bitte versuchen Sie es später erneut.
           </p>
         </>

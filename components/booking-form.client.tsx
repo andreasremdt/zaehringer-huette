@@ -246,8 +246,13 @@ export default function BookingFormClient({ content, bookings }: Props) {
               {state !== "loading" ? (
                 <Icon name="send" className="size-5" />
               ) : null}
-              {state === "loading" ? "Bitte warten..." : "Jetzt reservieren"}
+              {state === "loading" ? "Bitte warten..." : "Jetzt anfragen *"}
             </button>
+
+            <p className="text-sm">
+              * Die Anfrage ist unverbindlich und stellt keine feste
+              Reservierung oder Kaufbestätitung dar.
+            </p>
           </div>
         </fieldset>
       </div>

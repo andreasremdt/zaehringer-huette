@@ -14,10 +14,11 @@ export default function Hero({ title, pretitle, image }: Props) {
           <h1 className="mb-8 font-serif text-5xl lg:text-7xl">{title}</h1>
 
           <Link
-            href="/buchen"
+            href="/reservieren"
             className="inline-flex h-10 items-center gap-2 rounded-lg bg-primary-200 px-6 text-xs font-medium uppercase text-secondary-950 transition-colors duration-300 ease-in-out hover:bg-white lg:h-12 lg:gap-4 lg:text-sm"
           >
-            <Icon name="calendar" className="size-4 lg:size-5" /> Jetzt buchen
+            <Icon name="calendar" className="size-4 lg:size-5" /> Jetzt
+            reservieren
           </Link>
         </div>
 

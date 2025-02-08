@@ -65,16 +65,16 @@ export default function Navigation() {
           Galerie
         </Link>
         <Link
-          href="/buchen#preise"
+          href="/reservieren#preise"
           className="py-2 text-sm font-medium uppercase transition-colors ease-in-out hover:text-primary-200"
         >
           Preise
         </Link>
         <Link
-          href="/buchen"
+          href="/reservieren"
           className="flex h-12 md:h-10 items-center rounded-md border border-white px-8 text-sm md:text-xs font-medium uppercase transition-colors ease-in-out hover:border-primary-200 hover:text-primary-200 md:px-6 lg:h-12 lg:text-sm"
         >
-          Buchen
+          Reservieren
         </Link>
       </nav>
     </>
