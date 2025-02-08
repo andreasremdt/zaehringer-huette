@@ -65,12 +65,12 @@ export default async function Calendar({ data }: Props) {
           <span className="rdp-legend_box rdp-legend_box--free" /> freie Tage
         </li>
         <li>
-          <span className="rdp-legend_box rdp-legend_box--booked" /> gebuchte
-          Tage
+          <span className="rdp-legend_box rdp-legend_box--booked" /> gebuchte,
+          bestätigte Tage
         </li>
         <li>
-          <span className="rdp-legend_box rdp-legend_box--current" /> aktuelle
-          Buchung
+          <span className="rdp-legend_box rdp-legend_box--current" /> aktuelle,
+          offene Buchung
         </li>
         <li>
           <span className="rdp-legend_box rdp-legend_box--overlap" />{" "}
