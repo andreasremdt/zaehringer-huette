@@ -367,6 +367,7 @@ export interface ImageHeroBlock {
  */
 export interface Booking {
   id: string;
+  confirmed?: boolean | null;
   name: string;
   email: string;
   phone?: string | null;
@@ -379,7 +380,6 @@ export interface Booking {
   zip: string;
   city: string;
   country: string;
-  confirmed?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -697,6 +697,7 @@ export interface ImageHeroBlockSelect<T extends boolean = true> {
  * via the `definition` "bookings_select".
  */
 export interface BookingsSelect<T extends boolean = true> {
+  confirmed?: T;
   name?: T;
   email?: T;
   phone?: T;
@@ -709,7 +710,6 @@ export interface BookingsSelect<T extends boolean = true> {
   zip?: T;
   city?: T;
   country?: T;
-  confirmed?: T;
   updatedAt?: T;
   createdAt?: T;
 }

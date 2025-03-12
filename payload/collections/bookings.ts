@@ -23,8 +23,19 @@ const bookings: CollectionConfig = {
   },
   fields: [
     {
+      type: "checkbox",
+      name: "confirmed",
+      admin: {
+        position: "sidebar",
+      },
+      label: "Buchung bestätigt",
+    },
+    {
       type: "collapsible",
       label: "Kontaktdaten",
+      admin: {
+        position: "sidebar",
+      },
       fields: [
         {
           type: "text",
@@ -59,6 +70,9 @@ const bookings: CollectionConfig = {
     {
       type: "collapsible",
       label: "Buchungsdaten",
+      admin: {
+        position: "sidebar",
+      },
       fields: [
         {
           type: "row",
@@ -69,7 +83,7 @@ const bookings: CollectionConfig = {
               label: "Erwachsene",
               required: true,
               admin: {
-                width: "20%",
+                width: "50%",
               },
             },
             {
@@ -77,7 +91,7 @@ const bookings: CollectionConfig = {
               name: "kids",
               label: "Kinder",
               admin: {
-                width: "20%",
+                width: "50%",
               },
             },
           ],
@@ -96,7 +110,7 @@ const bookings: CollectionConfig = {
               label: "Gebucht von",
               required: true,
               admin: {
-                width: "20%",
+                width: "50%",
               },
             },
             {
@@ -105,7 +119,7 @@ const bookings: CollectionConfig = {
               label: "Gebucht bis",
               required: true,
               admin: {
-                width: "20%",
+                width: "50%",
               },
             },
           ],
@@ -115,6 +129,9 @@ const bookings: CollectionConfig = {
     {
       type: "collapsible",
       label: "Adressdaten",
+      admin: {
+        position: "sidebar",
+      },
       fields: [
         {
           type: "text",
@@ -140,7 +157,7 @@ const bookings: CollectionConfig = {
               label: "Stadt",
               required: true,
               admin: {
-                width: "80%",
+                width: "79%",
               },
             },
           ],
@@ -154,19 +171,13 @@ const bookings: CollectionConfig = {
       ],
     },
     {
-      type: "checkbox",
-      name: "confirmed",
-      label: "Buchung bestätigt",
-    },
-    {
       type: "ui",
       name: "calendar",
       label: "Kalender",
       admin: {
         components: {
-          Field: "/components/calendar",
+          Field: "/payload/components/calendar",
         },
-        position: "sidebar",
       },
     },
   ],
