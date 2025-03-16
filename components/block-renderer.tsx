@@ -23,27 +23,27 @@ export default function BlockRenderer({ blocks }: Props) {
   return blocks.map((block) => {
     switch (block.blockType) {
       case "hero":
-        return <Hero {...block} />;
+        return <Hero {...block} key={block.id} />;
       case "contact-form":
-        return <Contact {...block} />;
+        return <Contact {...block} key={block.id} />;
       case "about":
-        return <About {...block} />;
+        return <About {...block} key={block.id} />;
       case "amenities":
-        return <Amenities {...block} />;
+        return <Amenities {...block} key={block.id} />;
       case "book-now":
-        return <BookNow {...block} />;
+        return <BookNow {...block} key={block.id} />;
       case "environment":
-        return <Environment {...block} />;
+        return <Environment {...block} key={block.id} />;
       case "gallery":
-        return <Gallery {...block} />;
+        return <Gallery {...block} key={block.id} />;
       case "testimonial":
-        return <Testimonials {...block} />;
+        return <Testimonials {...block} key={block.id} />;
       case "rich-text":
-        return <Prose {...block} />;
+        return <Prose {...block} key={block.id} />;
       case "image-hero":
-        return <ImageHero {...block} />;
+        return <ImageHero {...block} key={block.id} />;
       case "calendar":
-        return <BookingForm {...block} />;
+        return <BookingForm {...block} key={block.id} />;
       default:
         return null;
     }

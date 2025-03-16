@@ -7,9 +7,9 @@ type Props = HeroBlock;
 
 export default function Hero({ title, pretitle, image }: Props) {
   return (
-    <section className="bg-secondary-950 py-16 text-white lg:py-32">
+    <section className="bg-secondary-950 pt-16 pb-4 text-white lg:py-32">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-16 px-4 lg:flex-row">
-        <div className="text-center lg:basis-2/5 lg:text-left">
+        <div className="text-center lg:w-1/2 lg:text-left">
           <p className="mb-2">{pretitle}</p>
           <h1 className="mb-8 font-serif text-5xl lg:text-7xl">{title}</h1>
 
@@ -33,7 +33,7 @@ export default function Hero({ title, pretitle, image }: Props) {
             priority
             quality={75}
             decoding="async"
-            className="w-full rounded-2xl object-cover object-top lg:basis-3/5"
+            className="w-full rounded-2xl object-cover object-top lg:w-1/2"
           />
         ) : null}
       </div>
