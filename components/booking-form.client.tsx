@@ -7,13 +7,13 @@ import Icon from "@/components/icon";
 import Input from "@/components/input";
 import Select from "@/components/select";
 import Textarea from "@/components/textarea";
+import { countries } from "@/lib/countries";
 import { getBookedDays } from "@/lib/utils";
 import type { Booking, CalendarBlock } from "@/payload-types";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import BookingFormAlert from "./booking-form-alert";
-import { countries } from "@/lib/countries";
 
 type Props = CalendarBlock & {
   bookings: Booking[];

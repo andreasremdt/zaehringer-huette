@@ -51,7 +51,7 @@ export default function BookingSummary({ range, adults, kids, error }: Props) {
             <li className="flex items-center justify-between">
               <span>Kurtaxe</span>
               <span className="text-right font-bold">
-                {formatCurrency(getTourismTax(range, adults, kids))}
+                {formatCurrency(getTourismTax(range, adults, kids).totalTax)}
               </span>
             </li>
             <li className="flex items-center justify-between">

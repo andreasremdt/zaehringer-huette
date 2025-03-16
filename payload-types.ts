@@ -423,6 +423,10 @@ export interface ImageHeroBlock {
 export interface Booking {
   id: string;
   confirmed?: boolean | null;
+  /**
+   * Die Rechnungs-Nr. wird für die Erstellung der Rechnung benötigt.
+   */
+  invoiceId?: string | null;
   name: string;
   email: string;
   phone?: string | null;
@@ -753,6 +757,7 @@ export interface ImageHeroBlockSelect<T extends boolean = true> {
  */
 export interface BookingsSelect<T extends boolean = true> {
   confirmed?: T;
+  invoiceId?: T;
   name?: T;
   email?: T;
   phone?: T;

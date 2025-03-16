@@ -4,6 +4,16 @@ import { addDays, differenceInDays, format, getMonth } from "date-fns";
 import type { DateRange } from "react-day-picker";
 import { twMerge } from "tailwind-merge";
 
+export const TAX_ADULTS = 2.9;
+export const TAX_KIDS = 1.2;
+export const PRICE_PER_NIGHT = 300;
+export const PRICE_PER_EXTRA_GUEST = 35;
+export const CLEANING_COSTS = 80;
+export const WOOD_COSTS_WINTER = 60;
+export const WOOD_COSTS_SUMMER = 30;
+export const DISCOUNT = 0.05;
+export const DEPOSIT = 200;
+
 export function cn(...classes: ClassValue[]) {
   return twMerge(clsx(...classes));
 }
@@ -51,22 +61,20 @@ export function formatGuests(adults: number, kids = 0) {
 }
 
 export function getTourismTax(range: DateRange, adults: number, kids = 0) {
-  const TAX_ADULTS = 2.9;
-  const TAX_KIDS = 1.2;
-
   const days = getNumberOfDays(range);
 
   if (!days) {
-    return 0;
+    return { adultsTax: 0, kidsTax: 0, totalTax: 0 };
   }
 
-  return adults * (days + 1) * TAX_ADULTS + kids * (days + 1) * TAX_KIDS;
+  const adultsTax = adults * (days + 1) * TAX_ADULTS;
+  const kidsTax = kids * (days + 1) * TAX_KIDS;
+  const totalTax = adultsTax + kidsTax;
+
+  return { adultsTax, kidsTax, totalTax };
 }
 
 export function getCosts(range: DateRange, adults: number, kids = 0) {
-  const PRICE_PER_NIGHT = 300;
-  const PRICE_PER_EXTRA_GUEST = 35;
-
   const totalGuests = adults + kids - 4;
   const days = getNumberOfDays(range);
 
@@ -82,15 +90,14 @@ export function getCosts(range: DateRange, adults: number, kids = 0) {
 
 export function getTotalCosts(range: DateRange, adults: number, kids = 0) {
   const costs = getCosts(range, adults, kids);
-  const tax = getTourismTax(range, adults, kids);
+  const { totalTax } = getTourismTax(range, adults, kids);
   const wood = getWoodCosts(range);
-  const cleaning = 80;
 
-  if (!costs || !tax) {
+  if (!costs || !totalTax) {
     return 0;
   }
 
-  return costs + tax + wood + cleaning;
+  return costs + totalTax + wood + CLEANING_COSTS;
 }
 
 export function getDiscount(range: DateRange, adults: number, kids = 0) {
@@ -119,16 +126,13 @@ export function hasEnoughGuests<T extends number>(
 }
 
 export function getWoodCosts(range: DateRange) {
-  const COSTS_WINTER = 60;
-  const COSTS_SUMMER = 30;
-
   if (!range.from) {
-    return COSTS_WINTER;
+    return WOOD_COSTS_WINTER;
   }
 
   const month = getMonth(range.from);
 
-  return month > 5 && month < 9 ? COSTS_SUMMER : COSTS_WINTER;
+  return month > 5 && month < 9 ? WOOD_COSTS_SUMMER : WOOD_COSTS_WINTER;
 }
 
 export function hasValidRange<T extends DateRange>(

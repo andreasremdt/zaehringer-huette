@@ -25,10 +25,40 @@ const bookings: CollectionConfig = {
     {
       type: "checkbox",
       name: "confirmed",
+      label: "Buchung bestätigt",
       admin: {
         position: "sidebar",
       },
-      label: "Buchung bestätigt",
+    },
+    {
+      type: "collapsible",
+      label: "Rechnung",
+      admin: {
+        position: "sidebar",
+      },
+      fields: [
+        {
+          type: "text",
+          name: "invoiceId",
+          label: "Rechnungs-Nr.",
+          admin: {
+            placeholder: "ZH35",
+            description:
+              "Die Rechnungs-Nr. wird für die Erstellung der Rechnung benötigt.",
+          },
+        },
+        {
+          type: "ui",
+          name: "generate-invoice",
+          label: "Rechnung",
+          admin: {
+            condition: (data) => Boolean(data.invoiceId),
+            components: {
+              Field: "/payload/components/invoice-creator",
+            },
+          },
+        },
+      ],
     },
     {
       type: "collapsible",

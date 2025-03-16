@@ -9,6 +9,7 @@ const nextConfig = {
   experimental: {
     reactCompiler: true,
   },
+  serverExternalPackages: ["pdfkit"],
   reactStrictMode: true,
   images: {
     remotePatterns: [NEXT_PUBLIC_SERVER_URL].map((item) => {
