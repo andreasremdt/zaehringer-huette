@@ -51,3 +51,12 @@ export const getGlobalConfig = cache(async function getGlobalConfig() {
 
   return result;
 });
+
+export const getGlobalCosts = cache(async function getGlobalCosts() {
+  const payload = await getPayload({ config });
+  const result = await payload.findGlobal({
+    slug: "costs",
+  });
+
+  return result;
+});

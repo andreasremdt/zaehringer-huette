@@ -96,6 +96,20 @@ const costs: GlobalConfig = {
         },
       ],
     },
+    {
+      type: "row",
+      fields: [
+        {
+          name: "deposit",
+          type: "number",
+          label: "Kaution (€)",
+          required: true,
+          admin: {
+            width: "20%",
+          },
+        },
+      ],
+    },
   ],
 };
 

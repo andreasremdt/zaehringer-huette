@@ -854,6 +854,7 @@ export interface Cost {
   woodCostsSummer: number;
   cleaningFee: number;
   discount: number;
+  deposit: number;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -887,6 +888,7 @@ export interface CostsSelect<T extends boolean = true> {
   woodCostsSummer?: T;
   cleaningFee?: T;
   discount?: T;
+  deposit?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

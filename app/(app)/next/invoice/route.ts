@@ -1,16 +1,6 @@
-import {
-  CLEANING_COSTS,
-  DEPOSIT,
-  TAX_ADULTS,
-  TAX_KIDS,
-  formatCurrency,
-  formatDateRange,
-  getCosts,
-  getDiscount,
-  getTotalCosts,
-  getTourismTax,
-  getWoodCosts,
-} from "@/lib/utils";
+import costsCalculator from "@/lib/costs-calculator";
+import { formatCurrency, formatDateRange } from "@/lib/utils";
+import { getGlobalCosts } from "@/payload/fetcher";
 import { format } from "date-fns";
 import { NextResponse } from "next/server";
 import PDFDocument from "pdfkit";
@@ -20,6 +10,8 @@ export async function POST(request: Request) {
   const chunks: Buffer[] = [];
 
   const data = await request.json();
+  const costs = await getGlobalCosts();
+  const calculator = costsCalculator(costs);
 
   doc.on("data", (chunk) => chunks.push(chunk));
 
@@ -69,29 +61,30 @@ export async function POST(request: Request) {
       "erlaube ich mir wie mit Ihnen vereinbart folgenden Betrag in Rechnung zu stellen:",
     );
 
-  const peopleCosts = getCosts(
+  const peopleCosts = calculator.getCosts(
     { from: data.from, to: data.to },
     data.adults,
     data.kids,
   );
-  const totalCosts = getTotalCosts(
+  const totalCosts = calculator.getTotalCosts(
     { from: data.from, to: data.to },
     data.adults,
     data.kids,
   );
-  const woodCosts = getWoodCosts({ from: data.from, to: data.to });
-  const { adultsTax, kidsTax } = getTourismTax(
+  const woodCosts = calculator.getWoodCosts({ from: data.from, to: data.to });
+  const { adultsTax, kidsTax } = calculator.getTourismTax(
     { from: data.from, to: data.to },
     data.adults,
     data.kids,
   );
-  const discount = getDiscount(
+  const discount = calculator.getDiscount(
     { from: data.from, to: data.to },
     data.adults,
     data.kids,
   );
-  const vat = (totalCosts - discount) * 0.19;
-  const totalBeforeVat = totalCosts - discount - vat;
+  const cleaningFee = calculator.getCleaningFee();
+  const vat = totalCosts * 0.19;
+  const totalBeforeVat = totalCosts - vat;
 
   // Invoice Positions
   doc
@@ -100,28 +93,31 @@ export async function POST(request: Request) {
     .text(`${data.adults} Erwachsene, ${data.kids} Kinder`, { continued: true })
     .text(`${formatCurrency(peopleCosts)}`, { align: "right" })
     .text("Putzpauschale", { continued: true })
-    .text(formatCurrency(CLEANING_COSTS), { align: "right" })
+    .text(formatCurrency(cleaningFee), { align: "right" })
     .text("Holzpauschale", { continued: true })
     .text(formatCurrency(woodCosts), {
       align: "right",
       underline: true,
     })
     .text("Zwischensumme", { continued: true })
-    .text(formatCurrency(peopleCosts + CLEANING_COSTS + woodCosts), {
+    .text(formatCurrency(peopleCosts + cleaningFee + woodCosts), {
       align: "right",
     })
     .moveDown(1)
     .text("Kurtaxe")
     .text(
-      `Anzahl Kinder:           ${data.kids} à ${formatCurrency(TAX_KIDS)}`,
+      `Anzahl Kinder:           ${data.kids} à ${formatCurrency(costs.taxKids)}`,
       {
         continued: true,
       },
     )
     .text(formatCurrency(kidsTax), { align: "right" })
-    .text(`Anzahl Erwachsene: ${data.adults} à ${formatCurrency(TAX_ADULTS)}`, {
-      continued: true,
-    })
+    .text(
+      `Anzahl Erwachsene: ${data.adults} à ${formatCurrency(costs.taxAdults)}`,
+      {
+        continued: true,
+      },
+    )
     .text(formatCurrency(adultsTax), {
       align: "right",
       underline: discount === 0,
@@ -138,7 +134,7 @@ export async function POST(request: Request) {
 
   doc
     .text("Gesamtbetrag", { continued: true })
-    .text(formatCurrency(totalCosts - discount), { align: "right" })
+    .text(formatCurrency(totalCosts), { align: "right" })
     .font("Helvetica")
     .text("In dem Betrag sind 19% Mehrwertsteuer enthalten", {
       continued: true,
@@ -148,10 +144,10 @@ export async function POST(request: Request) {
     .text(formatCurrency(totalBeforeVat), { align: "right" })
     .moveDown(1)
     .text("Zuzüglich einer Kaution von", { continued: true })
-    .text(formatCurrency(DEPOSIT), { align: "right" })
+    .text(formatCurrency(costs.deposit), { align: "right" })
     .font("Helvetica-Bold")
     .text("Gesamtüberweisungsbetrag", { continued: true })
-    .text(formatCurrency(totalCosts - discount + DEPOSIT), { align: "right" });
+    .text(formatCurrency(totalCosts + costs.deposit), { align: "right" });
 
   doc
     .moveDown(1)

@@ -9,7 +9,7 @@ import Select from "@/components/select";
 import Textarea from "@/components/textarea";
 import { countries } from "@/lib/countries";
 import { getBookedDays } from "@/lib/utils";
-import type { Booking, CalendarBlock } from "@/payload-types";
+import type { Booking, CalendarBlock, Cost } from "@/payload-types";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -17,9 +17,10 @@ import BookingFormAlert from "./booking-form-alert";
 
 type Props = CalendarBlock & {
   bookings: Booking[];
+  costs: Cost;
 };
 
-export default function BookingFormClient({ content, bookings }: Props) {
+export default function BookingFormClient({ content, costs, bookings }: Props) {
   const [state, setState] = useState<"idle" | "loading" | "success" | "error">(
     "idle",
   );
@@ -291,6 +292,7 @@ export default function BookingFormClient({ content, bookings }: Props) {
             />
 
             <BookingSummary
+              costs={costs}
               range={watch("range")}
               adults={watch("adults")}
               kids={watch("kids")}
