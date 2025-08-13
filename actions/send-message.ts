@@ -56,7 +56,7 @@ export default async function sendMessage(
     const payload = await getPayload({ config });
 
     await payload.sendEmail({
-      to: "me@andreasremdt.com",
+      to: "info@zaehringer-huette.de",
       subject: `Anfrage von ${name}`,
       replyTo: email,
       text: `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone || "-"}\n\n${message}`,

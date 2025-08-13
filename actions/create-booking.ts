@@ -101,7 +101,7 @@ export default async function createBooking(
     const payload = await getPayload({ config });
 
     await payload.sendEmail({
-      to: "me@andreasremdt.com",
+      to: "reservierung@zaehringer-huette.de",
       subject: `Reservierung von ${name}`,
       replyTo: email,
       text: `Name: ${name}\nE-Mail: ${email}\nTelefon: ${

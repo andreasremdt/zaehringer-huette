@@ -41,7 +41,7 @@ export default buildConfig({
     fallbackLanguage: "de",
   },
   email: nodemailerAdapter({
-    defaultFromAddress: "no-reply@zaehringer-huette.com",
+    defaultFromAddress: "no-reply@zaehringer-huette.de",
     defaultFromName: "Zähringer Hütte",
     transportOptions: {
       host: process.env.EMAIL_SMTP_HOST,
