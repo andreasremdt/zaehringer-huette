@@ -73,7 +73,7 @@ export default async function sendMessage(
     });
 
     return { success: true };
-  } catch (ex) {
+  } catch (_ex) {
     return { success: false };
   }
 }

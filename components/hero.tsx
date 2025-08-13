@@ -1,7 +1,7 @@
+import Link from "next/link";
 import Icon from "@/components/icon";
 import Image from "@/components/image";
 import type { HeroBlock } from "@/payload-types";
-import Link from "next/link";
 
 type Props = HeroBlock;
 

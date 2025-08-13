@@ -1,7 +1,7 @@
+import { Fragment } from "react";
 import Image from "@/components/image";
 import { cn } from "@/lib/utils";
 import type { AboutBlock } from "@/payload-types";
-import { Fragment } from "react";
 
 type Props = AboutBlock;
 

@@ -1,5 +1,5 @@
-import { getGlobalConfig } from "@/payload/fetcher";
 import type { MetadataRoute } from "next";
+import { getGlobalConfig } from "@/payload/fetcher";
 
 export default async function manifest(): Promise<MetadataRoute.Manifest> {
   const config = await getGlobalConfig();

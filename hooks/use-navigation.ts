@@ -1,9 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function useNavigation() {
   const [visible, setVisible] = useState(false);
   const lastFocused = useRef<HTMLElement | null>(null);
   const ref = useRef<HTMLDivElement>(null);
+
+  const close = useCallback(() => {
+    ref.current?.addEventListener(
+      "animationend",
+      () => {
+        setVisible(false);
+      },
+      { once: true },
+    );
+
+    ref.current?.classList.remove("animate-fade-in");
+    ref.current?.classList.add("animate-fade-out");
+    document.body.classList.remove("overflow-hidden");
+  }, []);
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
@@ -51,21 +65,7 @@ export default function useNavigation() {
       document.removeEventListener("keydown", handleKeyDown);
       document.addEventListener("click", handleClick);
     };
-  }, [visible]);
-
-  function close() {
-    ref.current?.addEventListener(
-      "animationend",
-      () => {
-        setVisible(false);
-      },
-      { once: true },
-    );
-
-    ref.current?.classList.remove("animate-fade-in");
-    ref.current?.classList.add("animate-fade-out");
-    document.body.classList.remove("overflow-hidden");
-  }
+  }, [visible, close]);
 
   function open() {
     document.body.classList.add("overflow-hidden");

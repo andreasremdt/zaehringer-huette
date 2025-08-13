@@ -1,6 +1,6 @@
+import { type ComponentPropsWithoutRef, forwardRef, type Ref } from "react";
 import Icon from "@/components/icon";
 import { cn } from "@/lib/utils";
-import { type ComponentPropsWithoutRef, type Ref, forwardRef } from "react";
 
 type Props = ComponentPropsWithoutRef<"select"> & {
   label: string;

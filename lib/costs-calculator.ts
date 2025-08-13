@@ -1,6 +1,6 @@
-import type { Cost } from "@/payload-types";
 import { getMonth } from "date-fns";
 import type { DateRange } from "react-day-picker";
+import type { Cost } from "@/payload-types";
 import { getNumberOfDays } from "./utils";
 
 export default function costsCalculator(costs: Cost) {

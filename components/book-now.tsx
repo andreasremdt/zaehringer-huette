@@ -1,7 +1,7 @@
-import Icon from "@/components/icon";
-import type { BookNowBlock } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
+import Icon from "@/components/icon";
+import type { BookNowBlock } from "@/payload-types";
 
 type Props = BookNowBlock;
 

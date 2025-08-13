@@ -1,5 +1,5 @@
-import type { RichTextBlock } from "@/payload-types";
 import { RichText } from "@payloadcms/richtext-lexical/react";
+import type { RichTextBlock } from "@/payload-types";
 
 type Props = RichTextBlock;
 

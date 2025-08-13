@@ -1,5 +1,5 @@
-import type { CalendarBlock } from "@/payload-types";
 import { getAllBookings, getGlobalCosts } from "@/payload/fetcher";
+import type { CalendarBlock } from "@/payload-types";
 import BookingFormClient from "./booking-form.client";
 
 type Props = CalendarBlock;

@@ -1,7 +1,7 @@
-import type { Booking } from "@/payload-types";
 import { isWithinInterval } from "date-fns";
 import Link from "next/link";
 import type { Data } from "payload";
+import type { Booking } from "@/payload-types";
 import { getNormalizedDate } from "../utils/date-utils";
 
 type Props = {

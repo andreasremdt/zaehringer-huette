@@ -1,5 +1,8 @@
 "use client";
 
+import { RichText } from "@payloadcms/richtext-lexical/react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import createBooking, { type BookingData } from "@/actions/create-booking";
 import BookingSummary from "@/components/booking-summary";
 import DatePicker from "@/components/date-picker";
@@ -10,9 +13,6 @@ import Textarea from "@/components/textarea";
 import { countries } from "@/lib/countries";
 import { getBookedDays } from "@/lib/utils";
 import type { Booking, CalendarBlock, Cost } from "@/payload-types";
-import { RichText } from "@payloadcms/richtext-lexical/react";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
 import BookingFormAlert from "./booking-form-alert";
 
 type Props = CalendarBlock & {

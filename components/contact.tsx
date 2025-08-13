@@ -1,8 +1,8 @@
 import ContactForm from "@/components/contact-form";
 import Icon from "@/components/icon";
 import LeafletMap from "@/components/leaflet-map";
-import type { ContactFormBlock } from "@/payload-types";
 import { getGlobalConfig } from "@/payload/fetcher";
+import type { ContactFormBlock } from "@/payload-types";
 
 type Props = ContactFormBlock;
 

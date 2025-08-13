@@ -1,9 +1,9 @@
+import { Fragment } from "react";
 import Carousel from "@/components/carousel";
 import Icon from "@/components/icon";
 import Image from "@/components/image";
 import Lightbox from "@/components/lightbox";
 import type { GalleryBlock } from "@/payload-types";
-import { Fragment } from "react";
 
 type Props = GalleryBlock;
 

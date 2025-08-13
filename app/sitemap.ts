@@ -1,5 +1,5 @@
-import { getAllPages } from "@/payload/fetcher";
 import type { MetadataRoute } from "next";
+import { getAllPages } from "@/payload/fetcher";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const pages = await getAllPages();

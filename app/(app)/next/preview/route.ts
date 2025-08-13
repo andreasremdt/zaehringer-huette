@@ -1,8 +1,8 @@
 import config from "@payload-config";
 import { draftMode } from "next/headers";
 import { redirect } from "next/navigation";
-import { type PayloadRequest, getPayload } from "payload";
 import type { CollectionSlug } from "payload";
+import { getPayload, type PayloadRequest } from "payload";
 
 export async function GET(request: Request): Promise<Response> {
   const payload = await getPayload({ config });
@@ -72,7 +72,7 @@ export async function GET(request: Request): Promise<Response> {
     }
 
     draft.enable();
-  } catch (error) {
+  } catch (_ex) {
     return new Response("You are not allowed to preview this page", {
       status: 403,
     });

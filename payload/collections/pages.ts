@@ -1,3 +1,4 @@
+import type { CollectionConfig } from "payload";
 import generatePreviewPath from "@/lib/generate-preview-path";
 import { revalidateDelete, revalidatePage } from "@/lib/revalidate-page";
 import about from "@/payload/blocks/about";
@@ -11,7 +12,6 @@ import hero from "@/payload/blocks/hero";
 import imageHero from "@/payload/blocks/image-hero";
 import richText from "@/payload/blocks/rich-text";
 import testimonial from "@/payload/blocks/testimonial";
-import type { CollectionConfig } from "payload";
 
 const pages: CollectionConfig = {
   slug: "pages",

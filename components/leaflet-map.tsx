@@ -1,8 +1,8 @@
 "use client";
 
+import { type ComponentProps, useEffect, useRef } from "react";
 import marker from "@/public/marker-icon.png";
 import markerShadow from "@/public/marker-shadow.png";
-import { type ComponentProps, useEffect, useRef } from "react";
 import "leaflet/dist/leaflet.css";
 
 type Props = ComponentProps<"div">;

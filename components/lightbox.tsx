@@ -1,11 +1,10 @@
 "use client";
 
-import { Fancybox } from "@fancyapps/ui";
-import type { OptionsType } from "@fancyapps/ui/types/Fancybox/options";
+import { Fancybox, type FancyboxOptions } from "@fancyapps/ui";
 import { type ComponentPropsWithoutRef, useEffect, useRef } from "react";
 
 type Props = ComponentPropsWithoutRef<"div"> & {
-  options?: Partial<OptionsType>;
+  options?: Partial<FancyboxOptions>;
 };
 
 export default function Lightbox({ options = {}, ...props }: Props) {

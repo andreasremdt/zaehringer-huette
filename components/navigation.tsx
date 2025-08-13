@@ -1,9 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import Icon from "@/components/icon";
 import useNavigation from "@/hooks/use-navigation";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 
 export default function Navigation() {
   const { visible, open, close, ref } = useNavigation();
@@ -27,7 +27,7 @@ export default function Navigation() {
         id="navigation"
         data-visible={visible || undefined}
         className={cn(
-          "fixed md:static inset-2 rounded-lg z-10 flex-col gap-y-2 justify-center md:flex-row gap-x-8 bg-secondary-900 md:bg-transparent items-center",
+          "fixed md:static inset-2 rounded-lg z-20 flex-col gap-y-2 justify-center md:flex-row gap-x-8 bg-secondary-900 md:bg-transparent items-center",
           {
             "visible flex animate-fade-in": visible,
             "hidden md:flex": !visible,

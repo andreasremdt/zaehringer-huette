@@ -60,8 +60,7 @@ const createBookingSchema = z.object({
       to: z.date(),
     },
     {
-      required_error:
-        "Bitte wählen Sie den gewünschten Zeitraum im Kalendar aus.",
+      error: "Bitte wählen Sie den gewünschten Zeitraum im Kalendar aus.",
     },
   ),
 });
@@ -105,7 +104,11 @@ export default async function createBooking(
       to: "me@andreasremdt.com",
       subject: `Reservierung von ${name}`,
       replyTo: email,
-      text: `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone || "-"}\nAnschrift: ${address}, ${zip} ${city}, ${country}\nErwachsene: ${adults}\nKinder: ${kids || "-"}\nZeitraum: ${format(range.from, "dd.MM.yyyy")} - ${format(range.to, "dd.MM.yyyy")}\n\n${comments}`,
+      text: `Name: ${name}\nE-Mail: ${email}\nTelefon: ${
+        phone || "-"
+      }\nAnschrift: ${address}, ${zip} ${city}, ${country}\nErwachsene: ${adults}\nKinder: ${
+        kids || "-"
+      }\nZeitraum: ${format(range.from, "dd.MM.yyyy")} - ${format(range.to, "dd.MM.yyyy")}\n\n${comments}`,
     });
 
     await payload.create({
@@ -128,7 +131,7 @@ export default async function createBooking(
     });
 
     return { success: true };
-  } catch (ex) {
+  } catch (_ex) {
     return { success: false };
   }
 }

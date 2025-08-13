@@ -1,8 +1,8 @@
-import type { Booking } from "@/payload-types";
 import clsx, { type ClassValue } from "clsx";
 import { addDays, differenceInDays, format } from "date-fns";
 import type { DateRange } from "react-day-picker";
 import { twMerge } from "tailwind-merge";
+import type { Booking } from "@/payload-types";
 
 export function cn(...classes: ClassValue[]) {
   return twMerge(clsx(...classes));

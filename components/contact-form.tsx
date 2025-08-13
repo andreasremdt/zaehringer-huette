@@ -1,12 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import sendMessage, { type FormInputData } from "@/actions/send-message";
 import ContactFormAlert from "@/components/contact-form-alert";
 import Icon from "@/components/icon";
 import Input from "@/components/input";
 import Textarea from "@/components/textarea";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
 
 export default function ContactForm() {
   const [state, setState] = useState<"idle" | "loading" | "success" | "error">(

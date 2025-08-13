@@ -1,7 +1,7 @@
 "use client";
 
-import type { Booking } from "@/payload-types";
 import { useState } from "react";
+import type { Booking } from "@/payload-types";
 import { getDaysInMonth, getMonths } from "../utils/date-utils";
 import CalendarCell from "./calendar-cell";
 

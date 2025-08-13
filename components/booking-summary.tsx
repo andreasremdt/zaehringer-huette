@@ -1,5 +1,6 @@
 "use client";
 
+import type { DateRange } from "react-day-picker";
 import costsCalculator from "@/lib/costs-calculator";
 import {
   formatCurrency,
@@ -9,7 +10,6 @@ import {
   hasValidRange,
 } from "@/lib/utils";
 import type { Cost } from "@/payload-types";
-import type { DateRange } from "react-day-picker";
 
 type Props = {
   costs: Cost;

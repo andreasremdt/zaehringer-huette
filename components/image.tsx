@@ -1,5 +1,5 @@
-import { getClientSideURL } from "@/lib/get-url";
 import NextImage, { type ImageProps } from "next/image";
+import { getClientSideURL } from "@/lib/get-url";
 
 type Props = Omit<ImageProps, "src"> & {
   src?: string | null;

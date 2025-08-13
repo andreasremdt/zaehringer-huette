@@ -1,9 +1,9 @@
-import type { Page } from "@/payload-types";
 import { revalidatePath } from "next/cache";
 import type {
   CollectionAfterChangeHook,
   CollectionAfterDeleteHook,
 } from "payload";
+import type { Page } from "@/payload-types";
 
 export const revalidatePage: CollectionAfterChangeHook<Page> = ({
   doc,

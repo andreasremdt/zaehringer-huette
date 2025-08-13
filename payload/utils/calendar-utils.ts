@@ -1,5 +1,5 @@
-import type { Booking } from "@/payload-types";
 import { isWithinInterval } from "date-fns";
+import type { Booking } from "@/payload-types";
 import { getNormalizedDate } from "./date-utils";
 
 export function getHighlightClasses(bookings: Booking[]) {

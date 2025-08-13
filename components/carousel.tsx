@@ -1,9 +1,9 @@
 "use client";
 
-import Icon from "@/components/icon";
-import { cn } from "@/lib/utils";
 import useEmblaCarousel from "embla-carousel-react";
 import type { ComponentPropsWithoutRef } from "react";
+import Icon from "@/components/icon";
+import { cn } from "@/lib/utils";
 
 type Props = ComponentPropsWithoutRef<"div"> & {
   options?: {

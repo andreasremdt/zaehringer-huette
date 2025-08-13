@@ -1,6 +1,6 @@
+import { isEqual } from "date-fns";
 import { cn } from "@/lib/utils";
 import type { Booking } from "@/payload-types";
-import { isEqual } from "date-fns";
 import {
   getBookingsForDate,
   getHighlightClasses,
