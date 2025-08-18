@@ -1,6 +1,6 @@
 import ContactForm from "@/components/contact-form";
 import Icon from "@/components/icon";
-import LeafletMap from "@/components/leaflet-map";
+import Map from "@/components/map";
 import { getGlobalConfig } from "@/payload/fetcher";
 import type { ContactFormBlock } from "@/payload-types";
 
@@ -15,7 +15,7 @@ export default async function Contact({ title, description }: Props) {
         role="presentation"
         className="order-2 aspect-4/3 z-0 w-full lg:order-1 lg:col-span-2 lg:aspect-auto lg:h-full lg:pr-8"
       >
-        <LeafletMap className="h-full" />
+        <Map />
       </div>
 
       <div className="order-1 py-16 pl-4 pr-4 lg:pl-8">
