@@ -10,10 +10,10 @@ export default async function Contact({ title, description }: Props) {
   const result = await getGlobalConfig();
 
   return (
-    <section className="mt-16 grid grid-cols-1 bg-white lg:grid-cols-[auto,minmax(0%,640px),minmax(0%,640px),auto]">
+    <section className="mt-16 grid grid-cols-1 bg-white lg:grid-cols-[auto_minmax(0%,640px)_minmax(0%,640px)_auto]">
       <div
         role="presentation"
-        className="order-2 aspect-[4/3] z-0 w-full lg:order-1 lg:col-span-2 lg:aspect-auto lg:h-full lg:pr-8"
+        className="order-2 aspect-4/3 z-0 w-full lg:order-1 lg:col-span-2 lg:aspect-auto lg:h-full lg:pr-8"
       >
         <LeafletMap className="h-full" />
       </div>

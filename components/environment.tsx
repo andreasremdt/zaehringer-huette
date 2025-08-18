@@ -22,7 +22,7 @@ export default function Environment({ title, items }: Props) {
                 width={544}
                 height={408}
                 alt={item.image.alt}
-                className="mb-4 aspect-video w-full rounded-xl object-cover md:aspect-[4/3]"
+                className="mb-4 aspect-video w-full rounded-xl object-cover md:aspect-4/3"
                 loading="lazy"
                 quality={75}
                 decoding="async"

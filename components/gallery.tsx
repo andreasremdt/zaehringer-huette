@@ -26,19 +26,19 @@ export default function Gallery({ description, title, images }: Props) {
             next: {
               "aria-label": "Nächstes Bild anzeigen",
               className:
-                "transition-all hover:translate-x-1 hover:text-primary-300 duration-300 ease-in-out",
+                "transition-all hover:translate-x-1 hover:text-primary-300 duration-300 ease-in-out cursor-pointer",
             },
             prev: {
               "aria-label": "Vorheriges Bild anzeigen",
               className:
-                "transition-all hover:-translate-x-1 hover:text-primary-300 duration-300 ease-in-out",
+                "transition-all hover:-translate-x-1 hover:text-primary-300 duration-300 ease-in-out cursor-pointer",
             },
           }}
         >
           {images.map((image, index) => (
             <Fragment key={typeof image === "string" ? index : image.id}>
               {typeof image !== "string" ? (
-                <figure className="min-w-0 flex-shrink-0 flex-grow-0 basis-1/2 overflow-hidden rounded-xl md:basis-1/4 lg:basis-1/6">
+                <figure className="min-w-0 shrink-0 grow-0 basis-1/2 overflow-hidden rounded-xl md:basis-1/4 lg:basis-1/6">
                   <a
                     href={image.url as string}
                     data-fancybox="gallery"
@@ -53,7 +53,7 @@ export default function Gallery({ description, title, images }: Props) {
                       loading="lazy"
                       quality={75}
                       decoding="async"
-                      className="aspect-[4/3] w-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-50 group-focus-visible:opacity-50"
+                      className="aspect-4/3 w-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-50 group-focus-visible:opacity-50"
                     />
                     <span className="absolute inset-0 flex scale-90 items-center justify-center opacity-0 transition-all duration-300 ease-in-out group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100">
                       <Icon name="maximize" className="size-8" />

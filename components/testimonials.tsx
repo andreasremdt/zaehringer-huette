@@ -19,18 +19,18 @@ export default function Testimonials({ title, description, items }: Props) {
             next: {
               "aria-label": "Nächste Bewertung anzeigen",
               className:
-                "from-primary-50 absolute right-0 top-0 flex h-full bg-gradient-to-l to-transparent pt-8 transition-all hover:translate-x-1 hover:text-primary-300 duration-300 ease-in-out",
+                "from-primary-50 absolute right-0 top-0 flex h-full bg-linear-to-l to-transparent pt-8 transition-all hover:translate-x-1 hover:text-primary-300 duration-300 ease-in-out cursor-pointer",
             },
             prev: {
               "aria-label": "Vorherige Bewertung anzeigen",
               className:
-                "from-primary-50 absolute left-0 top-0 flex h-full bg-gradient-to-r to-transparent pt-8 transition-all hover:-translate-x-1 hover:text-primary-300 duration-300 ease-in-out",
+                "from-primary-50 absolute left-0 top-0 flex h-full bg-linear-to-r to-transparent pt-8 transition-all hover:-translate-x-1 hover:text-primary-300 duration-300 ease-in-out cursor-pointer",
             },
           }}
         >
           {items?.map((item) => (
             <figure
-              className="min-w-0 flex-shrink-0 flex-grow-0 basis-full"
+              className="min-w-0 shrink-0 grow-0 basis-full"
               key={item.id}
             >
               <blockquote className="mx-auto mb-4 max-w-2xl">

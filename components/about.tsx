@@ -31,7 +31,7 @@ export default function About({ text, title, images }: Props) {
                   width={500}
                   height={600}
                   alt={image.alt}
-                  className="aspect-[4/5] rounded-xl object-cover"
+                  className="aspect-4/5 rounded-xl object-cover"
                   loading="lazy"
                   quality={75}
                   decoding="async"

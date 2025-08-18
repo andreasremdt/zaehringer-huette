@@ -25,7 +25,7 @@ export default function ImageHero({ title, description, images }: Props) {
                 loading="eager"
                 decoding="async"
                 quality={75}
-                className={cn("aspect-[4/3] w-full rounded-xl object-cover", {
+                className={cn("aspect-4/3 w-full rounded-xl object-cover", {
                   "col-span-2 row-span-2 h-full": index === 0,
                 })}
               />

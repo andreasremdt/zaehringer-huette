@@ -104,7 +104,7 @@ export default function ContactForm() {
       />
       <button
         type="submit"
-        className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-secondary-950 px-6 text-xs font-medium uppercase text-white transition-colors duration-300 ease-in-out hover:bg-primary-200 hover:text-secondary-950 md:gap-4 md:text-sm disabled:opacity-75 disabled:hover:bg-secondary-950 disabled:hover:text-white"
+        className="flex h-12 w-full items-center cursor-pointer justify-center gap-2 rounded-lg bg-secondary-950 px-6 text-xs font-medium uppercase text-white transition-colors duration-300 ease-in-out hover:bg-primary-200 hover:text-secondary-950 md:gap-4 md:text-sm disabled:opacity-75 disabled:hover:bg-secondary-950 disabled:hover:text-white"
         disabled={state === "loading"}
       >
         {state !== "loading" ? <Icon name="send" className="size-5" /> : null}

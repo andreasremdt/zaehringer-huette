@@ -14,7 +14,7 @@ export default forwardRef(function Input(
     <div className={cn("relative", className)} aria-live="assertive">
       <input
         id={id}
-        className="peer h-12 w-full rounded-lg border border-stone-300 bg-white px-4 text-sm text-stone-600 transition-colors duration-300 ease-in-out hover:border-stone-400 focus:border-stone-600 focus:outline-none aria-[invalid]:border-red-300 aria-[invalid]:hover:border-red-500 aria-[invalid]:focus-visible:border-red-500 md:text-base"
+        className="peer h-12 w-full rounded-lg border border-stone-300 bg-white px-4 text-sm text-stone-600 transition-colors duration-300 ease-in-out hover:border-stone-400 focus:border-stone-600 focus:outline-hidden aria-[invalid]:border-red-300 aria-[invalid]:hover:border-red-500 aria-[invalid]:focus-visible:border-red-500 md:text-base"
         placeholder=" "
         aria-describedby={`${id}-error`}
         aria-invalid={error ? true : undefined}
