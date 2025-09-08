@@ -57,7 +57,7 @@ export default function costsCalculator(costs: Cost) {
       return 0;
     },
 
-    getTotalCosts(range: DateRange, adults: number, kids = 0) {
+    getTotalCosts(range: DateRange, adults: number, kids = 0, surcharge = 0) {
       const costs = this.getCosts(range, adults, kids);
       const { totalTax } = this.getTourismTax(range, adults, kids);
       const wood = this.getWoodCosts(range);
@@ -66,7 +66,7 @@ export default function costsCalculator(costs: Cost) {
 
       if (!costs || !totalTax) return 0;
 
-      return costs + totalTax + wood + cleaningFee - discount;
+      return costs + totalTax + surcharge + wood + cleaningFee - discount;
     },
   };
 }

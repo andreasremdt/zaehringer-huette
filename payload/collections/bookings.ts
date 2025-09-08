@@ -58,6 +58,29 @@ const bookings: CollectionConfig = {
             },
           },
         },
+        {
+          type: 'row',
+          fields: [
+            {
+              type: "text",
+              name: "surchargeDescription",
+              label: "Aufschlagbeschreibung",
+              admin: {
+                width: "60%",
+                placeholder: "Kurzurlaub"
+              },
+            },
+            {
+              type: "number",
+              name: "surcharge",
+              label: "Aufschlag (in €)",
+              admin: {
+                width: "40%",
+                placeholder: "30,00"
+              },
+            },
+          ]
+        },
       ],
     },
     {

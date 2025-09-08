@@ -70,6 +70,7 @@ export async function POST(request: Request) {
     { from: data.from, to: data.to },
     data.adults,
     data.kids,
+    data.surcharge,
   );
   const woodCosts = calculator.getWoodCosts({ from: data.from, to: data.to });
   const { adultsTax, kidsTax } = calculator.getTourismTax(
@@ -83,7 +84,7 @@ export async function POST(request: Request) {
     data.kids,
   );
   const cleaningFee = calculator.getCleaningFee();
-  const vat = totalCosts * 0.19;
+  const vat = totalCosts * 0.07;
   const totalBeforeVat = totalCosts - vat;
 
   // Invoice Positions
@@ -104,7 +105,17 @@ export async function POST(request: Request) {
       align: "right",
     })
     .moveDown(1)
-    .text("Kurtaxe")
+    .text("Kurtaxe");
+
+  if (data.surcharge) {
+    doc
+      .text(data.surchargeDescription || "Sonderaufschlag", { continued: true })
+      .text(formatCurrency(data.surcharge), {
+        align: "right",
+      });
+  }
+    
+  doc
     .text(
       `Anzahl Kinder:           ${data.kids} à ${formatCurrency(costs.taxKids)}`,
       {
@@ -136,7 +147,7 @@ export async function POST(request: Request) {
     .text("Gesamtbetrag", { continued: true })
     .text(formatCurrency(totalCosts), { align: "right" })
     .font("Helvetica")
-    .text("In dem Betrag sind 19% Mehrwertsteuer enthalten", {
+    .text("In dem Betrag sind 7% Mehrwertsteuer enthalten", {
       continued: true,
     })
     .text(formatCurrency(vat), { align: "right" })
