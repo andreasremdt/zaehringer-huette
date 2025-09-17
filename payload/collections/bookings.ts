@@ -1,3 +1,4 @@
+import sendConfirmationEmail from "@/actions/send-confirmation-email";
 import type { CollectionConfig } from "payload";
 
 const bookings: CollectionConfig = {
@@ -20,6 +21,20 @@ const bookings: CollectionConfig = {
     delete: ({ req: { user } }) => {
       return Boolean(user);
     },
+  },
+  hooks: {
+    afterChange: [
+      async ({ doc, previousDoc, operation }) => {
+        if (operation !== "update") return;
+
+        const wasNotConfirmed = !previousDoc.confirmed;
+        const isNowConfirmed = doc.confirmed;
+
+        if (wasNotConfirmed && isNowConfirmed) {
+          await sendConfirmationEmail(doc);
+        }
+      }
+    ]
   },
   fields: [
     {
