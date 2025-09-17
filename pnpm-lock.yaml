@@ -57,8 +57,8 @@ importers:
         specifier: ^3.51.0
         version: 3.51.0(graphql@16.10.0)(typescript@5.9.2)
       pdfkit:
-        specifier: ^0.17.1
-        version: 0.17.1
+        specifier: ^0.17.2
+        version: 0.17.2
       react:
         specifier: ^19.1.1
         version: 19.1.1
@@ -2047,8 +2047,8 @@ packages:
     peerDependencies:
       graphql: ^16.8.1
 
-  pdfkit@0.17.1:
-    resolution: {integrity: sha512-Kkf1I9no14O/uo593DYph5u3QwiMfby7JsBSErN1WqeyTgCBNJE3K4pXBn3TgkdKUIVu+buSl4bYUNC+8Up4xg==}
+  pdfkit@0.17.2:
+    resolution: {integrity: sha512-UnwF5fXy08f0dnp4jchFYAROKMNTaPqb/xgR8GtCzIcqoTnbOqtp3bwKvO4688oHI6vzEEs8Q6vqqEnC5IUELw==}
 
   peek-readable@5.4.2:
     resolution: {integrity: sha512-peBp3qZyuS6cNIJ2akRNG1uo1WJ1d0wTxg/fxMdZ0BqCVhx242bSFHM9eNqflfJVS9SsgkzgT/1UgnsurBOTMg==}
@@ -4551,7 +4551,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  pdfkit@0.17.1:
+  pdfkit@0.17.2:
     dependencies:
       crypto-js: 4.2.0
       fontkit: 2.0.4
