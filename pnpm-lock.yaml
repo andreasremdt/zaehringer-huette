@@ -35,6 +35,9 @@ importers:
       '@payloadcms/translations':
         specifier: ^3.56.0
         version: 3.56.0
+      '@payloadcms/ui':
+        specifier: ^3.56.0
+        version: 3.56.0(@types/react@19.1.13)(monaco-editor@0.52.2)(next@15.5.3(babel-plugin-react-compiler@19.1.0-rc.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sass@1.77.4))(payload@3.56.0(graphql@16.10.0)(typescript@5.9.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@4.1.12)

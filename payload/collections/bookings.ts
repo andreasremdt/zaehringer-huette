@@ -1,5 +1,5 @@
-import sendConfirmationEmail from "@/actions/send-confirmation-email";
 import type { CollectionConfig } from "payload";
+import sendConfirmationEmail from "@/actions/send-confirmation-email";
 
 const bookings: CollectionConfig = {
   slug: "bookings",
@@ -33,8 +33,8 @@ const bookings: CollectionConfig = {
         if (wasNotConfirmed && isNowConfirmed) {
           await sendConfirmationEmail(doc);
         }
-      }
-    ]
+      },
+    ],
   },
   fields: [
     {
@@ -58,8 +58,7 @@ const bookings: CollectionConfig = {
           label: "Rechnungs-Nr.",
           admin: {
             placeholder: "ZH35",
-            description:
-              "Die Rechnungs-Nr. wird für die Erstellung der Rechnung benötigt.",
+            description: "Die Rechnungs-Nr. wird für die Erstellung der Rechnung benötigt.",
           },
         },
         {
@@ -74,7 +73,7 @@ const bookings: CollectionConfig = {
           },
         },
         {
-          type: 'row',
+          type: "row",
           fields: [
             {
               type: "text",
@@ -82,7 +81,7 @@ const bookings: CollectionConfig = {
               label: "Aufschlagbeschreibung",
               admin: {
                 width: "60%",
-                placeholder: "Kurzurlaub"
+                placeholder: "Kurzurlaub",
               },
             },
             {
@@ -91,10 +90,10 @@ const bookings: CollectionConfig = {
               label: "Aufschlag (in €)",
               admin: {
                 width: "40%",
-                placeholder: "30,00"
+                placeholder: "30,00",
               },
             },
-          ]
+          ],
         },
       ],
     },

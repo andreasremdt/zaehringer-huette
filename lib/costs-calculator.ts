@@ -11,10 +11,7 @@ export default function costsCalculator(costs: Cost) {
 
       if (totalGuests < 0 || !days) return 0;
 
-      return (
-        costs.pricePerNight * days +
-        costs.pricePerExtraPerson * days * totalGuests
-      );
+      return costs.pricePerNight * days + costs.pricePerExtraPerson * days * totalGuests;
     },
 
     getTourismTax(range: DateRange, adults: number, kids = 0) {
@@ -34,9 +31,7 @@ export default function costsCalculator(costs: Cost) {
 
       const month = getMonth(range.from);
 
-      return month > 5 && month < 9
-        ? costs.woodCostsSummer
-        : costs.woodCostsWinter;
+      return month > 5 && month < 9 ? costs.woodCostsSummer : costs.woodCostsWinter;
     },
 
     getCleaningFee() {

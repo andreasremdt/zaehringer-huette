@@ -54,35 +54,14 @@ export async function POST(request: Request) {
     .fontSize(12)
     .text("Für die Miete der Zähringer Hütte")
     .font("Helvetica")
-    .text(
-      `für den Zeitraum ${formatDateRange({ from: data.from, to: data.to })}`,
-    )
-    .text(
-      "erlaube ich mir wie mit Ihnen vereinbart folgenden Betrag in Rechnung zu stellen:",
-    );
+    .text(`für den Zeitraum ${formatDateRange({ from: data.from, to: data.to })}`)
+    .text("erlaube ich mir wie mit Ihnen vereinbart folgenden Betrag in Rechnung zu stellen:");
 
-  const peopleCosts = calculator.getCosts(
-    { from: data.from, to: data.to },
-    data.adults,
-    data.kids,
-  );
-  const totalCosts = calculator.getTotalCosts(
-    { from: data.from, to: data.to },
-    data.adults,
-    data.kids,
-    data.surcharge,
-  );
+  const peopleCosts = calculator.getCosts({ from: data.from, to: data.to }, data.adults, data.kids);
+  const totalCosts = calculator.getTotalCosts({ from: data.from, to: data.to }, data.adults, data.kids, data.surcharge);
   const woodCosts = calculator.getWoodCosts({ from: data.from, to: data.to });
-  const { adultsTax, kidsTax } = calculator.getTourismTax(
-    { from: data.from, to: data.to },
-    data.adults,
-    data.kids,
-  );
-  const discount = calculator.getDiscount(
-    { from: data.from, to: data.to },
-    data.adults,
-    data.kids,
-  );
+  const { adultsTax, kidsTax } = calculator.getTourismTax({ from: data.from, to: data.to }, data.adults, data.kids);
+  const discount = calculator.getDiscount({ from: data.from, to: data.to }, data.adults, data.kids);
   const cleaningFee = calculator.getCleaningFee();
   const vat = totalCosts * 0.07;
   const totalBeforeVat = totalCosts - vat;
@@ -104,43 +83,33 @@ export async function POST(request: Request) {
     .text(formatCurrency(peopleCosts + cleaningFee + woodCosts), {
       align: "right",
     })
-    .moveDown(1)
-    .text("Kurtaxe");
+    .moveDown(1);
 
   if (data.surcharge) {
-    doc
-      .text(data.surchargeDescription || "Sonderaufschlag", { continued: true })
-      .text(formatCurrency(data.surcharge), {
-        align: "right",
-      });
+    doc.text(data.surchargeDescription || "Sonderaufschlag", { continued: true }).text(formatCurrency(data.surcharge), {
+      align: "right",
+    });
   }
-    
+
   doc
-    .text(
-      `Anzahl Kinder:           ${data.kids} à ${formatCurrency(costs.taxKids)}`,
-      {
-        continued: true,
-      },
-    )
+    .text("Kurtaxe")
+    .text(`Anzahl Kinder:           ${data.kids} à ${formatCurrency(costs.taxKids)}`, {
+      continued: true,
+    })
     .text(formatCurrency(kidsTax), { align: "right" })
-    .text(
-      `Anzahl Erwachsene: ${data.adults} à ${formatCurrency(costs.taxAdults)}`,
-      {
-        continued: true,
-      },
-    )
+    .text(`Anzahl Erwachsene: ${data.adults} à ${formatCurrency(costs.taxAdults)}`, {
+      continued: true,
+    })
     .text(formatCurrency(adultsTax), {
       align: "right",
       underline: discount === 0,
     });
 
   if (discount > 0) {
-    doc
-      .text("5% Rabatt bei mehr als 5 Tagen", { continued: true })
-      .text(`- ${formatCurrency(discount)}`, {
-        underline: true,
-        align: "right",
-      });
+    doc.text("5% Rabatt bei mehr als 5 Tagen", { continued: true }).text(`- ${formatCurrency(discount)}`, {
+      underline: true,
+      align: "right",
+    });
   }
 
   doc
@@ -163,28 +132,20 @@ export async function POST(request: Request) {
   doc
     .moveDown(1)
     .font("Helvetica")
-    .text(
-      "Der Stromverbrauch wird nach Abreise mit 40 ct/kwh verrechnet. Bitte Anfangs- und Endstände mitteilen.",
-    )
+    .text("Der Stromverbrauch wird nach Abreise mit 40 ct/kwh verrechnet. Bitte Anfangs- und Endstände mitteilen.")
     .moveDown(1)
     .text("Mit freundlichen Grüßen")
     .text("Dr. Günther Effinger")
     .moveDown(1)
-    .text(
-      "Bitte überweisen Sie die Rechnungssumme vorab, damit Ihre Buchung aktiviert werden kann.",
-    );
+    .text("Bitte überweisen Sie die Rechnungssumme vorab, damit Ihre Buchung aktiviert werden kann.");
 
   doc
     .moveDown(1)
     .fontSize(8)
+    .text("Dr. Günther Effinger                    Tel.: 07631 938070                     Sparkasse Zollernalb")
+    .text("www.zaehringer-huette.de          Fax: 07631 705021                     IBAN: DE65 6535 1260 1140 0510 35")
     .text(
-      "Dr. Günther Effinger                    Tel.: 07631 938070                     Sparkasse Zollernalb",
-    )
-    .text(
-      "www.zaehringer-huette.de          Fax: 07631 705021                     IBAN: DE65 6535 1260 1140 0510 35",
-    )
-    .text(
-      "                                                                                                       BIC: SOLADES1BAL",
+      "                                                                                                       BIC: SOLADES1BAL"
     );
 
   // Finalize

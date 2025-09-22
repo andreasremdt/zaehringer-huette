@@ -37,7 +37,11 @@ export function formatDateRange({ from, to }: DateRange) {
     return null;
   }
 
-  return `${format(from, "dd.MM.yyyy")} - ${format(to, "dd.MM.yyyy")} (${getNumberOfDays({ from, to })} Nächte)`;
+  const numberOfDays = getNumberOfDays({ from, to });
+
+  return `${format(from, "dd.MM.yyyy")} - ${format(to, "dd.MM.yyyy")} (${numberOfDays} ${
+    numberOfDays === 1 ? "Nacht" : "Nächte"
+  })`;
 }
 
 export function formatGuests(adults: number, kids = 0) {
@@ -50,10 +54,7 @@ export function formatGuests(adults: number, kids = 0) {
   return str;
 }
 
-export function hasEnoughGuests<T extends number>(
-  adults?: T,
-  kids = 0,
-): adults is NonNullable<T> {
+export function hasEnoughGuests<T extends number>(adults?: T, kids = 0): adults is NonNullable<T> {
   if (!adults || adults < 1) {
     return false;
   }
@@ -65,9 +66,7 @@ export function hasEnoughGuests<T extends number>(
   return true;
 }
 
-export function hasValidRange<T extends DateRange>(
-  range?: T,
-): range is NonNullable<T> {
+export function hasValidRange<T extends DateRange>(range?: T): range is NonNullable<T> {
   return Boolean(range?.from) && Boolean(range?.to);
 }
 
