@@ -24,7 +24,7 @@
     "@payloadcms/storage-vercel-blob": "^3.56.0",
     "@payloadcms/translations": "^3.56.0",
     "@payloadcms/ui": "^3.56.0",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/typography": "^0.5.18",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
