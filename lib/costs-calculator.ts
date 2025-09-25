@@ -15,7 +15,7 @@ export default function costsCalculator(costs: Cost) {
     },
 
     getTourismTax(range: DateRange, adults: number, kids = 0) {
-      const days = getNumberOfDays(range);
+      const days = getNumberOfDays(range) - 1;
 
       if (!days) return { adultsTax: 0, kidsTax: 0, totalTax: 0 };
 
