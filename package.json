@@ -14,7 +14,7 @@
     "payload:generate-types": "payload generate:types"
   },
   "dependencies": {
-    "@fancyapps/ui": "^6.0.31",
+    "@fancyapps/ui": "^6.0.33",
     "@payloadcms/db-mongodb": "^3.56.0",
     "@payloadcms/email-nodemailer": "^3.56.0",
     "@payloadcms/live-preview-react": "^3.56.0",
