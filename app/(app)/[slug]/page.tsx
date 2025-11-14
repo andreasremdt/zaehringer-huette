@@ -40,16 +40,6 @@ export default async function Page({ params }: Props) {
   );
 }
 
-export async function generateStaticParams() {
-  const pages = await getAllPages();
-
-  return pages
-    .filter((page) => page.slug !== "home")
-    .map((page) => ({
-      slug: page.slug,
-    }));
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug || "home";
   const page = await getPageBySlug(slug);
