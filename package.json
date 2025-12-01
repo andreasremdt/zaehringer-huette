@@ -17,7 +17,7 @@
     "@fancyapps/ui": "^6.1.5",
     "@payloadcms/db-mongodb": "^3.64.0",
     "@payloadcms/email-nodemailer": "^3.64.0",
-    "@payloadcms/live-preview-react": "^3.64.0",
+    "@payloadcms/live-preview-react": "^3.65.0",
     "@payloadcms/next": "^3.64.0",
     "@payloadcms/plugin-seo": "^3.64.0",
     "@payloadcms/richtext-lexical": "^3.64.0",
