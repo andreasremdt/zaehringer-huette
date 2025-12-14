@@ -58,7 +58,8 @@ const bookings: CollectionConfig = {
           label: "Rechnungs-Nr.",
           admin: {
             placeholder: "ZH35",
-            description: "Die Rechnungs-Nr. wird für die Erstellung der Rechnung benötigt.",
+            description:
+              "Die Rechnungs-Nr. wird für die Erstellung der Rechnung benötigt.",
           },
         },
         {

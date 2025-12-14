@@ -54,7 +54,10 @@ export function formatGuests(adults: number, kids = 0) {
   return str;
 }
 
-export function hasEnoughGuests<T extends number>(adults?: T, kids = 0): adults is NonNullable<T> {
+export function hasEnoughGuests<T extends number>(
+  adults?: T,
+  kids = 0,
+): adults is NonNullable<T> {
   if (!adults || adults < 1) {
     return false;
   }
@@ -66,7 +69,9 @@ export function hasEnoughGuests<T extends number>(adults?: T, kids = 0): adults 
   return true;
 }
 
-export function hasValidRange<T extends DateRange>(range?: T): range is NonNullable<T> {
+export function hasValidRange<T extends DateRange>(
+  range?: T,
+): range is NonNullable<T> {
   return Boolean(range?.from) && Boolean(range?.to);
 }
 

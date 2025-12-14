@@ -16,7 +16,15 @@ export default async function sendConfirmationEmail(
       from: "info@zaehringer-huette.de",
       subject: "Ihre Reservierung wurde bestätigt",
       replyTo: "info@zaehringer-huette.de",
-      text: `Hallo ${booking.name},\n\nihre Reservierung in der Zähringer Hütte vom ${format(booking.from, "dd.MM.yyyy")} bis zum ${format(booking.to, "dd.MM.yyyy")} wurde soeben von uns bestätigt.\nWir freuen uns auf Ihren Besuch!\n\nMit freundlichen Grüßen\n\Familie Effinger\nhttps://zaehringer-huette.de`,
+      text: `Hallo ${
+        booking.name
+      },\n\nihre Reservierung in der Zähringer Hütte vom ${format(
+        booking.from,
+        "dd.MM.yyyy",
+      )} bis zum ${format(
+        booking.to,
+        "dd.MM.yyyy",
+      )} wurde soeben von uns bestätigt.\nWir freuen uns auf Ihren Besuch!\n\nMit freundlichen Grüßen\nFamilie Effinger\nhttps://zaehringer-huette.de`,
     });
 
     return true;

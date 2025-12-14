@@ -1,12 +1,16 @@
-@import '@fancyapps/ui/dist/fancybox/fancybox.css' layer(base);
+@import "@fancyapps/ui/dist/fancybox/fancybox.css" layer(base);
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-serif: var(--font-cormorant-garamond), ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-sans:
+    var(--font-jost), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif:
+    var(--font-cormorant-garamond), ui-serif, Georgia, Cambria,
+    "Times New Roman", Times, serif;
 }
 
 @theme {
@@ -54,7 +58,7 @@
       opacity: 0;
       scale: 0.9;
     }
-    
+
     to {
       opacity: 1;
       scale: 1;

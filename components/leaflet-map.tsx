@@ -16,31 +16,27 @@ export default function LeafletMap(props: Props) {
       return;
     }
 
-    const map = L
-      .map(ref.current, {
-        scrollWheelZoom: false,
-        dragging: !L.Browser.mobile,
-        touchZoom: true,
-      })
-      .setView([47.851272, 8.029753], 17);
+    const map = L.map(ref.current, {
+      scrollWheelZoom: false,
+      dragging: !L.Browser.mobile,
+      touchZoom: true,
+    }).setView([47.851272, 8.029753], 17);
 
     const icon = L.icon({
       iconUrl: marker.src,
       shadowUrl: markerShadow.src,
     });
 
-    L
-      .tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-      })
-      .addTo(map);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+    }).addTo(map);
 
     L.marker([47.8516, 8.029705], { icon }).addTo(map);
 
     return () => {
       map.off();
       map.remove();
-    }
+    };
   }, []);
 
   return <div ref={ref} className="h-full" {...props} />;
