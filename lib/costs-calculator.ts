@@ -6,7 +6,7 @@ import { getNumberOfDays } from "./utils";
 export default function costsCalculator(costs: Cost) {
   return {
     getCosts(range: DateRange, adults: number, kids = 0) {
-      const totalGuests = adults + kids - 4;
+      const totalGuests = adults + kids - costs.personCountPerNight;
       const days = getNumberOfDays(range);
 
       if (totalGuests < 0 || !days) return 0;
@@ -44,7 +44,7 @@ export default function costsCalculator(costs: Cost) {
     },
 
     hasDiscount(range: DateRange) {
-      return getNumberOfDays(range) > 4;
+      return getNumberOfDays(range) > costs.discountAfterDays;
     },
 
     getDiscount(range: DateRange, adults: number, kids = 0): number {

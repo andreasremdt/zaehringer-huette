@@ -894,13 +894,15 @@ export interface ContactInfo {
 export interface Cost {
   id: string;
   pricePerNight: number;
+  personCountPerNight: number;
   pricePerExtraPerson: number;
   taxAdults: number;
   taxKids: number;
+  discount: number;
+  discountAfterDays: number;
   woodCostsWinter: number;
   woodCostsSummer: number;
   cleaningFee: number;
-  discount: number;
   deposit: number;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -928,13 +930,15 @@ export interface ContactInfoSelect<T extends boolean = true> {
  */
 export interface CostsSelect<T extends boolean = true> {
   pricePerNight?: T;
+  personCountPerNight?: T;
   pricePerExtraPerson?: T;
   taxAdults?: T;
   taxKids?: T;
+  discount?: T;
+  discountAfterDays?: T;
   woodCostsWinter?: T;
   woodCostsSummer?: T;
   cleaningFee?: T;
-  discount?: T;
   deposit?: T;
   updatedAt?: T;
   createdAt?: T;
